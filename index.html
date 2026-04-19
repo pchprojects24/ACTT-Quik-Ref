@@ -98,6 +98,23 @@
   .med-body ul { margin: 4px 0 0; padding-left: 20px; }
   .med-body li { margin: 2px 0; }
   .med-body strong { color: var(--ink); }
+  .med-body p { margin: 4px 0 0; }
+  .med-body ol { margin: 4px 0 0; padding-left: 22px; }
+
+  .med-link {
+    color: var(--accent); text-decoration: underline; text-underline-offset: 2px;
+    cursor: pointer; font-weight: 600;
+  }
+  .med-link:hover { color: var(--accent-dark); }
+  .med.flash { animation: medFlash 1.2s ease-out; }
+  @keyframes medFlash {
+    0% { box-shadow: 0 0 0 2px var(--accent); }
+    100% { box-shadow: 0 0 0 0 transparent; }
+  }
+  .callout {
+    background: var(--warn-bg); border: 1px solid var(--warn-border);
+    border-radius: 6px; padding: 8px 12px; margin: 8px 0 0; font-size: 0.92rem;
+  }
 
   .empty { color: var(--muted); text-align: center; padding: 40px 10px; }
 
@@ -159,28 +176,39 @@
           </summary>
           <div class="med-body">
             <h4>Clinical Indication</h4>
-            <p>Heart rate typically &lt; 50/min.</p>
+            <p>Heart rate typically &lt; 50/min that is inadequate for the patient's clinical condition (AHA ACLS 2020, reaffirmed 2024 focused update).</p>
 
             <h4>Primary Assessment</h4>
-            <p>Identify and treat underlying causes. Maintain patent airway, assist breathing as necessary, and administer oxygen if hypoxemic. Monitor ECG, blood pressure, and oximetry. Establish IV/IO access and obtain a 12-lead ECG (do not delay therapy).</p>
+            <p>Identify and treat underlying causes. Maintain patent airway, assist breathing as necessary, and administer oxygen only if hypoxemic (titrate SpO2 to 94 to 99%). Attach cardiac monitor, monitor blood pressure and oximetry. Establish IV/IO access and obtain a 12-lead ECG when available (do not delay therapy).</p>
 
             <h4>Assess for Hemodynamic Instability</h4>
-            <p>Are there signs of poor perfusion? (Hypotension, acutely altered mental status, signs of shock, ischemic chest discomfort, acute heart failure)</p>
+            <p>Look for any of: hypotension, acutely altered mental status, signs of shock, ischemic chest discomfort, or acute heart failure.</p>
             <ul>
-              <li><strong>If NO:</strong> Monitor and observe.</li>
-              <li><strong>If YES:</strong>
+              <li><strong>Stable / asymptomatic:</strong> Monitor, identify reversible causes, obtain 12-lead ECG, consider expert consultation.</li>
+              <li><strong>Unstable / symptomatic:</strong>
                 <ul>
-                  <li>First-line: Atropine 1 mg IV. May repeat every 3 to 5 minutes up to a maximum of 3 mg.</li>
-                  <li>If Atropine is ineffective:
+                  <li><strong>First-line:</strong> Atropine 1 mg IV bolus. May repeat every 3 to 5 minutes to a maximum total dose of 3 mg.
+                    <p class="callout"><strong>Caution:</strong> Atropine is unlikely to be effective in second-degree Mobitz II or third-degree AV block, or in transplanted (denervated) hearts &mdash; do not delay pacing or chronotropic infusions in these settings.</p>
+                  </li>
+                  <li><strong>If Atropine is ineffective or unlikely to work, use one of the following without delay:</strong>
                     <ul>
-                      <li>Transcutaneous pacing.</li>
-                      <li>OR Dopamine infusion: 5 to 20 mcg/kg/min, titrated to patient response.</li>
-                      <li>OR Epinephrine infusion: 2 to 10 mcg/min, titrated to patient response.</li>
+                      <li>Transcutaneous pacing (TCP). Confirm electrical and mechanical capture; provide analgesia/sedation (e.g., <a class="med-link" data-med="FENTANYL">Fentanyl</a> and/or <a class="med-link" data-med="MIDAZOLAM">Midazolam</a>) for conscious patients.</li>
+                      <li><a class="med-link" data-med="DOPAMINE">Dopamine</a> infusion 5 to 20 mcg/kg/min IV, titrated to patient response.</li>
+                      <li><a class="med-link" data-med="EPINEPHRINE">Epinephrine</a> infusion 2 to 10 mcg/min IV, titrated to patient response.</li>
                     </ul>
                   </li>
-                  <li>Seek expert consultation.</li>
+                  <li>Consider expert consultation and transvenous pacing if symptomatic bradycardia persists.</li>
                 </ul>
               </li>
+            </ul>
+
+            <h4>Identify and Treat Underlying Cause</h4>
+            <ul>
+              <li>Acute coronary ischemia / inferior MI.</li>
+              <li>Hypoxia &mdash; ensure airway and oxygenation.</li>
+              <li>Electrolyte abnormalities (hyperkalemia &mdash; consider <a class="med-link" data-med="CALCIUM GLUCONATE">Calcium gluconate</a> or <a class="med-link" data-med="CALCIUM CHLORIDE">Calcium chloride</a>).</li>
+              <li>Drug effects: beta-blockers, calcium channel blockers, digoxin, opioids (consider <a class="med-link" data-med="NALOXONE">Naloxone</a>), organophosphates.</li>
+              <li>Increased vagal tone, hypothermia, or raised intracranial pressure.</li>
             </ul>
           </div>
         </details>
@@ -191,33 +219,52 @@
           </summary>
           <div class="med-body">
             <h4>Clinical Indication</h4>
-            <p>Heart rate typically &gt; 150/min.</p>
+            <p>Sustained tachyarrhythmia, generally HR &ge; 150/min, in a patient with a pulse (AHA ACLS 2020, current).</p>
 
             <h4>Primary Assessment</h4>
-            <p>Maintain patent airway, assist breathing, administer oxygen if hypoxemic. Attach cardiac monitor to identify rhythm, monitor blood pressure, and oximetry.</p>
+            <p>Maintain patent airway, assist breathing as needed, administer oxygen only if hypoxemic (target SpO2 &ge; 94%). Attach cardiac monitor to identify rhythm, monitor blood pressure and oximetry. Establish IV access.</p>
 
             <h4>Assess for Hemodynamic Instability</h4>
-            <p>Are there signs of poor perfusion? (Hypotension, acutely altered mental status, signs of shock, ischemic chest discomfort, acute heart failure)</p>
+            <p>Look for any of: hypotension, acutely altered mental status, signs of shock, ischemic chest discomfort, or acute heart failure that is caused by the arrhythmia.</p>
             <ul>
-              <li><strong>If YES (Unstable):</strong>
+              <li><strong>Unstable &mdash; Synchronized Cardioversion:</strong>
                 <ul>
-                  <li>Synchronized cardioversion.</li>
-                  <li>Consider procedural sedation (e.g., Midazolam 1 to 2.5 mg IV direct, or Ketamine 1 mg/kg IV push over 60 seconds).</li>
-                  <li>If regular narrow complex, consider Adenosine 6 mg IV rapid push.</li>
+                  <li>Provide procedural sedation if conscious and time permits (e.g., <a class="med-link" data-med="KETAMINE">Ketamine</a> 1 mg/kg IV over 60 seconds, <a class="med-link" data-med="MIDAZOLAM">Midazolam</a> 1 to 2.5 mg IV, or <a class="med-link" data-med="ETOMIDATE">Etomidate</a> 0.1 to 0.3 mg/kg IV). Add an analgesic (e.g., <a class="med-link" data-med="FENTANYL">Fentanyl</a>) when appropriate.</li>
+                  <li>Deliver synchronized cardioversion at the rhythm-appropriate biphasic energy (see Electrical Cardioversion Algorithm).</li>
+                  <li>If regular narrow complex (likely SVT), <a class="med-link" data-med="ADENOSINE">Adenosine</a> 6 mg IV rapid push may be considered while preparing cardioversion &mdash; do not delay cardioversion.</li>
                 </ul>
               </li>
-              <li><strong>If NO (Stable):</strong>
+              <li><strong>Stable:</strong>
                 <ul>
-                  <li>Establish IV access and obtain 12-lead ECG.</li>
-                  <li>Assess QRS Duration:
+                  <li>Establish IV access and obtain a 12-lead ECG.</li>
+                  <li><strong>Wide QRS (&ge; 0.12 sec):</strong>
                     <ul>
-                      <li><strong>Wide (≥ 0.12 sec):</strong> Consider Adenosine only if regular and monomorphic. Consider antiarrhythmic infusion (e.g., Amiodarone 150 mg IV over 10 minutes). Consult an expert.</li>
-                      <li><strong>Narrow (&lt; 0.12 sec):</strong> Perform vagal maneuvers. Administer Adenosine 6 mg IV rapid push; if no conversion, give 12 mg IV rapid push. Consider Beta-blocker or Calcium channel blocker. Consult an expert.</li>
+                      <li>If regular and monomorphic, consider <a class="med-link" data-med="ADENOSINE">Adenosine</a> (diagnostic and may convert SVT with aberrancy): 6 mg IV rapid push, then 12 mg if needed. Do <strong>not</strong> use adenosine for irregular or polymorphic wide-complex tachycardia.</li>
+                      <li>Antiarrhythmic infusion (any one):
+                        <ul>
+                          <li><a class="med-link" data-med="PROCAINAMIDE">Procainamide</a> 20 to 50 mg/min IV (max 17 mg/kg) until arrhythmia suppressed, hypotension occurs, QRS widens by &gt; 50%, or max dose given. Maintenance 1 to 4 mg/min. Avoid if prolonged QT or CHF.</li>
+                          <li><a class="med-link" data-med="AMIODARONE">Amiodarone</a> 150 mg IV over 10 minutes; may repeat as needed for recurrent VT (max 2.2 g/24 h). Maintenance 1 mg/min for 6 hours, then 0.5 mg/min.</li>
+                          <li>Sotalol 100 mg (1.5 mg/kg) IV over 5 minutes (avoid if prolonged QT).</li>
+                        </ul>
+                      </li>
+                      <li>For polymorphic VT with prolonged QT (Torsades de Pointes): <a class="med-link" data-med="MAGNESIUM SULFATE, AQUEOUS">Magnesium sulfate</a> 1 to 2 g IV over 15 minutes; correct electrolytes; consider overdrive pacing.</li>
+                      <li>Consult expert; if rhythm becomes unstable, proceed to synchronized cardioversion.</li>
+                    </ul>
+                  </li>
+                  <li><strong>Narrow QRS (&lt; 0.12 sec):</strong>
+                    <ul>
+                      <li>Vagal maneuvers (Valsalva, including modified/REVERT technique; carotid sinus massage if no contraindications).</li>
+                      <li><a class="med-link" data-med="ADENOSINE">Adenosine</a> if regular: 6 mg IV rapid push followed by 20 mL saline flush; if no conversion, 12 mg IV rapid push (a second 12 mg dose may be given).</li>
+                      <li>If irregular (likely atrial fibrillation/flutter or MAT): rate control with <a class="med-link" data-med="DILTIAZEM">Diltiazem</a>, <a class="med-link" data-med="VERAPAMIL">Verapamil</a>, or <a class="med-link" data-med="METOPROLOL">Metoprolol</a> (avoid AV-nodal blockers in pre-excited AF/WPW).</li>
+                      <li>Consult expert.</li>
                     </ul>
                   </li>
                 </ul>
               </li>
             </ul>
+
+            <h4>Identify and Treat Underlying Cause</h4>
+            <p>ACS, electrolyte/acid-base disturbance, hypovolemia, hypoxia, fever/sepsis, drug toxicity (sympathomimetics, anticholinergics), hyperthyroidism, pulmonary embolism.</p>
           </div>
         </details>
 
@@ -227,25 +274,42 @@
           </summary>
           <div class="med-body">
             <h4>Clinical Indication</h4>
-            <p>Tachyarrhythmias causing hemodynamic instability.</p>
+            <p>Tachyarrhythmia with a pulse that is causing serious signs or symptoms of hemodynamic instability (hypotension, acutely altered mental status, shock, ischemic chest discomfort, or acute heart failure) due to the arrhythmia (AHA ACLS 2020).</p>
 
             <h4>Preparation</h4>
             <ol>
-              <li>Administer sedation (e.g., Ketamine 1 mg/kg IV or Midazolam 1 to 2.5 mg IV direct) if the patient is conscious and time permits.</li>
-              <li>Turn on defibrillator and attach monitoring leads/defibrillation pads to the patient.</li>
-              <li>Press the SYNC button. Visually confirm that sync markers appear on the R waves.</li>
+              <li>Verify IV access, suction, BVM, and airway equipment immediately available; pre-oxygenate.</li>
+              <li>Continuous ECG, SpO2, BP, capnography, and defibrillator pads in anterior-lateral or anterior-posterior position.</li>
+              <li>Administer procedural sedation if the patient is conscious and time permits:
+                <ul>
+                  <li><a class="med-link" data-med="KETAMINE">Ketamine</a> 1 mg/kg IV push over 60 seconds, or</li>
+                  <li><a class="med-link" data-med="MIDAZOLAM">Midazolam</a> 1 to 2.5 mg IV direct (titrate), or</li>
+                  <li><a class="med-link" data-med="ETOMIDATE">Etomidate</a> 0.1 to 0.3 mg/kg IV, or</li>
+                  <li><a class="med-link" data-med="PROPOFOL">Propofol</a> 0.5 to 1 mg/kg IV (caution with hypotension).</li>
+                </ul>
+                Consider an analgesic such as <a class="med-link" data-med="FENTANYL">Fentanyl</a> 1 mcg/kg IV.
+              </li>
+              <li>Turn on defibrillator and press the <strong>SYNC</strong> button. Visually confirm sync markers appear on each R wave (re-check sync after every shock &mdash; some devices revert to unsynchronized).</li>
             </ol>
 
             <h4>Energy Selection (Biphasic)</h4>
             <ul>
-              <li>Narrow Regular (e.g., SVT, Atrial Flutter): 50 to 100 Joules.</li>
-              <li>Narrow Irregular (e.g., Atrial Fibrillation): 120 to 200 Joules.</li>
-              <li>Wide Regular (e.g., Monomorphic VT): 100 Joules.</li>
-              <li>Wide Irregular (e.g., Polymorphic VT): Do not sync. Deliver unsynchronized defibrillation dose.</li>
+              <li>Narrow regular (SVT, Atrial Flutter): start 50 to 100 J.</li>
+              <li>Narrow irregular (Atrial Fibrillation): start 120 to 200 J.</li>
+              <li>Wide regular (Monomorphic VT with pulse): start 100 J.</li>
+              <li>Wide irregular (Polymorphic VT): treat as VF &mdash; deliver <strong>unsynchronized</strong> high-energy defibrillation (120 to 200 J biphasic).</li>
+              <li>If the first shock fails, escalate energy in a stepwise fashion per device manufacturer recommendations.</li>
             </ul>
 
             <h4>Execution</h4>
-            <p>Announce "Clear," ensure no physical contact with the patient or bed, press and hold the "Shock" button, and immediately reassess rhythm and pulse.</p>
+            <ol>
+              <li>State "Charging." Announce "Clear &mdash; I'm clear, you're clear, oxygen clear" and ensure no contact with patient, bed, or O2 source.</li>
+              <li>Press and hold the SHOCK button until shock is delivered.</li>
+              <li>Immediately reassess rhythm and pulse; if VF/pulseless VT, begin CPR and follow Cardiac Arrest Algorithm.</li>
+              <li>If unstable rhythm persists, re-sync and re-shock at increased energy.</li>
+            </ol>
+
+            <p class="callout"><strong>Pitfalls:</strong> failure to engage SYNC, sync inadvertently capturing T waves in polymorphic VT (use unsynchronized shock), inadequate sedation, and forgetting to disconnect oxygen flow over the chest before shocking.</p>
           </div>
         </details>
 
@@ -254,24 +318,47 @@
             <span class="name">Adult BLS Algorithm for Healthcare Providers</span>
           </summary>
           <div class="med-body">
+            <h4>Clinical Indication</h4>
+            <p>Suspected cardiac arrest in an adult (AHA BLS for Healthcare Providers, 2020 Guidelines and 2023 focused update).</p>
+
             <h4>Initial Steps</h4>
             <ol>
-              <li>Verify scene safety.</li>
-              <li>Check for responsiveness. If unresponsive, shout for nearby help, activate the emergency response system, and acquire an AED/defibrillator.</li>
-              <li>Simultaneously look for no breathing or only gasping and check the carotid pulse for 5 to 10 seconds.</li>
+              <li>Verify scene safety; don PPE.</li>
+              <li>Check for responsiveness (tap and shout). If unresponsive, shout for nearby help, activate the emergency response system (or send second rescuer), and obtain an AED/defibrillator.</li>
+              <li>Simultaneously check for breathing (look for no breathing or only gasping) <strong>and</strong> palpate the carotid pulse for no more than 10 seconds.</li>
             </ol>
 
             <h4>Action Matrix</h4>
             <ul>
-              <li><strong>Normal breathing, pulse present:</strong> Monitor until emergency responders arrive.</li>
-              <li><strong>No normal breathing, pulse present:</strong> Provide rescue breathing (1 breath every 6 seconds). Check pulse every 2 minutes.</li>
-              <li><strong>No breathing or only gasping, no pulse:</strong> Begin CPR. Cycles of 30 compressions to 2 breaths. Use the AED as soon as it is available.</li>
+              <li><strong>Normal breathing, pulse present:</strong> Place in recovery position if no trauma; monitor; reassess until EMS arrives.</li>
+              <li><strong>No normal breathing, pulse present (respiratory arrest):</strong> Provide rescue breathing 1 breath every 6 seconds (10/min); each breath over 1 second producing visible chest rise. Recheck pulse every 2 minutes. If suspected opioid overdose, administer <a class="med-link" data-med="NALOXONE">Naloxone</a> per local protocol.</li>
+              <li><strong>No breathing or only gasping, no pulse:</strong> Begin CPR immediately, starting with chest compressions. Use AED as soon as it arrives.</li>
+            </ul>
+
+            <h4>High-Quality CPR (every cycle)</h4>
+            <ul>
+              <li>Compression rate 100 to 120/min.</li>
+              <li>Compression depth 2 to 2.4 inches (5 to 6 cm) in adults; allow full chest recoil after each compression.</li>
+              <li>Minimize interruptions in compressions (target chest compression fraction &gt; 60%, ideally &gt; 80%).</li>
+              <li>Compression-to-ventilation ratio 30:2 without an advanced airway (single or two-rescuer adult).</li>
+              <li>With an advanced airway: continuous compressions at 100 to 120/min and 1 breath every 6 seconds (10/min). Avoid hyperventilation.</li>
+              <li>Rotate compressors every 2 minutes (or sooner if fatigued) to maintain quality.</li>
+              <li>Use real-time CPR feedback (audiovisual device or quantitative waveform capnography) when available; PETCO2 &lt; 10 mmHg suggests poor CPR quality.</li>
             </ul>
 
             <h4>AED Use</h4>
             <ul>
-              <li><strong>Shockable rhythm:</strong> Give 1 shock. Resume CPR immediately for 2 minutes until prompted by AED to allow rhythm check.</li>
-              <li><strong>Non-shockable rhythm:</strong> Resume CPR immediately for 2 minutes.</li>
+              <li>Power on the AED, attach pads, follow voice prompts, minimize interruption to compressions while pads are placed.</li>
+              <li><strong>Shockable rhythm (VF/pulseless VT):</strong> Clear the patient, deliver 1 shock, then resume CPR immediately for 2 minutes before next rhythm check.</li>
+              <li><strong>Non-shockable rhythm:</strong> Resume CPR immediately for 2 minutes, then re-analyze.</li>
+              <li>Continue cycles until ALS providers take over, the patient shows signs of life, or the rescuer is exhausted.</li>
+            </ul>
+
+            <h4>Special Considerations</h4>
+            <ul>
+              <li>Suspected opioid overdose with a pulse but inadequate breathing: provide ventilations and administer <a class="med-link" data-med="NALOXONE">Naloxone</a>.</li>
+              <li>Pregnancy: perform manual left-uterine displacement during CPR; standard BLS otherwise.</li>
+              <li>Hypothermia: continue resuscitation while rewarming &mdash; "not dead until warm and dead."</li>
             </ul>
           </div>
         </details>
@@ -281,29 +368,57 @@
             <span class="name">Adult Cardiac Arrest Algorithm</span>
           </summary>
           <div class="med-body">
-            <h4>Continuous Actions</h4>
-            <p>CPR quality (100–120/min, 2–2.4 inches depth), administer oxygen, attach monitor/defibrillator.</p>
+            <h4>Clinical Indication</h4>
+            <p>Confirmed cardiac arrest in an adult (unresponsive, no normal breathing, no pulse). Per AHA ACLS 2020 Guidelines (with 2023 and 2024 focused updates).</p>
 
-            <h4>Rhythm Check</h4>
-            <p><strong>Shockable (VF/pVT):</strong></p>
+            <h4>Continuous Actions</h4>
+            <ul>
+              <li>High-quality CPR: rate 100 to 120/min, depth 2 to 2.4 inches (5 to 6 cm), full recoil, chest compression fraction &gt; 60%, minimize interruptions.</li>
+              <li>Provide oxygen during CPR; attach cardiac monitor / defibrillator pads as soon as available.</li>
+              <li>Establish IV access (preferred) or IO access if IV cannot be rapidly obtained.</li>
+              <li>Switch compressors every 2 minutes (or sooner if fatigued).</li>
+              <li>Use quantitative waveform capnography to monitor CPR quality and detect ROSC (PETCO2 &lt; 10 mmHg suggests poor compressions; abrupt sustained rise often signals ROSC).</li>
+              <li>If advanced airway: 1 breath every 6 seconds (10/min) with continuous compressions; avoid hyperventilation.</li>
+            </ul>
+
+            <h4>Shockable Rhythm (VF / Pulseless VT)</h4>
             <ol>
-              <li>Shock (120–200J biphasic).</li>
-              <li>CPR for 2 minutes. Establish IV/IO access.</li>
-              <li>Shock.</li>
-              <li>CPR for 2 minutes. Administer Epinephrine 1 mg IV/IO every 3 to 5 minutes. Consider advanced airway.</li>
-              <li>Shock.</li>
-              <li>CPR for 2 minutes. Administer Amiodarone (300 mg bolus, second dose 150 mg) OR Lidocaine (1 to 1.5 mg/kg, second dose 0.5 to 0.75 mg/kg).</li>
+              <li><strong>Shock</strong> 120 to 200 J biphasic (or 360 J monophasic); use device-specific energy when known. Resume CPR immediately for 2 minutes.</li>
+              <li>Rhythm check &mdash; if still shockable: <strong>Shock</strong>, then resume CPR for 2 minutes. Establish IV/IO access if not already done. Consider advanced airway and waveform capnography.</li>
+              <li>Administer <a class="med-link" data-med="EPINEPHRINE">Epinephrine</a> 1 mg IV/IO every 3 to 5 minutes (give after the second shock for VF/pVT).</li>
+              <li>Rhythm check &mdash; if still shockable: <strong>Shock</strong>, then resume CPR for 2 minutes. Administer an antiarrhythmic:
+                <ul>
+                  <li><a class="med-link" data-med="AMIODARONE">Amiodarone</a> 300 mg IV/IO bolus first dose; second dose 150 mg IV/IO, OR</li>
+                  <li><a class="med-link" data-med="LIDOCAINE">Lidocaine</a> 1 to 1.5 mg/kg IV/IO first dose; second dose 0.5 to 0.75 mg/kg IV/IO.</li>
+                </ul>
+              </li>
+              <li>For Torsades de Pointes / suspected hypomagnesemia: <a class="med-link" data-med="MAGNESIUM SULFATE, AQUEOUS">Magnesium sulfate</a> 1 to 2 g IV/IO diluted in 10 mL D5W.</li>
+              <li>Continue 2-minute CPR cycles, rhythm checks, shocks, and Epinephrine every 3 to 5 minutes. Treat reversible causes throughout.</li>
             </ol>
 
-            <p><strong>Non-Shockable (Asystole/PEA):</strong></p>
+            <h4>Non-Shockable Rhythm (Asystole / PEA)</h4>
             <ol>
-              <li>Administer Epinephrine 1 mg IV/IO as soon as possible, then every 3 to 5 minutes.</li>
-              <li>CPR for 2 minutes. Establish IV/IO access. Consider advanced airway.</li>
-              <li>Rhythm check every 2 minutes.</li>
+              <li>Resume CPR for 2 minutes; establish IV/IO access; consider advanced airway and waveform capnography.</li>
+              <li>Administer <a class="med-link" data-med="EPINEPHRINE">Epinephrine</a> 1 mg IV/IO as soon as feasible, then every 3 to 5 minutes (early epinephrine emphasized in 2020 update).</li>
+              <li>Rhythm check every 2 minutes; if rhythm becomes shockable, switch to the VF/pVT pathway.</li>
+              <li>Aggressively search for and treat reversible causes (H's and T's).</li>
             </ol>
 
             <h4>Reversible Causes (H's and T's)</h4>
-            <p>Hypovolemia, Hypoxia, Hydrogen ion (acidosis), Hypo-/hyperkalemia, Hypothermia, Tension pneumothorax, Tamponade (cardiac), Toxins, Thrombosis (pulmonary or coronary).</p>
+            <ul>
+              <li><strong>Hypovolemia</strong> &mdash; IV/IO crystalloid bolus.</li>
+              <li><strong>Hypoxia</strong> &mdash; airway, oxygen, ventilation.</li>
+              <li><strong>Hydrogen ion (acidosis)</strong> &mdash; ventilation; consider <a class="med-link" data-med="SODIUM BICARBONATE">Sodium bicarbonate</a> for known severe acidosis, hyperkalemia, or TCA overdose.</li>
+              <li><strong>Hypo-/Hyperkalemia</strong> &mdash; replace K+ if low (<a class="med-link" data-med="POTASSIUM CHLORIDE (KCl)">KCl</a>); for hyperkalemia give <a class="med-link" data-med="CALCIUM CHLORIDE">Calcium chloride</a> or <a class="med-link" data-med="CALCIUM GLUCONATE">Calcium gluconate</a>, <a class="med-link" data-med="INSULIN REGULAR (SHORT-ACTING)">Insulin</a> with <a class="med-link" data-med="DEXTROSE (D50W)">Dextrose</a>, <a class="med-link" data-med="SODIUM BICARBONATE">Sodium bicarbonate</a>.</li>
+              <li><strong>Hypothermia</strong> &mdash; active rewarming; continue prolonged resuscitation.</li>
+              <li><strong>Tension pneumothorax</strong> &mdash; needle decompression / finger thoracostomy.</li>
+              <li><strong>Tamponade (cardiac)</strong> &mdash; pericardiocentesis.</li>
+              <li><strong>Toxins</strong> &mdash; antidotes (<a class="med-link" data-med="NALOXONE">Naloxone</a> for opioids, <a class="med-link" data-med="GLUCAGON (RECOMBINANT)">Glucagon</a> or calcium for &beta;-blocker / CCB overdose, <a class="med-link" data-med="SODIUM BICARBONATE">Sodium bicarbonate</a> for TCA, lipid emulsion for local anaesthetic systemic toxicity).</li>
+              <li><strong>Thrombosis (pulmonary)</strong> &mdash; consider fibrinolysis.</li>
+              <li><strong>Thrombosis (coronary)</strong> &mdash; emergent PCI after ROSC.</li>
+            </ul>
+
+            <p class="callout"><strong>Termination considerations:</strong> Use end-tidal CO2 trends, downtime, age, witnessed status, initial rhythm, response to ACLS, and patient wishes; involve team and base-hospital physician per local protocol.</p>
           </div>
         </details>
 
@@ -1046,12 +1161,37 @@
   function showMeds() {
     viewLanding.hidden = true;
     viewMeds.hidden = false;
+    document.getElementById("viewAlgorithms").hidden = true;
     backBtn.hidden = false;
     siteTitle.textContent = "Medications";
     window.scrollTo(0, 0);
     if (location.hash !== "#medications")
       history.replaceState(null, "", location.pathname + "#medications");
   }
+  function openMedByName(medName) {
+    showMeds();
+    var target = medName.toLowerCase();
+    var listEl = document.getElementById("medList");
+    var cards = listEl.querySelectorAll(".med");
+    for (var i = 0; i < cards.length; i++) {
+      if ((cards[i].dataset.name || "") === target) {
+        cards[i].open = true;
+        cards[i].classList.remove("flash");
+        void cards[i].offsetWidth;
+        cards[i].classList.add("flash");
+        cards[i].scrollIntoView({ behavior: "smooth", block: "start" });
+        return true;
+      }
+    }
+    return false;
+  }
+  document.addEventListener("click", function (e) {
+    var link = e.target.closest && e.target.closest(".med-link");
+    if (!link) return;
+    e.preventDefault();
+    var name = link.dataset.med;
+    if (name) openMedByName(name);
+  });
   function showAlgos() {
     viewLanding.hidden = true;
     document.getElementById("viewMedications").hidden = true;
