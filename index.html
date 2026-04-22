@@ -106,6 +106,14 @@
     cursor: pointer; font-weight: 600;
   }
   .med-link:hover { color: var(--accent-dark); }
+  .mono-link {
+    display: inline-flex; align-items: center; gap: 4px;
+    font-size: 0.78rem; font-weight: 600; color: var(--accent);
+    background: rgba(11,110,153,0.08); border: 1px solid rgba(11,110,153,0.25);
+    border-radius: 4px; padding: 2px 7px; text-decoration: none;
+    margin-top: 10px; margin-bottom: 2px;
+  }
+  .mono-link:hover { background: rgba(11,110,153,0.15); color: var(--accent-dark); }
   .med.flash { animation: medFlash 1.2s ease-out; }
   @keyframes medFlash {
     0% { box-shadow: 0 0 0 2px var(--accent); }
@@ -2133,6 +2141,86 @@
     return "<h4>" + title + "</h4>" + html;
   }
 
+
+  // BC drug monograph PDF mapping (med number -> relative path)
+  var MONO_MAP = {
+    1: "BC drug monos/acyclovir NEW.pdf",
+    2: "BC drug monos/adenosine NEW.pdf",
+    3: "BC drug monos/amiodarone NEW.pdf",
+    4: "BC drug monos/ampicillin NEW.pdf",
+    5: "BC drug monos/azithromycin NEW.pdf",
+    6: "BC drug monos/benztropine NEW.pdf",
+    7: "BC drug monos/calcium chloride NEW.pdf",
+    8: "BC drug monos/calcium gluconate NEW.pdf",
+    9: "BC drug monos/ceFAZolin NEW.pdf",
+    10: "BC drug monos/cefOXitin NEW.pdf",
+    11: "BC drug monos/cefTRIAXone NEW.pdf",
+    13: "BC drug monos/ciprofloxacin NEW.pdf",
+    14: "BC drug monos/clindamycin NEW.pdf",
+    15: "BC drug monos/cloxacillin NEW.pdf",
+    16: "BC drug monos/dexamethasone NEW.pdf",
+    17: "BC drug monos/dextrose 50 NEW.pdf",
+    18: "BC drug monos/diazepam NEW.pdf",
+    20: "BC drug monos/diltiazem NEW.pdf",
+    21: "BC drug monos/dimenhyDRINATE NEW.pdf",
+    22: "BC drug monos/diphenhydrAMINE NEW.pdf",
+    23: "BC drug monos/DOPamine NEW.pdf",
+    24: "BC drug monos/enoxaparin NEW.pdf",
+    25: "BC drug monos/epinephrine NEW.pdf",
+    28: "BC drug monos/fentanyl NEW.pdf",
+    30: "BC drug monos/flumazenil NEW.pdf",
+    32: "BC drug monos/furosemide NEW.pdf",
+    34: "BC drug monos/glucagon NEW.pdf",
+    35: "BC drug monos/haloperidol NEW.pdf",
+    36: "BC drug monos/heparin NEW.pdf",
+    40: "BC drug monos/insulin NEW.pdf",
+    42: "BC drug monos/ketamine NEW.pdf",
+    43: "BC drug monos/ketorolac NEW.pdf",
+    44: "BC drug monos/labetalol NEW.pdf",
+    45: "BC drug monos/lidocaine NEW.pdf",
+    46: "BC drug monos/LORazepam NEW.pdf",
+    47: "BC drug monos/magnesium sulfate NEW.pdf",
+    48: "BC drug monos/mannitol NEW.pdf",
+    49: "BC drug monos/metoclopramide NEW.pdf",
+    50: "BC drug monos/metoprolol NEW.pdf",
+    52: "BC drug monos/midazolam NEW.pdf",
+    53: "BC drug monos/morphine NEW.pdf",
+    54: "BC drug monos/MOXIfloxacin NEW.pdf",
+    55: "BC drug monos/acetylcysteine NEW.pdf",
+    56: "BC drug monos/naloxone NEW.pdf",
+    57: "BC drug monos/nitroglycerin NEW.pdf",
+    58: "BC drug monos/ondansetron NEW.pdf",
+    59: "BC drug monos/pantoprazole NEW.pdf",
+    60: "BC drug monos/penicillin G sodium NEW.pdf",
+    61: "BC drug monos/PHENYLephrine NEW.pdf",
+    62: "BC drug monos/phenytoin NEW.pdf",
+    63: "BC drug monos/piperacillin-tazobactam NEW.pdf",
+    64: "BC drug monos/potassium chloride NEW.pdf",
+    65: "BC drug monos/procainamide NEW.pdf",
+    66: "BC drug monos/proPOFol NEW.pdf",
+    67: "BC drug monos/protamine NEW.pdf",
+    68: "BC drug monos/rocuronium NEW.pdf",
+    70: "BC drug monos/sodium bicarbonate NEW.pdf",
+    71: "BC drug monos/sodium thiosulfate NEW.pdf",
+    72: "BC drug monos/succinylcholine NEW.pdf",
+    75: "BC drug monos/thiamine NEW.pdf",
+    76: "BC drug monos/tranexamic acid NEW.pdf",
+    77: "BC drug monos/valproic acid.pdf",
+    78: "BC drug monos/vasopressin NEW.pdf",
+    79: "BC drug monos/verapamil NEW.pdf",
+    80: "BC drug monos/acetaminophen.pdf",
+    81: "BC drug monos/amoxicillin-clavulanate.pdf",
+    82: "BC drug monos/atropine NEW.pdf",
+    83: "BC drug monos/hydroxocobalamin NEW.pdf",
+    84: "BC drug monos/methylPREDNISolone sodium succinate NEW.pdf",
+    85: "BC drug monos/NORepinephrine NEW.pdf",
+    86: "BC drug monos/sodium chloride 3 or 5 NEW.pdf",
+    87: "BC drug monos/tenecteplase NEW.pdf",
+    88: "BC drug monos/vitamin K NEW.pdf",
+    89: "BC drug monos/dextrose 50 NEW.pdf",
+    90: "BC drug monos/penicillin G sodium NEW.pdf"
+  };
+
   function renderMed(m) {
     var details = document.createElement("details");
     details.className = "med";
@@ -2148,7 +2236,11 @@
 
     var body = document.createElement("div");
     body.className = "med-body";
-    body.innerHTML =
+    var monoPath = MONO_MAP[m.number];
+    var monoHtml = monoPath
+      ? '<a class="mono-link" href="' + monoPath + '" target="_blank" rel="noopener">BC Drug Monograph ↗</a>'
+      : "";
+    body.innerHTML = monoHtml +
       buildSection("Indications", m.sections["Indications"]) +
       buildSection("Dosage", m.sections["Dosage"]) +
       buildSection("Preparation & Administration",
