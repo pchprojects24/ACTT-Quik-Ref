@@ -143,7 +143,7 @@
       <div class="card-grid">
         <button class="tile" data-target="viewMedications">
           <h3>Medications</h3>
-          <p>Searchable reference for 79 IV/IM/SC medications.</p>
+          <p id="medTileDesc">Searchable reference for IV/IM/SC medications.</p>
         </button>
         <button class="tile" data-target="viewAlgorithms">
           <h3>Clinical Algorithms</h3>
@@ -2050,6 +2050,11 @@
 <script>
 (function () {
   var MEDS = JSON.parse(document.getElementById("med-data").textContent);
+  var medTileDesc = document.getElementById("medTileDesc");
+  if (medTileDesc) {
+    medTileDesc.textContent =
+      "Searchable reference for " + MEDS.length + " IV/IM/SC medications.";
+  }
 
   var viewLanding = document.getElementById("viewLanding");
   var viewMeds = document.getElementById("viewMedications");
