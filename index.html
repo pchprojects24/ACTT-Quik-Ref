@@ -2057,541 +2057,842 @@
       </div>
     </section>
 
-    <!-- Procedures page -->
-    <section id="viewProcedures" hidden>
-      <div class="callout">
-        <strong>Note:</strong> These are high-level, step-by-step checklists mapped to the “Medical Directives” list (see
-        <em>BC drug monos/extracted_medical_directives.pdf</em>). Use local directives, clinical judgment, and available resources.
-        Several items overlap with the <strong>Clinical Algorithms</strong> tab.
-      </div>
+	    <!-- Procedures page -->
+	    <section id="viewProcedures" hidden>
+	      <div class="callout">
+	        <strong>Note:</strong> These are practical, step-by-step checklists mapped to the “Medical Directives” list (see
+	        <em>BC drug monos/extracted_medical_directives.pdf</em>). Use local directives, scope of practice, and clinical judgment.
+	        This content is not a substitute for hands-on training, credentialing, or medical control guidance. Several items overlap
+	        with the <strong>Clinical Algorithms</strong> tab.
+	      </div>
 
       <div class="med-list">
-        <details class="med">
-          <summary><span class="name">001 — Procedural Sedation</span></summary>
-          <div class="med-body">
-            <h4>Ideal Steps</h4>
-            <ol>
-              <li>Confirm indication, fasting risk, and ASA/airway risk; obtain consent when feasible.</li>
-              <li>Set up monitoring: SpO2, ECG, NIBP, ETCO&#8322; if available; suction, BVM, airway kit at bedside.</li>
-              <li>Assign roles (sedationist + procedure operator), perform pre-brief, and prepare rescue meds.</li>
-              <li>Choose agent(s) and titrate to effect; prioritize analgesia for painful procedures.</li>
-              <li>Manage complications early: airway repositioning, BVM, treat hypotension, treat laryngospasm.</li>
-              <li>Recover to baseline mental status/vitals, document, and ensure safe disposition.</li>
-            </ol>
-            <h4>Key Medications</h4>
-            <ul>
-              <li>Dissociative: <a class="med-link" data-med="KETAMINE">Ketamine</a>.</li>
-              <li>Benzodiazepine: <a class="med-link" data-med="MIDAZOLAM">Midazolam</a> (consider reversal availability).</li>
-              <li>Analgesia: <a class="med-link" data-med="FENTANYL">Fentanyl</a> or <a class="med-link" data-med="MORPHINE">Morphine</a>.</li>
-              <li>Hypnotic options (case-dependent): <a class="med-link" data-med="ETOMIDATE">Etomidate</a>, <a class="med-link" data-med="PROPOFOL">Propofol</a>.</li>
-              <li>Reversal/rescue: <a class="med-link" data-med="FLUMAZENIL">Flumazenil</a>, <a class="med-link" data-med="NALOXONE">Naloxone</a>.</li>
-              <li>Antiemetic: <a class="med-link" data-med="ONDANSETRON">Ondansetron</a>.</li>
-            </ul>
-            <p class="callout"><strong>At sea:</strong> Plan for limited airway backup and difficult evacuation. Use the simplest sedation plan that preserves spontaneous ventilation and ensures a clear “stop/abort” threshold if monitoring or staffing is limited.</p>
-          </div>
-        </details>
+	        <details class="med">
+	          <summary><span class="name">001 — Procedural Sedation</span></summary>
+	          <div class="med-body">
+	            <h4>Step-by-Step</h4>
+	            <ol>
+	              <li>Confirm the procedure/indication and whether sedation is truly required (consider regional/local anesthesia or analgesia-only when appropriate).</li>
+	              <li>Assess risk up front: airway difficulty, aspiration risk, cardiopulmonary comorbidity, current intoxication, and availability of rescue/backup.</li>
+	              <li>Get baseline status and focused history: allergies, last intake (risk modifier, not an absolute contraindication), prior sedation issues, current meds (especially opioids/benzos), and pregnancy status when relevant.</li>
+	              <li>Explain plan and obtain consent when feasible; set a clear “abort/stop” threshold if monitoring, staffing, or patient physiology becomes unsafe.</li>
+	              <li>Set up equipment before meds: suction ready, BVM with PEEP valve if available, oxygen delivery options, airway kit, and a clear path to intubation/RSI gear if within scope.</li>
+	              <li>Assign roles and do a pre-brief: one person dedicated to sedation/monitoring; one person performing the procedure; one person available for airway help if possible.</li>
+	              <li>Establish monitoring and access: SpO2, ECG, NIBP at frequent intervals; ETCO&#8322; if available; obtain IV access (consider a second line for high-risk cases).</li>
+	              <li>Prepare rescue meds and plan responses to predictable problems (hypoventilation, laryngospasm, hypotension, vomiting/aspiration, emergence reactions).</li>
+	              <li>Choose the simplest effective sedation strategy and titrate slowly to effect; use analgesia-first for painful procedures and avoid stacking sedatives.</li>
+	              <li>Perform the procedure with continuous observation of airway/ventilation; intervene early with repositioning, jaw thrust, suctioning, oxygen escalation, or BVM ventilation as needed.</li>
+	              <li>Reassess frequently during and after: mental status, ventilation (ETCO&#8322; trends), hemodynamics, and pain control; treat complications promptly.</li>
+	              <li>Recover and disposition: monitor until baseline mentation and stable vitals; document meds/times, adverse events, and discharge criteria/hand-off plan.</li>
+	            </ol>
+	            <h4>Key Medications</h4>
+	            <ul>
+	              <li>Dissociative: <a class="med-link" data-med="KETAMINE">Ketamine</a>.</li>
+	              <li>Benzodiazepine: <a class="med-link" data-med="MIDAZOLAM">Midazolam</a> (consider reversal availability).</li>
+	              <li>Analgesia: <a class="med-link" data-med="FENTANYL">Fentanyl</a> or <a class="med-link" data-med="MORPHINE">Morphine</a>.</li>
+	              <li>Hypnotic options (case-dependent): <a class="med-link" data-med="ETOMIDATE">Etomidate</a>, <a class="med-link" data-med="PROPOFOL">Propofol</a>.</li>
+	              <li>Reversal/rescue: <a class="med-link" data-med="FLUMAZENIL">Flumazenil</a>, <a class="med-link" data-med="NALOXONE">Naloxone</a>.</li>
+	              <li>Antiemetic: <a class="med-link" data-med="ONDANSETRON">Ondansetron</a>.</li>
+	            </ul>
+	            <h4>Notes / Tips / Caveats</h4>
+	            <ul>
+	              <li>Capnography (ETCO&#8322;) often detects hypoventilation earlier than pulse oximetry, especially when supplemental oxygen is used.</li>
+	              <li>Do not rely on antihistamines/antiemetics to “make sedation safer” &mdash; airway/ventilation readiness is the safety lever.</li>
+	              <li>Avoid “dose stacking”: wait for peak effect before re-dosing, especially with benzos/opioids.</li>
+	              <li>Plan for post-procedure pain control and nausea early to reduce repeated sedative dosing.</li>
+	              <li>Document clearly: indication, monitoring used, sedation target, medication times/doses, vitals trends, and complications/responses.</li>
+	            </ul>
+	            <p class="callout"><strong>At sea:</strong> Plan for limited airway backup and difficult evacuation. Use the simplest sedation plan that preserves spontaneous ventilation and ensures a clear “stop/abort” threshold if monitoring or staffing is limited.</p>
+	          </div>
+	        </details>
 
-        <details class="med">
-          <summary><span class="name">002 — Myocardial Infarction Management (STEMI / NSTEMI)</span></summary>
-          <div class="med-body">
-            <h4>Ideal Steps</h4>
-            <ol>
-              <li>Assess ABCs, obtain 12-lead ECG early, and repeat if symptoms evolve.</li>
-              <li>Risk stratify (STEMI vs NSTEMI/UA), monitor continuously, and establish IV access.</li>
-              <li>Treat pain and ischemia; avoid hypotension and excessive oxygen (titrate if hypoxemic).</li>
-              <li>Initiate antithrombotic strategy per protocol and contraindications.</li>
-              <li>If STEMI and PCI unavailable: consider fibrinolysis if within window and no contraindications.</li>
-              <li>Arrange definitive care/evacuation; treat complications (arrhythmia, shock, pulmonary edema).</li>
-            </ol>
-            <h4>Key Medications</h4>
-            <ul>
-              <li>Vasodilator (if appropriate): <a class="med-link" data-med="NITROGLYCERIN">Nitroglycerin</a>.</li>
-              <li>Analgesia: <a class="med-link" data-med="FENTANYL">Fentanyl</a> (or <a class="med-link" data-med="MORPHINE">Morphine</a> per protocol).</li>
-              <li>Anticoagulation/antithrombotics (protocol dependent): <a class="med-link" data-med="ENOXAPARIN">Enoxaparin</a>, <a class="med-link" data-med="HEPARIN (UNFRACTIONATED)">Heparin</a>.</li>
-              <li>Fibrinolytic (STEMI, eligible): <a class="med-link" data-med="TENECTEPLASE">Tenecteplase</a>.</li>
-            </ul>
-            <p class="callout"><strong>At sea:</strong> If prolonged transport is expected, focus on continuous monitoring, early recognition of arrhythmias/shock, and clear documentation of symptom onset time and contraindications (critical for reperfusion decisions).</p>
-          </div>
-        </details>
+	        <details class="med">
+	          <summary><span class="name">002 — Myocardial Infarction Management (STEMI / NSTEMI)</span></summary>
+	          <div class="med-body">
+	            <h4>Step-by-Step</h4>
+	            <ol>
+	              <li>Immediate assessment: ABCs, vitals, symptom onset time, and red flags for shock/pulmonary edema; place on continuous monitor and obtain IV access early.</li>
+	              <li>Get a 12-lead ECG as early as possible; repeat ECGs for evolving symptoms and compare to prior if available.</li>
+	              <li>Differentiate likely STEMI/OMI vs NSTEMI/UA vs mimics (pericarditis, PE, aortic catastrophe, pneumothorax, GI); treat life threats while continuing evaluation.</li>
+	              <li>Provide oxygen only if hypoxemic/respiratory distress (avoid routine high-flow oxygen in normoxic patients).</li>
+	              <li>Treat pain/anxiety and reduce sympathetic surge while avoiding hypotension; reassess blood pressure after each intervention.</li>
+	              <li>Initiate antithrombotic/anticoagulation strategy per directive, contraindications, and bleeding risk; document the rationale.</li>
+	              <li>Screen explicitly for contraindications before nitrates and before any fibrinolysis consideration (e.g., hypotension, suspected RV infarct, recent PDE5 inhibitor use, ICH history, active bleeding).</li>
+	              <li>Plan definitive reperfusion: activate PCI pathway when available; if PCI is unavailable and STEMI criteria are met, evaluate fibrinolysis eligibility within the protocol window.</li>
+	              <li>Monitor for complications and treat early: brady/tachyarrhythmias, cardiogenic shock, pulmonary edema, recurrent ischemia, and mechanical complications (new murmur, sudden decompensation).</li>
+	              <li>Prepare for transfer/evacuation: transmit ECG if possible, keep a timeline of symptoms/ECGs/meds, and hand off contraindication screening results.</li>
+	            </ol>
+	            <h4>Key Medications</h4>
+	            <ul>
+	              <li>Vasodilator (if appropriate): <a class="med-link" data-med="NITROGLYCERIN">Nitroglycerin</a>.</li>
+	              <li>Analgesia: <a class="med-link" data-med="FENTANYL">Fentanyl</a> (or <a class="med-link" data-med="MORPHINE">Morphine</a> per protocol).</li>
+	              <li>Anticoagulation/antithrombotics (protocol dependent): <a class="med-link" data-med="ENOXAPARIN">Enoxaparin</a>, <a class="med-link" data-med="HEPARIN (UNFRACTIONATED)">Heparin</a>.</li>
+	              <li>Fibrinolytic (STEMI, eligible): <a class="med-link" data-med="TENECTEPLASE">Tenecteplase</a>.</li>
+	            </ul>
+	            <h4>Notes / Tips / Caveats</h4>
+	            <ul>
+	              <li>Right-sided/RV infarct or preload-dependent states can crash with nitrates &mdash; if suspected, prioritize fluids/pressor support over vasodilation per protocol.</li>
+	              <li>Serial ECGs matter: “non-diagnostic” initial ECG does not exclude evolving occlusion.</li>
+	              <li>Document the exact symptom onset/last-known-well time; it drives reperfusion options and handoff decisions.</li>
+	              <li>When diagnostics are limited, prioritize physiologic stability and early consultation/evacuation over “perfect” risk stratification.</li>
+	            </ul>
+	            <p class="callout"><strong>At sea:</strong> If prolonged transport is expected, focus on continuous monitoring, early recognition of arrhythmias/shock, and clear documentation of symptom onset time and contraindications (critical for reperfusion decisions).</p>
+	          </div>
+	        </details>
 
-        <details class="med">
-          <summary><span class="name">003 — Anaphylaxis</span></summary>
-          <div class="med-body">
-            <h4>Ideal Steps</h4>
-            <ol>
-              <li>Recognize rapidly (airway compromise, hypotension, bronchospasm, urticaria) and stop exposure.</li>
-              <li>Give IM epinephrine early; lay patient supine with legs elevated if tolerated.</li>
-              <li>High-flow oxygen if needed; establish IV access and give rapid isotonic fluid bolus for shock.</li>
-              <li>Add adjuncts (antihistamine, steroid) and treat bronchospasm per protocol.</li>
-              <li>Prepare for airway escalation; observe for biphasic reaction and document triggers.</li>
-            </ol>
-            <h4>Key Medications</h4>
-            <ul>
-              <li>First-line: <a class="med-link" data-med="EPINEPHRINE">Epinephrine</a>.</li>
-              <li>Adjunct antihistamine: <a class="med-link" data-med="DIPHENHYDRAMINE">DiphenhydrAMINE</a>.</li>
-              <li>Steroid (adjunct): <a class="med-link" data-med="DEXAMETHASONE">Dexamethasone</a> or <a class="med-link" data-med="METHYLPREDNISOLONE SODIUM SUCCINATE">MethylPREDNISolone</a>.</li>
-              <li>Refractory hypotension: consider vasopressors (e.g., <a class="med-link" data-med="NOREPINEPHRINE">Norepinephrine</a>) per protocol.</li>
-            </ul>
-            <p class="callout"><strong>At sea:</strong> Lower threshold to re-dose epinephrine and to start vasopressor support if fluids are limited and evacuation is delayed. Secure airway early if worsening edema and no advanced backup.</p>
-          </div>
-        </details>
+	        <details class="med">
+	          <summary><span class="name">003 — Anaphylaxis</span></summary>
+	          <div class="med-body">
+	            <h4>Step-by-Step</h4>
+	            <ol>
+	              <li>Recognize anaphylaxis early (airway compromise, hypotension, bronchospasm, GI symptoms, skin findings) and stop/remove the trigger if possible.</li>
+	              <li>Call for help early and position the patient (supine with legs elevated if tolerated); avoid sudden standing/walking.</li>
+	              <li>Give IM epinephrine immediately; reassess every few minutes and repeat IM dosing per protocol if symptoms persist or recur.</li>
+	              <li>Support airway and breathing: oxygen as needed, suction, and early BVM support for fatigue/hypoventilation; treat bronchospasm per protocol.</li>
+	              <li>Support circulation: establish IV/IO access, give rapid isotonic fluids for hypotension/shock, and trend blood pressure frequently.</li>
+	              <li>Add adjuncts (antihistamine, steroid) after epinephrine &mdash; they do not replace epinephrine and do not reliably prevent biphasic reactions.</li>
+	              <li>Escalate when refractory: prepare for airway intervention and start vasopressor support per protocol if shock persists despite epi and fluids.</li>
+	              <li>Observe and disposition: monitor for recurrence/biphasic reaction, document suspected trigger and response timeline, and plan prolonged observation/evacuation for severe cases.</li>
+	            </ol>
+	            <h4>Key Medications</h4>
+	            <ul>
+	              <li>First-line: <a class="med-link" data-med="EPINEPHRINE">Epinephrine</a>.</li>
+	              <li>Adjunct antihistamine: <a class="med-link" data-med="DIPHENHYDRAMINE">DiphenhydrAMINE</a>.</li>
+	              <li>Steroid (adjunct): <a class="med-link" data-med="DEXAMETHASONE">Dexamethasone</a> or <a class="med-link" data-med="METHYLPREDNISOLONE SODIUM SUCCINATE">MethylPREDNISolone</a>.</li>
+	              <li>Refractory hypotension: consider vasopressors (e.g., <a class="med-link" data-med="NOREPINEPHRINE">Norepinephrine</a>) per protocol.</li>
+	            </ul>
+	            <h4>Notes / Tips / Caveats</h4>
+	            <ul>
+	              <li>Epinephrine is the life-saving intervention; delays are a common failure point.</li>
+	              <li>Wheezing alone is not always asthma &mdash; consider anaphylaxis when there is hypotension, exposure history, or multi-system symptoms.</li>
+	              <li>Beta-blocker use can blunt epinephrine response; early escalation to pressors/advanced support may be needed per protocol.</li>
+	              <li>Persistent GI symptoms or isolated hypotension can still be anaphylaxis even without rash.</li>
+	            </ul>
+	            <p class="callout"><strong>At sea:</strong> Lower threshold to re-dose epinephrine and to start vasopressor support if fluids are limited and evacuation is delayed. Secure airway early if worsening edema and no advanced backup.</p>
+	          </div>
+	        </details>
 
-        <details class="med">
-          <summary><span class="name">004 — Seizure Management</span></summary>
-          <div class="med-body">
-            <h4>Ideal Steps</h4>
-            <ol>
-              <li>Protect from injury, time the seizure, manage airway/oxygenation, and check glucose early.</li>
-              <li>Treat ongoing seizure with benzodiazepine; reassess for persistent convulsions.</li>
-              <li>If status epilepticus: load antiseizure medication and address underlying causes (toxins, infection, electrolytes, trauma).</li>
-              <li>Consider intubation/ventilation for refractory seizures or airway compromise.</li>
-            </ol>
-            <h4>Key Medications</h4>
-            <ul>
-              <li>First-line benzodiazepines: <a class="med-link" data-med="MIDAZOLAM">Midazolam</a>, <a class="med-link" data-med="LORAZEPAM">LORazepam</a>, <a class="med-link" data-med="DIAZEPAM">Diazepam</a>.</li>
-              <li>Second-line: <a class="med-link" data-med="PHENYTOIN">Phenytoin</a>, <a class="med-link" data-med="VALPROIC ACID (SODIUM VALPROATE)">Valproic acid</a>.</li>
-              <li>Hypoglycemia: <a class="med-link" data-med="DEXTROSE (D50W)">Dextrose</a> (and <a class="med-link" data-med="THIAMINE (VITAMIN B1)">Thiamine</a> when indicated).</li>
-            </ul>
-            <p class="callout"><strong>At sea:</strong> When EEG/CT are unavailable, treat persistent convulsions aggressively while simultaneously searching for reversible causes (glucose, toxins, hypoxia). Document onset/med timing to guide receiving facility.</p>
-          </div>
-        </details>
+	        <details class="med">
+	          <summary><span class="name">004 — Seizure Management</span></summary>
+	          <div class="med-body">
+	            <h4>Step-by-Step</h4>
+	            <ol>
+	              <li>Safety first: protect the patient from injury, do not restrain, and time the event (start time, duration, and whether convulsions are continuous or intermittent).</li>
+	              <li>Immediate ABCs: position for airway protection, suction as needed, provide oxygen if hypoxemic, and consider BVM support if ventilation is inadequate.</li>
+	              <li>Check point-of-care glucose early and treat hypoglycemia immediately.</li>
+	              <li>Rapidly look for reversible causes and high-risk contexts: fever/hyperthermia, trauma, eclampsia, toxin exposure/withdrawal, missed antiseizure meds.</li>
+	              <li>If the seizure is ongoing, give a benzodiazepine per protocol; reassess response within minutes and repeat dosing per directive if convulsions persist.</li>
+	              <li>If status epilepticus is suspected or seizures recur, transition to second-line antiseizure therapy per protocol while continuing supportive care.</li>
+	              <li>Manage complications proactively: treat hypoxia, prevent aspiration, control temperature, correct major electrolyte derangements if known/available.</li>
+	              <li>Escalate airway management when needed: persistent convulsions, airway compromise, inability to maintain oxygenation/ventilation, or repeated benzo dosing with respiratory depression.</li>
+	              <li>After termination, perform serial neuro checks, obtain vitals frequently, and reassess for ongoing nonconvulsive seizure if mental status does not improve as expected.</li>
+	              <li>Document the timeline (onset, meds given, response, recurrence) and arrange evacuation/definitive evaluation for first seizure, refractory seizures, trauma, pregnancy, or persistent altered status.</li>
+	            </ol>
+	            <h4>Key Medications</h4>
+	            <ul>
+	              <li>First-line benzodiazepines: <a class="med-link" data-med="MIDAZOLAM">Midazolam</a>, <a class="med-link" data-med="LORAZEPAM">LORazepam</a>, <a class="med-link" data-med="DIAZEPAM">Diazepam</a>.</li>
+	              <li>Second-line: <a class="med-link" data-med="PHENYTOIN">Phenytoin</a>, <a class="med-link" data-med="VALPROIC ACID (SODIUM VALPROATE)">Valproic acid</a>.</li>
+	              <li>Hypoglycemia: <a class="med-link" data-med="DEXTROSE (D50W)">Dextrose</a> (and <a class="med-link" data-med="THIAMINE (VITAMIN B1)">Thiamine</a> when indicated).</li>
+	            </ul>
+	            <h4>Notes / Tips / Caveats</h4>
+	            <ul>
+	              <li>Persistent altered mental status after convulsions can be post-ictal, but prolonged confusion should prompt concern for ongoing seizure, head injury, hypoxia, or toxic/metabolic causes.</li>
+	              <li>Repeated benzodiazepines can cause respiratory depression; anticipate BVM support and airway escalation rather than “waiting for it to wear off.”</li>
+	              <li>In pregnancy/postpartum, treat seizures as eclampsia until proven otherwise and follow the relevant directive.</li>
+	              <li>Actively cool and treat hyperthermia; prolonged convulsions can cause dangerous temperature rise and rhabdomyolysis.</li>
+	            </ul>
+	            <p class="callout"><strong>At sea:</strong> When EEG/CT are unavailable, treat persistent convulsions aggressively while simultaneously searching for reversible causes (glucose, toxins, hypoxia). Document onset/med timing to guide receiving facility.</p>
+	          </div>
+	        </details>
 
-        <details class="med">
-          <summary><span class="name">005 — Advanced Airway Management (Rapid Sequence Intubation)</span></summary>
-          <div class="med-body">
-            <h4>Ideal Steps</h4>
-            <ol>
-              <li>Plan airway (primary + backup + failed airway); prepare suction, BVM, oxygen, and post-intubation vent plan.</li>
-              <li>Preoxygenate and position; consider hemodynamic optimization before induction.</li>
-              <li>Induce + paralyze with RSI medications; perform first-pass attempt with best method available.</li>
-              <li>Confirm with waveform ETCO&#8322;; secure tube and start lung-protective ventilation.</li>
-              <li>Start analgesia/sedation promptly and reassess frequently (ventilator dyssynchrony, hypotension).</li>
-            </ol>
-            <h4>Key Medications</h4>
-            <ul>
-              <li>Induction: <a class="med-link" data-med="ETOMIDATE">Etomidate</a>, <a class="med-link" data-med="KETAMINE">Ketamine</a>, <a class="med-link" data-med="PROPOFOL">Propofol</a> (patient-dependent).</li>
-              <li>Paralysis: <a class="med-link" data-med="ROCURONIUM">Rocuronium</a> or <a class="med-link" data-med="SUCCINYLCHOLINE">Succinylcholine</a>.</li>
-              <li>Post-intubation: <a class="med-link" data-med="FENTANYL">Fentanyl</a> + <a class="med-link" data-med="MIDAZOLAM">Midazolam</a> (titrate).</li>
-              <li>Hemodynamic support: <a class="med-link" data-med="NOREPINEPHRINE">Norepinephrine</a>, <a class="med-link" data-med="PHENYLEPHRINE">PHENYLephrine</a>.</li>
-            </ul>
-            <p class="callout"><strong>At sea:</strong> Limit attempts and commit early to backup plans. If oxygenation is fragile and evacuation is delayed, prioritize strategies that preserve hemodynamics and minimize hypoxia during laryngoscopy.</p>
-          </div>
-        </details>
+	        <details class="med">
+	          <summary><span class="name">005 — Advanced Airway Management (Rapid Sequence Intubation)</span></summary>
+	          <div class="med-body">
+	            <h4>Step-by-Step</h4>
+	            <ol>
+	              <li>Decide if intubation is needed now vs alternatives (BVM, supraglottic airway, NIV) and whether the team/equipment can support ongoing ventilation/sedation after the tube is placed.</li>
+	              <li>Airway assessment and plan: choose primary approach and at least one backup; identify a “failed airway” plan before giving induction meds.</li>
+	              <li>Prepare equipment and check function: suction on and within reach, BVM + oxygen source, laryngoscope/video + backup blade, bougie/stylet, ETT sizes, supraglottic rescue, and suction catheter passage test when time allows.</li>
+	              <li>Prepare for physiology: optimize hemodynamics before induction (fluids/pressors as appropriate), and anticipate peri-intubation hypotension.</li>
+	              <li>Position and preoxygenate: head-elevated where possible; use the best preoxygenation method available and maximize safe apneic oxygenation.</li>
+	              <li>Do a final pre-brief: assign roles (intubator, meds, monitor/ETCO&#8322;, compressor if arrest risk), set time limits for attempts, and verbalize abort criteria.</li>
+	              <li>Induce and paralyze per protocol; ensure adequate time for onset before attempting laryngoscopy to maximize first-pass success.</li>
+	              <li>Perform first-pass attempt with the best available technique; stop and re-oxygenate early if view is poor or SpO2 drops.</li>
+	              <li>Confirm tube placement with waveform ETCO&#8322; (continuous), bilateral chest rise/auscultation, and secure the tube; obtain CXR when available but do not delay ETCO&#8322;-based confirmation.</li>
+	              <li>Transition immediately to a sustainable ventilation plan (lung-protective settings, avoid hyperventilation) and provide analgesia/sedation promptly to prevent awareness and dyssynchrony.</li>
+	              <li>Post-intubation reassessment: check vitals, ETCO&#8322; trend, ventilation pressures, and troubleshoot deterioration systematically (DOPES).</li>
+	            </ol>
+	            <h4>Key Medications</h4>
+	            <ul>
+	              <li>Induction: <a class="med-link" data-med="ETOMIDATE">Etomidate</a>, <a class="med-link" data-med="KETAMINE">Ketamine</a>, <a class="med-link" data-med="PROPOFOL">Propofol</a> (patient-dependent).</li>
+	              <li>Paralysis: <a class="med-link" data-med="ROCURONIUM">Rocuronium</a> or <a class="med-link" data-med="SUCCINYLCHOLINE">Succinylcholine</a>.</li>
+	              <li>Post-intubation: <a class="med-link" data-med="FENTANYL">Fentanyl</a> + <a class="med-link" data-med="MIDAZOLAM">Midazolam</a> (titrate).</li>
+	              <li>Hemodynamic support: <a class="med-link" data-med="NOREPINEPHRINE">Norepinephrine</a>, <a class="med-link" data-med="PHENYLEPHRINE">PHENYLephrine</a>.</li>
+	            </ul>
+	            <h4>Notes / Tips / Caveats</h4>
+	            <ul>
+	              <li>The “hard part” is often the aftercare: have a plan for sedation/analgesia, ventilation, and pressor support before you commit.</li>
+	              <li>Limit attempts: repeated laryngoscopy increases hypoxia and aspiration risk; re-oxygenate early and move to the backup plan decisively.</li>
+	              <li>Waveform ETCO&#8322; is the most reliable continuous confirmation tool; maintain it through transport when possible.</li>
+	              <li>Post-intubation hypotension is common; treat promptly and consider reducing sedative load if appropriate.</li>
+	            </ul>
+	            <p class="callout"><strong>At sea:</strong> Limit attempts and commit early to backup plans. If oxygenation is fragile and evacuation is delayed, prioritize strategies that preserve hemodynamics and minimize hypoxia during laryngoscopy.</p>
+	          </div>
+	        </details>
 
-        <details class="med">
-          <summary><span class="name">007 — Mechanical Ventilation</span></summary>
-          <div class="med-body">
-            <h4>Ideal Steps</h4>
-            <ol>
-              <li>Set initial mode and lung-protective parameters (tidal volume by IBW, appropriate PEEP).</li>
-              <li>Confirm tube position and ventilation with ETCO&#8322;, auscultation, and CXR if available.</li>
-              <li>Address oxygenation, ventilation, and patient comfort (analgesia/sedation).</li>
-              <li>Troubleshoot deterioration systematically (DOPES: Displacement, Obstruction, Pneumothorax, Equipment, Stacking).</li>
-            </ol>
-            <h4>Key Medications</h4>
-            <ul>
-              <li>Analgesia: <a class="med-link" data-med="FENTANYL">Fentanyl</a>, <a class="med-link" data-med="MORPHINE">Morphine</a>.</li>
-              <li>Sedation: <a class="med-link" data-med="MIDAZOLAM">Midazolam</a>, <a class="med-link" data-med="PROPOFOL">Propofol</a>, <a class="med-link" data-med="KETAMINE">Ketamine</a>.</li>
-              <li>Pressors (if sedation-related hypotension): <a class="med-link" data-med="NOREPINEPHRINE">Norepinephrine</a>.</li>
-            </ul>
-            <p class="callout"><strong>At sea:</strong> Account for limited ventilator modes/alarms and restricted imaging. Use simple, repeatable checks (ETCO&#8322; trends, chest rise, suction catheter pass) and keep spare circuits/oxygen planning front-of-mind.</p>
-          </div>
-        </details>
+	        <details class="med">
+	          <summary><span class="name">007 — Mechanical Ventilation</span></summary>
+	          <div class="med-body">
+	            <h4>Step-by-Step</h4>
+	            <ol>
+	              <li>Start with a clear goal: oxygenation, ventilation (CO&#8322; removal), and patient comfort/synchrony while minimizing ventilator-induced lung injury.</li>
+	              <li>Confirm the airway is secure and patent: continuous ETCO&#8322;, bilateral chest rise/auscultation, and tube depth; obtain imaging when available.</li>
+	              <li>Choose an initial mode your team can manage reliably and set lung-protective parameters (tidal volume based on IBW, reasonable PEEP, and appropriate respiratory rate).</li>
+	              <li>Set alarms and safety limits (high pressure, low exhaled volume, apnea) and ensure staff know how to respond to each alarm.</li>
+	              <li>Address oxygenation first: adjust FiO2/PEEP, check for pneumothorax, secretions, tube position, and patient-vent dyssynchrony.</li>
+	              <li>Address ventilation: adjust RR/tidal volume within safe limits and avoid excessive minute ventilation; watch ETCO&#8322; trends and clinical perfusion.</li>
+	              <li>Provide analgesia-first and add sedation as needed; treat agitation/dyssynchrony early to prevent high pressures and barotrauma.</li>
+	              <li>Reassess frequently: vitals, ETCO&#8322;, SpO2, breath sounds, airway pressures, and clinical work of breathing.</li>
+	              <li>Troubleshoot deterioration systematically with DOPES (Displacement, Obstruction, Pneumothorax, Equipment, Stacking) and be ready to disconnect and BVM ventilate if needed.</li>
+	              <li>Plan for transport: secure the tube and circuit, ensure battery/oxygen supply, and keep a simple written record of current settings and recent changes.</li>
+	            </ol>
+	            <h4>Key Medications</h4>
+	            <ul>
+	              <li>Analgesia: <a class="med-link" data-med="FENTANYL">Fentanyl</a>, <a class="med-link" data-med="MORPHINE">Morphine</a>.</li>
+	              <li>Sedation: <a class="med-link" data-med="MIDAZOLAM">Midazolam</a>, <a class="med-link" data-med="PROPOFOL">Propofol</a>, <a class="med-link" data-med="KETAMINE">Ketamine</a>.</li>
+	              <li>Pressors (if sedation-related hypotension): <a class="med-link" data-med="NOREPINEPHRINE">Norepinephrine</a>.</li>
+	            </ul>
+	            <h4>Notes / Tips / Caveats</h4>
+	            <ul>
+	              <li>When oxygenation suddenly worsens, prioritize quick checks: tube depth, suction catheter pass, bilateral breath sounds, and ETCO&#8322; waveform quality.</li>
+	              <li>Auto-PEEP/breath stacking can cause hypotension and barotrauma; allow longer exhalation and treat agitation.</li>
+	              <li>ETCO&#8322; changes can reflect perfusion problems (shock/low CO) as well as ventilation problems &mdash; interpret with the clinical picture.</li>
+	            </ul>
+	            <p class="callout"><strong>At sea:</strong> Account for limited ventilator modes/alarms and restricted imaging. Use simple, repeatable checks (ETCO&#8322; trends, chest rise, suction catheter pass) and keep spare circuits/oxygen planning front-of-mind.</p>
+	          </div>
+	        </details>
 
-        <details class="med">
-          <summary><span class="name">008 — Continuous Sedation</span></summary>
-          <div class="med-body">
-            <h4>Ideal Steps</h4>
-            <ol>
-              <li>Define target (RASS/comfort, ventilator synchrony) and ensure analgesia-first where applicable.</li>
-              <li>Start sedation/analgesia and titrate to target; reassess frequently for hypotension/respiratory depression.</li>
-              <li>Consider daily sedation interruption when safe and feasible; treat delirium contributors.</li>
-            </ol>
-            <h4>Key Medications</h4>
-            <ul>
-              <li>Sedation: <a class="med-link" data-med="MIDAZOLAM">Midazolam</a>, <a class="med-link" data-med="PROPOFOL">Propofol</a>, <a class="med-link" data-med="KETAMINE">Ketamine</a>.</li>
-              <li>Analgesia: <a class="med-link" data-med="FENTANYL">Fentanyl</a>.</li>
-            </ul>
-            <p class="callout"><strong>At sea:</strong> Conserve infusions and simplify titration plans when staffing is limited. Use the lowest effective doses and document rate changes, given long monitoring intervals may occur.</p>
-          </div>
-        </details>
+	        <details class="med">
+	          <summary><span class="name">008 — Continuous Sedation</span></summary>
+	          <div class="med-body">
+	            <h4>Step-by-Step</h4>
+	            <ol>
+	              <li>Define the goal (comfort, ventilator synchrony, procedure tolerance) and pick a practical sedation target that staff can monitor consistently.</li>
+	              <li>Use analgesia-first when pain is a driver (trauma, burns, ventilation); avoid escalating sedatives when untreated pain is the real problem.</li>
+	              <li>Start one agent at a time when feasible; titrate slowly to effect and avoid simultaneous up-titration of multiple sedatives.</li>
+	              <li>Monitor closely after any change: airway/ventilation, blood pressure, heart rate, and mental status; anticipate hypotension and respiratory depression.</li>
+	              <li>Reassess for reversible causes of agitation/dyssynchrony (hypoxia, hypercapnia, tube discomfort, secretions, urinary retention, withdrawal, delirium).</li>
+	              <li>Use the lowest effective dose and document each titration with time and rationale to support safe handoffs.</li>
+	              <li>When safe and operationally feasible, consider a structured wean/“sedation break” approach to reassess neuro status and reduce cumulative dose burden.</li>
+	            </ol>
+	            <h4>Key Medications</h4>
+	            <ul>
+	              <li>Sedation: <a class="med-link" data-med="MIDAZOLAM">Midazolam</a>, <a class="med-link" data-med="PROPOFOL">Propofol</a>, <a class="med-link" data-med="KETAMINE">Ketamine</a>.</li>
+	              <li>Analgesia: <a class="med-link" data-med="FENTANYL">Fentanyl</a>.</li>
+	            </ul>
+	            <h4>Notes / Tips / Caveats</h4>
+	            <ul>
+	              <li>Sedation without analgesia can lead to “quiet suffering” and escalating doses; treat pain explicitly.</li>
+	              <li>Propofol and deep sedation can cause hypotension; have a blood pressure support plan before escalating.</li>
+	              <li>In prolonged care settings, consider the operational burden: infusion supply, staffing to titrate, and monitoring frequency.</li>
+	            </ul>
+	            <p class="callout"><strong>At sea:</strong> Conserve infusions and simplify titration plans when staffing is limited. Use the lowest effective doses and document rate changes, given long monitoring intervals may occur.</p>
+	          </div>
+	        </details>
 
-        <details class="med">
-          <summary><span class="name">009 — Pneumothorax Management</span></summary>
-          <div class="med-body">
-            <h4>Ideal Steps</h4>
-            <ol>
-              <li>Identify tension physiology clinically; do not delay decompression for imaging if unstable.</li>
-              <li>Perform needle decompression or finger thoracostomy per capability; reassess immediately.</li>
-              <li>Place definitive chest tube if indicated and within scope; confirm function and lung re-expansion when possible.</li>
-              <li>Provide analgesia and monitor for recurrence, malposition, or ongoing air leak.</li>
-            </ol>
-            <h4>Key Medications</h4>
-            <ul>
-              <li>Analgesia: <a class="med-link" data-med="FENTANYL">Fentanyl</a>, <a class="med-link" data-med="MORPHINE">Morphine</a>.</li>
-              <li>Procedural sedation (if stable and time): <a class="med-link" data-med="KETAMINE">Ketamine</a>, <a class="med-link" data-med="MIDAZOLAM">Midazolam</a>.</li>
-            </ul>
-            <p class="callout"><strong>At sea:</strong> Be prepared for recurrence with motion/pressure changes. Secure devices robustly and ensure ongoing suction/water seal functionality with limited supplies.</p>
-          </div>
-        </details>
+	        <details class="med">
+	          <summary><span class="name">009 — Pneumothorax Management</span></summary>
+	          <div class="med-body">
+	            <h4>Step-by-Step</h4>
+	            <ol>
+	              <li>Recognize clinically: sudden hypoxia, hypotension, unilateral decreased breath sounds, and rising airway pressures on a ventilated patient.</li>
+	              <li>If unstable and tension is suspected, decompress immediately; do not wait for imaging.</li>
+	              <li>Choose the decompression method per scope/equipment (needle decompression vs finger thoracostomy) and reassess immediately for physiologic improvement.</li>
+	              <li>Confirm ongoing patency and be prepared to repeat decompression if symptoms recur.</li>
+	              <li>Place a definitive drain/chest tube when indicated and within scope; confirm function (bubbling, tidaling, improved ventilation/oxygenation) and secure thoroughly.</li>
+	              <li>Provide analgesia and reassess frequently for tube obstruction, displacement, persistent air leak, bleeding, or failure to re-expand.</li>
+	              <li>In ventilated patients, reassess ventilator settings and consider DOPES if deterioration persists.</li>
+	            </ol>
+	            <h4>Key Medications</h4>
+	            <ul>
+	              <li>Analgesia: <a class="med-link" data-med="FENTANYL">Fentanyl</a>, <a class="med-link" data-med="MORPHINE">Morphine</a>.</li>
+	              <li>Procedural sedation (if stable and time): <a class="med-link" data-med="KETAMINE">Ketamine</a>, <a class="med-link" data-med="MIDAZOLAM">Midazolam</a>.</li>
+	            </ul>
+	            <h4>Notes / Tips / Caveats</h4>
+	            <ul>
+	              <li>On a ventilated patient, a new pneumothorax may present as sudden high airway pressures and hypotension before obvious exam changes.</li>
+	              <li>Secure all devices aggressively; motion and patient repositioning are common causes of displacement.</li>
+	              <li>If the patient does not improve after decompression, immediately broaden the differential (tube displacement, obstruction, massive hemothorax, equipment failure).</li>
+	            </ul>
+	            <p class="callout"><strong>At sea:</strong> Be prepared for recurrence with motion/pressure changes. Secure devices robustly and ensure ongoing suction/water seal functionality with limited supplies.</p>
+	          </div>
+	        </details>
 
-        <details class="med">
-          <summary><span class="name">010 — ACLS</span></summary>
-          <div class="med-body">
-            <h4>Ideal Steps</h4>
-            <ol>
-              <li>Confirm arrest, start high-quality CPR, and attach monitor/defibrillator ASAP.</li>
-              <li>Shockable rhythms: defibrillate early + CPR cycles; non-shockable: CPR + epi per protocol.</li>
-              <li>Identify/treat reversible causes (Hs &amp; Ts) continuously; secure airway/ventilation appropriately.</li>
-              <li>Post-ROSC: optimize oxygenation/ventilation, hemodynamics, temperature, and treat cause.</li>
-            </ol>
-            <h4>Key Medications</h4>
-            <ul>
-              <li><a class="med-link" data-med="EPINEPHRINE">Epinephrine</a>, <a class="med-link" data-med="AMIODARONE">Amiodarone</a>, <a class="med-link" data-med="LIDOCAINE">Lidocaine</a>.</li>
-              <li>Bradycardia support: <a class="med-link" data-med="ATROPINE">Atropine</a>, <a class="med-link" data-med="DOPAMINE">Dopamine</a>.</li>
-              <li>Electrolyte/toxin adjuncts: <a class="med-link" data-med="CALCIUM GLUCONATE">Calcium gluconate</a>, <a class="med-link" data-med="SODIUM BICARBONATE">Sodium bicarbonate</a>.</li>
-            </ul>
-            <p class="callout"><strong>At sea:</strong> Emphasize team choreography and compression quality. Rotate compressors often and use a designated timer/scribe; prolonged resuscitations are common with delayed evacuation.</p>
-          </div>
-        </details>
+	        <details class="med">
+	          <summary><span class="name">010 — ACLS</span></summary>
+	          <div class="med-body">
+	            <h4>Step-by-Step</h4>
+	            <ol>
+	              <li>Confirm arrest (unresponsive, not breathing normally, no pulse) and start high-quality CPR immediately; call for additional resources.</li>
+	              <li>Attach pads/monitor/defibrillator ASAP without interrupting compressions; assign a team leader and a timekeeper/scribe.</li>
+	              <li>Follow the rhythm pathway: shockable rhythms &rarr; defibrillate promptly and resume CPR; non-shockable &rarr; continuous CPR with timely epinephrine per protocol.</li>
+	              <li>Minimize pauses: aim for short rhythm checks, immediate return to compressions, and rotate compressors frequently to maintain quality.</li>
+	              <li>Manage airway/ventilation appropriately for the setting: initially BVM with good seal; add advanced airway only if it will not meaningfully interrupt compressions.</li>
+	              <li>Use waveform ETCO&#8322; if available to guide CPR quality and detect ROSC; treat sudden ETCO&#8322; rise as possible ROSC and confirm.</li>
+	              <li>Continuously search for and treat reversible causes (Hs &amp; Ts) with the highest yield in your context (hypoxia, hypovolemia/hemorrhage, tension pneumothorax, tamponade, toxins, thrombosis).</li>
+	              <li>Post-ROSC care: optimize oxygenation/ventilation, treat hypotension/shock, obtain 12-lead ECG, manage temperature and glucose, and prepare urgent evacuation to definitive care.</li>
+	            </ol>
+	            <h4>Key Medications</h4>
+	            <ul>
+	              <li><a class="med-link" data-med="EPINEPHRINE">Epinephrine</a>, <a class="med-link" data-med="AMIODARONE">Amiodarone</a>, <a class="med-link" data-med="LIDOCAINE">Lidocaine</a>.</li>
+	              <li>Bradycardia support: <a class="med-link" data-med="ATROPINE">Atropine</a>, <a class="med-link" data-med="DOPAMINE">Dopamine</a>.</li>
+	              <li>Electrolyte/toxin adjuncts: <a class="med-link" data-med="CALCIUM GLUCONATE">Calcium gluconate</a>, <a class="med-link" data-med="SODIUM BICARBONATE">Sodium bicarbonate</a>.</li>
+	            </ul>
+	            <h4>Notes / Tips / Caveats</h4>
+	            <ul>
+	              <li>CPR quality is the main “drug”: depth, rate, full recoil, and minimal interruptions.</li>
+	              <li>Avoid hyperventilation &mdash; it reduces venous return and worsens outcomes.</li>
+	              <li>Use ETCO&#8322; trends to detect deterioration in compression quality and to help troubleshoot causes (e.g., sudden drop can suggest tube/circuit problems or severe shock).</li>
+	              <li>For prolonged resuscitations, manage team fatigue and logistics (compressor rotation, medication timing, device battery/oxygen planning).</li>
+	            </ul>
+	            <p class="callout"><strong>At sea:</strong> Emphasize team choreography and compression quality. Rotate compressors often and use a designated timer/scribe; prolonged resuscitations are common with delayed evacuation.</p>
+	          </div>
+	        </details>
 
-        <details class="med">
-          <summary><span class="name">011 — Atrial Fibrillation Management</span></summary>
-          <div class="med-body">
-            <h4>Ideal Steps</h4>
-            <ol>
-              <li>Assess stability; unstable (hypotension, shock, ischemia, pulmonary edema) &rarr; synchronized cardioversion.</li>
-              <li>If stable: rate vs rhythm strategy based on onset, comorbidities, and anticoagulation context.</li>
-              <li>Correct reversible triggers (sepsis, hypoxia, electrolyte disturbance, stimulants).</li>
-            </ol>
-            <h4>Key Medications</h4>
-            <ul>
-              <li>Rate control: <a class="med-link" data-med="DILTIAZEM">Diltiazem</a>, <a class="med-link" data-med="METOPROLOL">Metoprolol</a>.</li>
-              <li>Rhythm strategy (selected patients): <a class="med-link" data-med="AMIODARONE">Amiodarone</a>.</li>
-              <li>Anticoagulation (case-dependent): <a class="med-link" data-med="HEPARIN (UNFRACTIONATED)">Heparin</a>, <a class="med-link" data-med="ENOXAPARIN">Enoxaparin</a>.</li>
-            </ul>
-            <p class="callout"><strong>At sea:</strong> When imaging/labs are limited, be conservative with rhythm conversion if onset is unclear. Prioritize hemodynamic stability and treat underlying drivers (pain, hypoxia, infection).</p>
-          </div>
-        </details>
+	        <details class="med">
+	          <summary><span class="name">011 — Atrial Fibrillation Management</span></summary>
+	          <div class="med-body">
+	            <h4>Step-by-Step</h4>
+	            <ol>
+	              <li>Confirm the rhythm and assess immediate stability: hypotension, altered perfusion, ongoing ischemic chest pain, or pulmonary edema.</li>
+	              <li>If unstable and AF is felt to be the driver, proceed to synchronized cardioversion per protocol with appropriate analgesia/sedation support and airway readiness.</li>
+	              <li>If stable, focus first on identifying and treating reversible drivers (pain, hypoxia, fever, sepsis, dehydration, stimulant use, electrolyte disturbance).</li>
+	              <li>Estimate onset/last-known-normal rhythm if possible; document uncertainty explicitly (onset drives rhythm-control risk/benefit and anticoagulation decisions).</li>
+	              <li>Choose a strategy per protocol: rate control vs rhythm control (selected patients) based on symptoms, onset, comorbidities, and available monitoring/resources.</li>
+	              <li>Reassess frequently for deterioration; be ready to escalate to cardioversion if the patient becomes unstable.</li>
+	              <li>Consider anticoagulation per directive and bleeding risk; document indication, contraindications, and the planned disposition/follow-up.</li>
+	            </ol>
+	            <h4>Key Medications</h4>
+	            <ul>
+	              <li>Rate control: <a class="med-link" data-med="DILTIAZEM">Diltiazem</a>, <a class="med-link" data-med="METOPROLOL">Metoprolol</a>.</li>
+	              <li>Rhythm strategy (selected patients): <a class="med-link" data-med="AMIODARONE">Amiodarone</a>.</li>
+	              <li>Anticoagulation (case-dependent): <a class="med-link" data-med="HEPARIN (UNFRACTIONATED)">Heparin</a>, <a class="med-link" data-med="ENOXAPARIN">Enoxaparin</a>.</li>
+	            </ul>
+	            <h4>Notes / Tips / Caveats</h4>
+	            <ul>
+	              <li>Always ask “why now?”: infection, hemorrhage, dehydration, hypoxia, and pain are common triggers; treating the driver may resolve the rhythm.</li>
+	              <li>If onset is unclear, be conservative with rhythm conversion unless unstable; document the rationale and consult medical control when possible.</li>
+	              <li>Consider alternative diagnoses if the presentation is disproportionate (PE, sepsis, ACS, thyroid disease) and treat what is killing the patient first.</li>
+	              <li>Watch for pre-excitation/WPW patterns on ECG; some AV nodal blockers can be dangerous in that context &mdash; follow protocol and seek expert guidance.</li>
+	            </ul>
+	            <p class="callout"><strong>At sea:</strong> When imaging/labs are limited, be conservative with rhythm conversion if onset is unclear. Prioritize hemodynamic stability and treat underlying drivers (pain, hypoxia, infection).</p>
+	          </div>
+	        </details>
 
-        <details class="med">
-          <summary><span class="name">011 — Shoulder/Hip Dislocation — Reduction</span></summary>
-          <div class="med-body">
-            <h4>Ideal Steps</h4>
-            <ol>
-              <li>Document neurovascular status and check for associated fractures (exam/imaging if available).</li>
-              <li>Provide analgesia and consider procedural sedation if needed; prepare post-reduction immobilization.</li>
-              <li>Perform reduction technique appropriate to joint and clinician experience; stop if increasing pain/crepitus.</li>
-              <li>Re-check neurovascular status and confirm reduction (exam +/- imaging).</li>
-            </ol>
-            <h4>Key Medications</h4>
-            <ul>
-              <li>Analgesia: <a class="med-link" data-med="FENTANYL">Fentanyl</a>, <a class="med-link" data-med="KETOROLAC">Ketorolac</a>.</li>
-              <li>Procedural sedation: <a class="med-link" data-med="KETAMINE">Ketamine</a>, <a class="med-link" data-med="MIDAZOLAM">Midazolam</a>.</li>
-            </ul>
-            <p class="callout"><strong>At sea:</strong> If imaging is unavailable and evacuation is delayed, avoid forceful reduction when fracture is suspected. Prioritize pain control, immobilization, and neurovascular monitoring.</p>
-          </div>
-        </details>
+	        <details class="med">
+	          <summary><span class="name">011 — Shoulder/Hip Dislocation — Reduction</span></summary>
+	          <div class="med-body">
+	            <h4>Step-by-Step</h4>
+	            <ol>
+	              <li>Assess and document baseline neurovascular status (pulses, cap refill, sensation, motor function) and skin integrity before any manipulation.</li>
+	              <li>Screen for red flags suggesting fracture/complication (high-energy trauma, deformity with crepitus, severe pain out of proportion, neurovascular compromise); obtain imaging when available and when it will not delay urgent care.</li>
+	              <li>Prepare the environment: analgesia plan, sedation plan if needed, monitoring, and immobilization supplies ready for post-reduction.</li>
+	              <li>Explain the plan to the patient and align on a stop signal; reduction works best with calm coaching and muscle relaxation.</li>
+	              <li>Perform the reduction technique you are trained for; use controlled, gentle maneuvers and avoid forceful, repeated attempts.</li>
+	              <li>Stop and reassess if pain increases sharply, there is crepitus, or neurovascular status worsens; treat as possible fracture/complication and arrange urgent evacuation.</li>
+	              <li>After reduction, re-check and document neurovascular status and range-of-motion limits; confirm reduction clinically and with imaging if available.</li>
+	              <li>Immobilize appropriately, provide analgesia, and arrange follow-up/evacuation; re-check neurovascular status periodically during transport.</li>
+	            </ol>
+	            <h4>Key Medications</h4>
+	            <ul>
+	              <li>Analgesia: <a class="med-link" data-med="FENTANYL">Fentanyl</a>, <a class="med-link" data-med="KETOROLAC">Ketorolac</a>.</li>
+	              <li>Procedural sedation: <a class="med-link" data-med="KETAMINE">Ketamine</a>, <a class="med-link" data-med="MIDAZOLAM">Midazolam</a>.</li>
+	            </ul>
+	            <h4>Notes / Tips / Caveats</h4>
+	            <ul>
+	              <li>Hip dislocation is often high-energy trauma; the threshold for fracture concern and urgent evacuation is lower than for simple anterior shoulder dislocation.</li>
+	              <li>Neurovascular checks before and after are non-negotiable; document clearly even if normal.</li>
+	              <li>Procedural sedation requires full monitoring and rescue readiness; consider analgesia-only approaches when appropriate and within directive.</li>
+	            </ul>
+	            <p class="callout"><strong>At sea:</strong> If imaging is unavailable and evacuation is delayed, avoid forceful reduction when fracture is suspected. Prioritize pain control, immobilization, and neurovascular monitoring.</p>
+	          </div>
+	        </details>
 
-        <details class="med">
-          <summary><span class="name">012 — Burn Injury Management</span></summary>
-          <div class="med-body">
-            <h4>Ideal Steps</h4>
-            <ol>
-              <li>Stop burning process, cool briefly with clean water (avoid hypothermia), remove constricting items.</li>
-              <li>Assess TBSA and depth; look for inhalation injury and associated trauma.</li>
-              <li>Provide analgesia, tetanus prophylaxis as indicated, and begin fluid resuscitation for major burns.</li>
-              <li>Cover with clean dry dressings, prevent hypothermia, and plan evacuation/burn center consult.</li>
-            </ol>
-            <h4>Key Medications</h4>
-            <ul>
-              <li>Analgesia: <a class="med-link" data-med="FENTANYL">Fentanyl</a>, <a class="med-link" data-med="MORPHINE">Morphine</a>.</li>
-              <li>Nausea control: <a class="med-link" data-med="ONDANSETRON">Ondansetron</a>.</li>
-              <li>Tetanus prophylaxis (high-risk wounds): <a class="med-link" data-med="TETANUS IMMUNE GLOBULIN">Tetanus immune globulin</a> per protocol.</li>
-            </ul>
-            <p class="callout"><strong>At sea:</strong> Hypothermia is a major threat with wet environments and limited warming. Use dry coverings, active warming, and strict infection-control with limited dressing supplies.</p>
-          </div>
-        </details>
+	        <details class="med">
+	          <summary><span class="name">012 — Burn Injury Management</span></summary>
+	          <div class="med-body">
+	            <h4>Step-by-Step</h4>
+	            <ol>
+	              <li>Stop the burning process and ensure scene safety; remove from heat/chemical source and protect rescuers.</li>
+	              <li>Initial cooling: use cool (not ice) clean water briefly for thermal burns when appropriate; avoid prolonged cooling that causes hypothermia.</li>
+	              <li>Remove constricting items early (rings, watches, tight clothing) before swelling develops; remove smoldering clothing.</li>
+	              <li>Primary survey: address airway/breathing/circulation and look for inhalation injury (facial burns, soot, hoarseness, stridor) and associated trauma.</li>
+	              <li>Estimate burn size and depth (TBSA, partial vs full thickness) and identify special-site burns (face, hands, feet, genitalia, circumferential limb/chest).</li>
+	              <li>Provide analgesia early and reassess frequently; anticipate escalating pain needs during dressing changes/transport.</li>
+	              <li>Initiate fluid resuscitation for major burns per protocol; monitor mental status, perfusion, and urine output when feasible.</li>
+	              <li>Cover wounds with clean, dry dressings (or protocol-directed burn dressings) and prevent hypothermia with active warming.</li>
+	              <li>Address tetanus prophylaxis and infection-control considerations per directive.</li>
+	              <li>Plan evacuation and early consultation for large TBSA, inhalation injury, circumferential burns, pediatric/elderly patients, or electrical/chemical burns.</li>
+	            </ol>
+	            <h4>Key Medications</h4>
+	            <ul>
+	              <li>Analgesia: <a class="med-link" data-med="FENTANYL">Fentanyl</a>, <a class="med-link" data-med="MORPHINE">Morphine</a>.</li>
+	              <li>Nausea control: <a class="med-link" data-med="ONDANSETRON">Ondansetron</a>.</li>
+	              <li>Tetanus prophylaxis (high-risk wounds): <a class="med-link" data-med="TETANUS IMMUNE GLOBULIN">Tetanus immune globulin</a> per protocol.</li>
+	            </ul>
+	            <h4>Notes / Tips / Caveats</h4>
+	            <ul>
+	              <li>Hypothermia worsens outcomes; limit cooling time and actively warm early.</li>
+	              <li>Circumferential burns can compromise perfusion/ventilation as swelling increases &mdash; monitor distal pulses, cap refill, and chest excursion closely.</li>
+	              <li>Inhalation injury can progress over hours; have a low threshold for early airway planning when hoarseness/stridor or deep facial burns are present.</li>
+	            </ul>
+	            <p class="callout"><strong>At sea:</strong> Hypothermia is a major threat with wet environments and limited warming. Use dry coverings, active warming, and strict infection-control with limited dressing supplies.</p>
+	          </div>
+	        </details>
 
-        <details class="med">
-          <summary><span class="name">013 — Post Exposure Prophylaxis (PEP)</span></summary>
-          <div class="med-body">
-            <h4>Ideal Steps</h4>
-            <ol>
-              <li>Immediate first aid: irrigate/clean exposure site; do not delay.</li>
-              <li>Risk assess source/exposure type; document circumstances and baseline status.</li>
-              <li>Initiate indicated PEP as early as possible and arrange follow-up testing per protocol.</li>
-            </ol>
-            <p class="callout"><strong>At sea:</strong> Because follow-up is harder, ensure meticulous documentation and arrange early specialist guidance via telehealth when possible.</p>
-          </div>
-        </details>
+	        <details class="med">
+	          <summary><span class="name">013 — Post Exposure Prophylaxis (PEP)</span></summary>
+	          <div class="med-body">
+	            <h4>Step-by-Step</h4>
+	            <ol>
+	              <li>Immediate first aid: wash/irrigate the exposure site right away (skin, eyes, mucous membranes); do not delay for paperwork.</li>
+	              <li>Report and document the exposure promptly: time, type of body fluid, mechanism (needle, splash), and injury details.</li>
+	              <li>Risk assess the exposure and source: known infection status if available, clinical risk factors, and whether this is a significant exposure per directive.</li>
+	              <li>Obtain baseline status/testing per protocol for the exposed person and coordinate source testing where feasible and authorized.</li>
+	              <li>Start indicated PEP as early as possible (time-sensitive); do not wait for test results if the exposure is high risk and protocol supports empiric initiation.</li>
+	              <li>Provide counseling: adherence expectations, side effects, work restrictions, and safer practices until follow-up is complete.</li>
+	              <li>Arrange follow-up testing and specialist/medical control consultation per directive; track appointments and ensure continuity through transfer/evacuation.</li>
+	            </ol>
+	            <h4>Notes / Tips / Caveats</h4>
+	            <ul>
+	              <li>Time matters: delays reduce efficacy for time-sensitive PEP pathways; document the exact exposure time and start time.</li>
+	              <li>Keep the documentation thorough and factual; it drives follow-up, occupational health decisions, and continuity at the receiving facility.</li>
+	              <li>Follow the directive for confidentiality and chain-of-custody considerations where applicable.</li>
+	            </ul>
+	            <p class="callout"><strong>At sea:</strong> Because follow-up is harder, ensure meticulous documentation and arrange early specialist guidance via telehealth when possible.</p>
+	          </div>
+	        </details>
 
-        <details class="med">
-          <summary><span class="name">014 — Emergency Glycemic Management</span></summary>
-          <div class="med-body">
-            <h4>Ideal Steps</h4>
-            <ol>
-              <li>Check point-of-care glucose in any altered patient.</li>
-              <li>Hypoglycemia: treat immediately and re-check; investigate cause (insulin, sepsis, adrenal insufficiency).</li>
-              <li>Hyperglycemic emergency: assess dehydration, ketones/acidosis, and start protocol-based management.</li>
-            </ol>
-            <h4>Key Medications</h4>
-            <ul>
-              <li>Hypoglycemia: <a class="med-link" data-med="DEXTROSE (D50W)">Dextrose</a>, <a class="med-link" data-med="GLUCAGON (RECOMBINANT)">Glucagon</a>.</li>
-              <li>Hyperglycemia: <a class="med-link" data-med="INSULIN REGULAR (SHORT-ACTING)">Insulin</a> (per protocol), fluids/electrolytes as indicated.</li>
-            </ul>
-            <p class="callout"><strong>At sea:</strong> Recurrent hypoglycemia is common with limited food access and motion sickness; plan carbohydrate availability and frequent re-checks.</p>
-          </div>
-        </details>
+	        <details class="med">
+	          <summary><span class="name">014 — Emergency Glycemic Management</span></summary>
+	          <div class="med-body">
+	            <h4>Step-by-Step</h4>
+	            <ol>
+	              <li>Check point-of-care glucose early in any altered mental status, seizure, focal deficit, or unexplained deterioration.</li>
+	              <li>If hypoglycemic, treat immediately per protocol (oral if awake/able to swallow; IM/IV routes if not) and reassess airway protection.</li>
+	              <li>Re-check glucose after treatment and repeat therapy as directed; plan longer-acting carbohydrate intake when the patient can safely eat.</li>
+	              <li>Identify and address the cause: missed meals/insulin mismatch, alcohol, sepsis, adrenal insufficiency, renal failure, medication errors.</li>
+	              <li>If hyperglycemic with concern for DKA/HHS, assess dehydration, mental status, vitals, and (if available) ketones/acid-base; obtain IV access and start fluids/electrolyte management per directive.</li>
+	              <li>Use insulin only per protocol and with attention to potassium and monitoring capability; avoid rapid over-correction that creates harm.</li>
+	              <li>Plan disposition: persistent hypoglycemia, suspected DKA/HHS, or inability to monitor safely requires evacuation/definitive evaluation.</li>
+	            </ol>
+	            <h4>Key Medications</h4>
+	            <ul>
+	              <li>Hypoglycemia: <a class="med-link" data-med="DEXTROSE (D50W)">Dextrose</a>, <a class="med-link" data-med="GLUCAGON (RECOMBINANT)">Glucagon</a>.</li>
+	              <li>Hyperglycemia: <a class="med-link" data-med="INSULIN REGULAR (SHORT-ACTING)">Insulin</a> (per protocol), fluids/electrolytes as indicated.</li>
+	            </ul>
+	            <h4>Notes / Tips / Caveats</h4>
+	            <ul>
+	              <li>Recurrent hypoglycemia is common; plan repeated checks and sustained carbohydrate once safe.</li>
+	              <li>Do not anchor on “diabetes” &mdash; sepsis, liver failure, and medication errors can cause dangerous glucose derangements.</li>
+	              <li>For suspected DKA/HHS, fluids and monitoring are often higher-yield early than aggressive insulin, especially when labs are limited.</li>
+	            </ul>
+	            <p class="callout"><strong>At sea:</strong> Recurrent hypoglycemia is common with limited food access and motion sickness; plan carbohydrate availability and frequent re-checks.</p>
+	          </div>
+	        </details>
 
-        <details class="med">
-          <summary><span class="name">015 — Head Injury</span></summary>
-          <div class="med-body">
-            <h4>Ideal Steps</h4>
-            <ol>
-              <li>Spine precautions as indicated; assess GCS, pupils, and focal deficits serially.</li>
-              <li>Prevent secondary injury: avoid hypoxia/hypotension; control agitation and pain.</li>
-              <li>Consider hyperosmolar therapy for signs of herniation (per protocol) and expedite imaging/evacuation.</li>
-            </ol>
-            <h4>Key Medications</h4>
-            <ul>
-              <li>Hyperosmolar therapy (protocol dependent): <a class="med-link" data-med="MANNITOL">Mannitol</a>, <a class="med-link" data-med="SODIUM CHLORIDE 3% OR 5%">Hypertonic saline</a>.</li>
-              <li>Analgesia/sedation as appropriate: <a class="med-link" data-med="FENTANYL">Fentanyl</a>, <a class="med-link" data-med="MIDAZOLAM">Midazolam</a>.</li>
-            </ul>
-            <p class="callout"><strong>At sea:</strong> Without CT, rely on frequent neuro checks and strict avoidance of hypoxia/hypotension. Document times and exam trends to support receiving facility decisions.</p>
-          </div>
-        </details>
+	        <details class="med">
+	          <summary><span class="name">015 — Head Injury</span></summary>
+	          <div class="med-body">
+	            <h4>Step-by-Step</h4>
+	            <ol>
+	              <li>Primary survey with cervical spine precautions as indicated; treat hypoxia and hypotension immediately.</li>
+	              <li>Do a focused neuro exam and establish a baseline: GCS, pupils, limb strength, and behavior; repeat at regular intervals and trend changes.</li>
+	              <li>Identify red flags: decreasing GCS, unequal pupils, repeated vomiting, seizure, anticoagulant use, worsening headache, focal deficits, skull fracture signs.</li>
+	              <li>Prevent secondary injury: optimize oxygenation/ventilation, maintain adequate blood pressure, control pain and agitation, and avoid hypoglycemia/hyperthermia.</li>
+	              <li>Consider airway management if the patient cannot protect the airway or requires controlled ventilation; avoid unnecessary hyperventilation.</li>
+	              <li>If signs of impending herniation are present, initiate protocol-directed temporizing measures (hyperosmolar therapy) and expedite urgent evacuation/imaging.</li>
+	              <li>Document the timeline: mechanism, witnessed LOC, symptoms, serial exams, and all interventions.</li>
+	            </ol>
+	            <h4>Key Medications</h4>
+	            <ul>
+	              <li>Hyperosmolar therapy (protocol dependent): <a class="med-link" data-med="MANNITOL">Mannitol</a>, <a class="med-link" data-med="SODIUM CHLORIDE 3% OR 5%">Hypertonic saline</a>.</li>
+	              <li>Analgesia/sedation as appropriate: <a class="med-link" data-med="FENTANYL">Fentanyl</a>, <a class="med-link" data-med="MIDAZOLAM">Midazolam</a>.</li>
+	            </ul>
+	            <h4>Notes / Tips / Caveats</h4>
+	            <ul>
+	              <li>Secondary injury prevention (oxygen and blood pressure) is often higher-yield than any single medication.</li>
+	              <li>Consider anticoagulants/antiplatelets: they increase delayed bleed risk and should lower your threshold for urgent evacuation.</li>
+	              <li>Hyperventilation is a temporary bridge for imminent herniation in select cases; routine hyperventilation can worsen cerebral ischemia.</li>
+	            </ul>
+	            <p class="callout"><strong>At sea:</strong> Without CT, rely on frequent neuro checks and strict avoidance of hypoxia/hypotension. Document times and exam trends to support receiving facility decisions.</p>
+	          </div>
+	        </details>
 
-        <details class="med">
-          <summary><span class="name">016 — Status Asthmaticus</span></summary>
-          <div class="med-body">
-            <h4>Ideal Steps</h4>
-            <ol>
-              <li>Assess severity, oxygenation, and fatigue; prepare for rapid deterioration.</li>
-              <li>Give bronchodilators per protocol and systemic steroids early; consider magnesium for severe cases.</li>
-              <li>Escalate to ventilatory support when failing medical therapy; avoid dynamic hyperinflation.</li>
-            </ol>
-            <h4>Key Medications</h4>
-            <ul>
-              <li>Steroid: <a class="med-link" data-med="DEXAMETHASONE">Dexamethasone</a>, <a class="med-link" data-med="METHYLPREDNISOLONE SODIUM SUCCINATE">MethylPREDNISolone</a>.</li>
-              <li>Adjunct: <a class="med-link" data-med="MAGNESIUM SULFATE, AQUEOUS">Magnesium sulfate</a>.</li>
-              <li>Anaphylaxis overlap: <a class="med-link" data-med="EPINEPHRINE">Epinephrine</a> when indicated.</li>
-            </ul>
-            <p class="callout"><strong>At sea:</strong> Nebulization may be limited by oxygen supply and isolation needs; have a clear oxygen conservation plan and ensure early evacuation triggers when fatigue/CO&#8322; retention is suspected.</p>
-          </div>
-        </details>
+	        <details class="med">
+	          <summary><span class="name">016 — Status Asthmaticus</span></summary>
+	          <div class="med-body">
+	            <h4>Step-by-Step</h4>
+	            <ol>
+	              <li>Assess severity immediately: work of breathing, speech, mental status, SpO2, and signs of fatigue (silent chest, exhaustion, rising CO&#8322; if monitored).</li>
+	              <li>Start oxygen only as needed to maintain adequate saturation and apply continuous monitoring early.</li>
+	              <li>Give bronchodilators per protocol promptly and repeat/escalate based on response; reassess after each treatment cycle.</li>
+	              <li>Administer systemic steroids early; do not wait for “failure” of bronchodilators.</li>
+	              <li>For severe or refractory cases, add protocol-directed adjuncts (e.g., magnesium) and consider epinephrine when indicated (especially if anaphylaxis overlap).</li>
+	              <li>Reassess for alternate/complicating diagnoses: pneumothorax, anaphylaxis, foreign body, pneumonia, PE; treat what is killing the patient.</li>
+	              <li>Escalate respiratory support when failing therapy: consider NIV where appropriate and within scope; prepare for intubation if mental status worsens or ventilation fails.</li>
+	              <li>If intubated/ventilated, use a strategy that avoids dynamic hyperinflation (longer exhalation, permissive hypercapnia per protocol) and monitor closely for hypotension/barotrauma.</li>
+	            </ol>
+	            <h4>Key Medications</h4>
+	            <ul>
+	              <li>Steroid: <a class="med-link" data-med="DEXAMETHASONE">Dexamethasone</a>, <a class="med-link" data-med="METHYLPREDNISOLONE SODIUM SUCCINATE">MethylPREDNISolone</a>.</li>
+	              <li>Adjunct: <a class="med-link" data-med="MAGNESIUM SULFATE, AQUEOUS">Magnesium sulfate</a>.</li>
+	              <li>Anaphylaxis overlap: <a class="med-link" data-med="EPINEPHRINE">Epinephrine</a> when indicated.</li>
+	            </ul>
+	            <h4>Notes / Tips / Caveats</h4>
+	            <ul>
+	              <li>A “silent chest,” altered mental status, or exhaustion can be pre-arrest signs even if SpO2 looks acceptable.</li>
+	              <li>Intubation in severe asthma is high-risk; ensure you can ventilate safely afterwards and be ready to treat hypotension/auto-PEEP.</li>
+	              <li>Over-ventilation and short expiratory time can worsen air trapping; prioritize adequate exhalation time.</li>
+	            </ul>
+	            <p class="callout"><strong>At sea:</strong> Nebulization may be limited by oxygen supply and isolation needs; have a clear oxygen conservation plan and ensure early evacuation triggers when fatigue/CO&#8322; retention is suspected.</p>
+	          </div>
+	        </details>
 
-        <details class="med">
-          <summary><span class="name">017 — Stroke / TIA</span></summary>
-          <div class="med-body">
-            <h4>Ideal Steps</h4>
-            <ol>
-              <li>Determine last-known-well time; perform focused neuro exam and glucose check.</li>
-              <li>Stabilize ABCs and avoid hypotension/hypoxia; obtain CT/CTA urgently when available.</li>
-              <li>Activate stroke pathway and evaluate for thrombolysis/thrombectomy eligibility (time + contraindications).</li>
-            </ol>
-            <h4>Key Medications</h4>
-            <ul>
-              <li>Thrombolytic option (selected ischemic stroke settings): <a class="med-link" data-med="TENECTEPLASE">Tenecteplase</a> per protocol and contraindications.</li>
-              <li>Blood pressure control (protocol dependent): <a class="med-link" data-med="LABETALOL">Labetalol</a>.</li>
-            </ul>
-            <p class="callout"><strong>At sea:</strong> Time is the critical resource. Prioritize accurate last-known-well documentation, rapid comms with receiving stroke center, and early evacuation decision-making when imaging is unavailable.</p>
-          </div>
-        </details>
+	        <details class="med">
+	          <summary><span class="name">017 — Stroke / TIA</span></summary>
+	          <div class="med-body">
+	            <h4>Step-by-Step</h4>
+	            <ol>
+	              <li>Determine last-known-well time (or symptom discovery time if unwitnessed) and document it precisely; time drives eligibility for reperfusion pathways.</li>
+	              <li>Check glucose immediately and treat hypoglycemia; stroke mimics are common.</li>
+	              <li>Perform and document a focused neuro exam (speech, gaze, face, arm/leg drift, neglect) and repeat serially to track evolution.</li>
+	              <li>Stabilize ABCs and avoid hypoxia and hypotension; treat fever and correct severe glucose derangements.</li>
+	              <li>Activate the stroke pathway early and arrange urgent imaging (CT/CTA) when available; avoid thrombolysis decisions without hemorrhage exclusion per protocol.</li>
+	              <li>Screen for thrombolysis contraindications and bleeding risks; document clearly.</li>
+	              <li>Plan evacuation to a stroke-capable center when indicated (thrombectomy capability matters in large-vessel syndromes).</li>
+	              <li>Manage complications: airway protection if decreased level of consciousness, aspiration risk mitigation, blood pressure management per directive, and seizure management if occurs.</li>
+	            </ol>
+	            <h4>Key Medications</h4>
+	            <ul>
+	              <li>Thrombolytic option (selected ischemic stroke settings): <a class="med-link" data-med="TENECTEPLASE">Tenecteplase</a> per protocol and contraindications.</li>
+	              <li>Blood pressure control (protocol dependent): <a class="med-link" data-med="LABETALOL">Labetalol</a>.</li>
+	            </ul>
+	            <h4>Notes / Tips / Caveats</h4>
+	            <ul>
+	              <li>Do not miss mimics: hypoglycemia, seizure/post-ictal state, migraine, intoxication, and functional symptoms.</li>
+	              <li>“Time zero” documentation is critical: last-known-well, symptom onset, and when deficits were first recognized.</li>
+	              <li>Be cautious about aggressive blood pressure lowering unless protocol-directed; hypotension can worsen ischemia.</li>
+	            </ul>
+	            <p class="callout"><strong>At sea:</strong> Time is the critical resource. Prioritize accurate last-known-well documentation, rapid comms with receiving stroke center, and early evacuation decision-making when imaging is unavailable.</p>
+	          </div>
+	        </details>
 
-        <details class="med">
-          <summary><span class="name">018 — Pulmonary Embolism / Deep Vein Thrombosis</span></summary>
-          <div class="med-body">
-            <h4>Ideal Steps</h4>
-            <ol>
-              <li>Assess risk and stability (shock, hypoxemia); consider differential diagnoses.</li>
-              <li>Start anticoagulation when suspicion is high and bleeding risk acceptable, per protocol.</li>
-              <li>Arrange definitive imaging and evacuation; monitor for decompensation.</li>
-            </ol>
-            <h4>Key Medications</h4>
-            <ul>
-              <li>Anticoagulation: <a class="med-link" data-med="ENOXAPARIN">Enoxaparin</a>, <a class="med-link" data-med="HEPARIN (UNFRACTIONATED)">Heparin</a>.</li>
-            </ul>
-            <p class="callout"><strong>At sea:</strong> With limited imaging, document the clinical probability and bleeding risk rationale for anticoagulation. Establish clear thresholds for escalation if hypoxia/hypotension develops.</p>
-          </div>
-        </details>
+	        <details class="med">
+	          <summary><span class="name">018 — Pulmonary Embolism / Deep Vein Thrombosis</span></summary>
+	          <div class="med-body">
+	            <h4>Step-by-Step</h4>
+	            <ol>
+	              <li>Assess stability immediately: hypotension/shock, hypoxemia, altered mental status; start monitoring and oxygen as needed.</li>
+	              <li>Consider the differential (ACS, pneumothorax, pneumonia, asthma/COPD, tamponade) and treat immediate threats while evaluating.</li>
+	              <li>Gather focused risk history: recent surgery/immobilization, malignancy, prior VTE, estrogen therapy/pregnancy, long travel, unilateral leg swelling/pain.</li>
+	              <li>Obtain ECG and, if available, bedside ultrasound assessments per local capability; document clinical probability.</li>
+	              <li>Start anticoagulation when suspicion is high and bleeding risk is acceptable, per directive; document the benefit-risk rationale.</li>
+	              <li>Arrange definitive imaging and evacuation/consultation; reassess frequently for decompensation and be ready to escalate support.</li>
+	            </ol>
+	            <h4>Key Medications</h4>
+	            <ul>
+	              <li>Anticoagulation: <a class="med-link" data-med="ENOXAPARIN">Enoxaparin</a>, <a class="med-link" data-med="HEPARIN (UNFRACTIONATED)">Heparin</a>.</li>
+	            </ul>
+	            <h4>Notes / Tips / Caveats</h4>
+	            <ul>
+	              <li>Massive PE can deteriorate quickly; treat shock physiology and prioritize rapid evacuation.</li>
+	              <li>Bleeding risk assessment is part of the “procedure” &mdash; document contraindications, trauma, recent surgery, and active bleeding.</li>
+	              <li>Hypoxemia out of proportion to lung exam should keep PE high on the list.</li>
+	            </ul>
+	            <p class="callout"><strong>At sea:</strong> With limited imaging, document the clinical probability and bleeding risk rationale for anticoagulation. Establish clear thresholds for escalation if hypoxia/hypotension develops.</p>
+	          </div>
+	        </details>
 
-        <details class="med">
-          <summary><span class="name">019 — Carbon Monoxide</span></summary>
-          <div class="med-body">
-            <h4>Ideal Steps</h4>
-            <ol>
-              <li>Remove from exposure; administer high-flow oxygen promptly.</li>
-              <li>Assess for co-exposures (smoke inhalation, cyanide) and for neurologic/cardiac involvement.</li>
-              <li>Consider hyperbaric oxygen criteria and arrange evacuation when indicated.</li>
-            </ol>
-            <p class="callout"><strong>At sea:</strong> CO monitoring may be limited; treat based on exposure history and symptoms. Ensure scene safety and ventilation of enclosed spaces.</p>
-          </div>
-        </details>
+	        <details class="med">
+	          <summary><span class="name">019 — Carbon Monoxide</span></summary>
+	          <div class="med-body">
+	            <h4>Step-by-Step</h4>
+	            <ol>
+	              <li>Ensure scene safety and remove the patient from exposure; ventilate enclosed spaces and protect rescuers.</li>
+	              <li>Give high-concentration oxygen promptly and monitor closely; treat as a clinical diagnosis when COHb testing is unavailable.</li>
+	              <li>Assess for co-exposures (smoke inhalation, cyanide) and for concurrent trauma.</li>
+	              <li>Screen for high-risk features: altered mental status, syncope, seizures, pregnancy, ischemic chest pain/ECG changes, severe metabolic acidosis if labs available.</li>
+	              <li>Consider hyperbaric oxygen indications per protocol and coordinate early evacuation/consultation when high-risk features are present.</li>
+	              <li>Document exposure duration, environment (engine room, enclosed fire), symptom progression, and response to oxygen.</li>
+	            </ol>
+	            <h4>Notes / Tips / Caveats</h4>
+	            <ul>
+	              <li>Pulse oximetry can appear normal in CO poisoning; rely on exposure history and symptoms, not SpO2 alone.</li>
+	              <li>Neurologic symptoms can be delayed; plan observation/evacuation for significant exposures.</li>
+	              <li>Pregnancy increases fetal risk; lower threshold for evacuation and definitive care coordination.</li>
+	            </ul>
+	            <p class="callout"><strong>At sea:</strong> CO monitoring may be limited; treat based on exposure history and symptoms. Ensure scene safety and ventilation of enclosed spaces.</p>
+	          </div>
+	        </details>
 
-        <details class="med">
-          <summary><span class="name">020 — Sepsis Management</span></summary>
-          <div class="med-body">
-            <h4>Ideal Steps</h4>
-            <ol>
-              <li>Identify sepsis early (infection + organ dysfunction); obtain cultures/lactate when feasible.</li>
-              <li>Give timely broad-spectrum antibiotics and fluid resuscitation per protocol.</li>
-              <li>Start vasopressors if shock persists after fluids; monitor urine output and reassess frequently.</li>
-            </ol>
-            <h4>Key Medications</h4>
-            <ul>
-              <li>Antibiotics (context dependent): <a class="med-link" data-med="CEFTRIAXONE">Ceftriaxone</a>, <a class="med-link" data-med="PIPERACILLIN / TAZOBACTAM (TAZOCIN)">Piperacillin-tazobactam</a>, vancomycin (if stocked), etc.</li>
-              <li>Pressors: <a class="med-link" data-med="NOREPINEPHRINE">Norepinephrine</a>, <a class="med-link" data-med="VASOPRESSIN">Vasopressin</a>.</li>
-            </ul>
-            <p class="callout"><strong>At sea:</strong> Limited diagnostics make “treat early, reassess often” essential. Track fluids/pressors carefully and prioritize early source control and evacuation when instability persists.</p>
-          </div>
-        </details>
+	        <details class="med">
+	          <summary><span class="name">020 — Sepsis Management</span></summary>
+	          <div class="med-body">
+	            <h4>Step-by-Step</h4>
+	            <ol>
+	              <li>Recognize sepsis early: suspected infection plus signs of organ dysfunction (hypotension, altered mental status, tachypnea, oliguria, lactate if available).</li>
+	              <li>Start monitoring, obtain IV/IO access, and measure a baseline set of vitals and mental status; repeat frequently.</li>
+	              <li>Obtain cultures/lactate and other labs if feasible without delaying antibiotics; document limitations if labs are unavailable.</li>
+	              <li>Give broad-spectrum antibiotics early per directive and likely source; document time of administration.</li>
+	              <li>Resuscitate with fluids per protocol while reassessing response (blood pressure, perfusion, mentation, urine output); avoid blind over-resuscitation in patients with heart failure/renal failure when possible.</li>
+	              <li>If shock persists despite fluids, start vasopressors per protocol and titrate to a perfusion goal; treat hypoglycemia/hypocalcemia or other reversible contributors as directed.</li>
+	              <li>Identify and address source control needs (drainage, debridement, line removal) and coordinate early evacuation for ongoing instability.</li>
+	              <li>Track a sepsis timeline: recognition time, antibiotics time, fluids volume, pressor start, and trends in vitals/lactate (if available).</li>
+	            </ol>
+	            <h4>Key Medications</h4>
+	            <ul>
+	              <li>Antibiotics (context dependent): <a class="med-link" data-med="CEFTRIAXONE">Ceftriaxone</a>, <a class="med-link" data-med="PIPERACILLIN / TAZOBACTAM (TAZOCIN)">Piperacillin-tazobactam</a>, vancomycin (if stocked), etc.</li>
+	              <li>Pressors: <a class="med-link" data-med="NOREPINEPHRINE">Norepinephrine</a>, <a class="med-link" data-med="VASOPRESSIN">Vasopressin</a>.</li>
+	            </ul>
+	            <h4>Notes / Tips / Caveats</h4>
+	            <ul>
+	              <li>Early antibiotics and reassessment drive outcomes; “wait for labs” is a common failure mode when labs are delayed or unavailable.</li>
+	              <li>Consider hemorrhage, dehydration, and cardiogenic causes when hypotension is present; not all shock is septic.</li>
+	              <li>Source control is essential: antibiotics alone may not stabilize abscesses, necrotizing infections, or obstructed systems.</li>
+	            </ul>
+	            <p class="callout"><strong>At sea:</strong> Limited diagnostics make “treat early, reassess often” essential. Track fluids/pressors carefully and prioritize early source control and evacuation when instability persists.</p>
+	          </div>
+	        </details>
 
-        <details class="med">
-          <summary><span class="name">021 — Toxins / Overdose Management</span></summary>
-          <div class="med-body">
-            <h4>Ideal Steps</h4>
-            <ol>
-              <li>Stabilize airway/breathing/circulation; obtain focused tox history and check glucose.</li>
-              <li>Use targeted antidotes when indicated; avoid empiric therapies that increase harm.</li>
-              <li>Support ventilation and hemodynamics; treat seizures/arrhythmias; contact poison center when possible.</li>
-            </ol>
-            <h4>Key Medications</h4>
-            <ul>
-              <li>Opioids: <a class="med-link" data-med="NALOXONE">Naloxone</a>.</li>
-              <li>Benzodiazepines (reversal selected cases): <a class="med-link" data-med="FLUMAZENIL">Flumazenil</a>.</li>
-              <li>Acetaminophen: <a class="med-link" data-med="N-ACETYLCYSTEINE (NAC)">N-acetylcysteine (NAC)</a>.</li>
-              <li>Beta-blocker/CCB toxicity support: <a class="med-link" data-med="GLUCAGON (RECOMBINANT)">Glucagon</a>, <a class="med-link" data-med="CALCIUM GLUCONATE">Calcium gluconate</a>.</li>
-              <li>Cyanide-specific antidotes: <a class="med-link" data-med="HYDROXOCOBALAMIN">Hydroxocobalamin</a>, <a class="med-link" data-med="SODIUM THIOSULFATE">Sodium thiosulfate</a>.</li>
-            </ul>
-            <p class="callout"><strong>At sea:</strong> If poison center contact is delayed, prioritize supportive care and antidotes with high benefit-to-risk when classic toxidromes are present. Preserve samples/containers for identification.</p>
-          </div>
-        </details>
+	        <details class="med">
+	          <summary><span class="name">021 — Toxins / Overdose Management</span></summary>
+	          <div class="med-body">
+	            <h4>Step-by-Step</h4>
+	            <ol>
+	              <li>Stabilize ABCs first: airway protection, ventilation, and perfusion; place on monitor and obtain IV/IO access.</li>
+	              <li>Check glucose early and treat hypoglycemia; obtain temperature and treat hyperthermia aggressively when present.</li>
+	              <li>Get a focused tox history: what/when/how much, co-ingestants, intent, access to containers, and baseline health/medications; bring containers/samples with the patient when possible.</li>
+	              <li>Perform a toxidrome-focused exam (pupils, skin, bowel sounds, mental status, clonus/rigidity) and obtain ECG early for QRS/QT changes.</li>
+	              <li>Consider decontamination only when indicated and safe; prioritize airway protection over GI decontamination.</li>
+	              <li>Use targeted antidotes when there is a clear indication; avoid “shotgun” antidote use that adds risk.</li>
+	              <li>Provide supportive care as the backbone: ventilatory support, fluids/pressors, seizure control, and temperature management.</li>
+	              <li>Escalate for high-risk presentations (refractory seizures, shock, wide-complex dysrhythmias, severe acidosis) and arrange urgent evacuation/ICU-level care.</li>
+	              <li>Contact poison center/medical control when possible; document recommendations and the timeline of treatments.</li>
+	            </ol>
+	            <h4>Key Medications</h4>
+	            <ul>
+	              <li>Opioids: <a class="med-link" data-med="NALOXONE">Naloxone</a>.</li>
+	              <li>Benzodiazepines (reversal selected cases): <a class="med-link" data-med="FLUMAZENIL">Flumazenil</a>.</li>
+	              <li>Acetaminophen: <a class="med-link" data-med="N-ACETYLCYSTEINE (NAC)">N-acetylcysteine (NAC)</a>.</li>
+	              <li>Beta-blocker/CCB toxicity support: <a class="med-link" data-med="GLUCAGON (RECOMBINANT)">Glucagon</a>, <a class="med-link" data-med="CALCIUM GLUCONATE">Calcium gluconate</a>.</li>
+	              <li>Cyanide-specific antidotes: <a class="med-link" data-med="HYDROXOCOBALAMIN">Hydroxocobalamin</a>, <a class="med-link" data-med="SODIUM THIOSULFATE">Sodium thiosulfate</a>.</li>
+	            </ul>
+	            <h4>Notes / Tips / Caveats</h4>
+	            <ul>
+	              <li>Supportive care saves most poisoned patients; antidotes are situational adjuncts.</li>
+	              <li>Flumazenil can precipitate seizures in mixed ingestions or chronic benzodiazepine use; follow protocol and be cautious.</li>
+	              <li>ECG is high-yield: QRS widening, QT prolongation, and dysrhythmias guide urgency and management.</li>
+	            </ul>
+	            <p class="callout"><strong>At sea:</strong> If poison center contact is delayed, prioritize supportive care and antidotes with high benefit-to-risk when classic toxidromes are present. Preserve samples/containers for identification.</p>
+	          </div>
+	        </details>
 
-        <details class="med">
-          <summary><span class="name">001n — Cyanide Exposure (Navy)</span></summary>
-          <div class="med-body">
-            <h4>Ideal Steps</h4>
-            <ol>
-              <li>Remove from source, provide 100% oxygen, and support ABCs.</li>
-              <li>Give antidote promptly when exposure risk is high (smoke inhalation with severe lactic acidosis, collapse in enclosed fire, etc.).</li>
-              <li>Continue supportive care and arrange urgent evacuation/ICU-level monitoring.</li>
-            </ol>
-            <h4>Key Medications</h4>
-            <ul>
-              <li><a class="med-link" data-med="HYDROXOCOBALAMIN">Hydroxocobalamin</a>.</li>
-              <li><a class="med-link" data-med="SODIUM THIOSULFATE">Sodium thiosulfate</a> (as indicated per protocol).</li>
-            </ul>
-            <p class="callout"><strong>At sea:</strong> Confounding exposures are common (CO + cyanide). Treat based on scenario severity and physiology when labs are unavailable; decontaminate and protect crew.</p>
-          </div>
-        </details>
+	        <details class="med">
+	          <summary><span class="name">001n — Cyanide Exposure (Navy)</span></summary>
+	          <div class="med-body">
+	            <h4>Step-by-Step</h4>
+	            <ol>
+	              <li>Ensure rescuer safety and remove the patient from the exposure source; start decontamination as feasible (remove contaminated clothing, bag items).</li>
+	              <li>Support ABCs immediately: high-concentration oxygen, ventilation support if needed, and hemodynamic stabilization.</li>
+	              <li>Assess the scenario and physiology for high likelihood of cyanide toxicity (enclosed-space fire, rapid collapse, severe acidosis if available) and consider co-exposures (CO, smoke inhalation).</li>
+	              <li>Initiate the protocol-directed antidote pathway promptly when indicated; document why cyanide was suspected and the timing of antidote administration.</li>
+	              <li>Continue supportive care: treat seizures, dysrhythmias, hypotension, and airway edema/inhalation injury.</li>
+	              <li>Arrange urgent evacuation and higher-level monitoring; anticipate delayed complications and the need for prolonged oxygen and ventilatory support.</li>
+	            </ol>
+	            <h4>Key Medications</h4>
+	            <ul>
+	              <li><a class="med-link" data-med="HYDROXOCOBALAMIN">Hydroxocobalamin</a>.</li>
+	              <li><a class="med-link" data-med="SODIUM THIOSULFATE">Sodium thiosulfate</a> (as indicated per protocol).</li>
+	            </ul>
+	            <h4>Notes / Tips / Caveats</h4>
+	            <ul>
+	              <li>Cyanide and CO poisoning often coexist in structural fires; treat based on scenario severity and physiology when labs are unavailable.</li>
+	              <li>Decontamination protects the crew and treatment area; remove and isolate contaminated clothing early.</li>
+	              <li>Document operational details (location, duration, protective gear, others affected) to support receiving facility evaluation.</li>
+	            </ul>
+	            <p class="callout"><strong>At sea:</strong> Confounding exposures are common (CO + cyanide). Treat based on scenario severity and physiology when labs are unavailable; decontaminate and protect crew.</p>
+	          </div>
+	        </details>
 
-        <details class="med">
-          <summary><span class="name">002n — Smoke Inhalation Management (Navy)</span></summary>
-          <div class="med-body">
-            <h4>Ideal Steps</h4>
-            <ol>
-              <li>Remove from exposure, provide oxygen, and assess airway burns/edema early.</li>
-              <li>Evaluate for CO and cyanide co-exposure; treat when indicated.</li>
-              <li>Support ventilation and consider early intubation if progressive edema is expected.</li>
-            </ol>
-            <h4>Key Medications</h4>
-            <ul>
-              <li>Potential antidote: <a class="med-link" data-med="HYDROXOCOBALAMIN">Hydroxocobalamin</a>.</li>
-              <li>Bronchospasm/anaphylaxis overlap: <a class="med-link" data-med="EPINEPHRINE">Epinephrine</a> when indicated.</li>
-            </ul>
-            <p class="callout"><strong>At sea:</strong> Airway swelling can evolve during long transits. If intubation is likely, do it early in a controlled setting rather than late in extremis.</p>
-          </div>
-        </details>
+	        <details class="med">
+	          <summary><span class="name">002n — Smoke Inhalation Management (Navy)</span></summary>
+	          <div class="med-body">
+	            <h4>Step-by-Step</h4>
+	            <ol>
+	              <li>Ensure scene safety, remove from exposure, and start high-concentration oxygen; monitor continuously.</li>
+	              <li>Assess airway early for evolving edema/injury (soot, hoarseness, stridor, facial burns) and plan for escalation before obstruction develops.</li>
+	              <li>Assess breathing: bronchospasm, hypoxia, and work of breathing; provide bronchodilator therapy per protocol when indicated.</li>
+	              <li>Assess circulation and associated trauma/burns; treat shock and prevent hypothermia.</li>
+	              <li>Evaluate for CO and cyanide co-exposure and treat when indicated; document exposure scenario and symptom progression.</li>
+	              <li>Consider early intubation if progressive edema is expected or ventilation is failing, especially when evacuation delays are likely.</li>
+	              <li>Arrange evacuation and ongoing monitoring; airway deterioration can occur hours after the initial exposure.</li>
+	            </ol>
+	            <h4>Key Medications</h4>
+	            <ul>
+	              <li>Potential antidote: <a class="med-link" data-med="HYDROXOCOBALAMIN">Hydroxocobalamin</a>.</li>
+	              <li>Bronchospasm/anaphylaxis overlap: <a class="med-link" data-med="EPINEPHRINE">Epinephrine</a> when indicated.</li>
+	            </ul>
+	            <h4>Notes / Tips / Caveats</h4>
+	            <ul>
+	              <li>Airway edema can be delayed; reassess frequently even if initial exam is reassuring.</li>
+	              <li>Pulse oximetry can be misleading in CO poisoning; treat based on exposure and symptoms.</li>
+	              <li>Protect the medical space from secondary contamination (soot/chemicals on clothing and gear).</li>
+	            </ul>
+	            <p class="callout"><strong>At sea:</strong> Airway swelling can evolve during long transits. If intubation is likely, do it early in a controlled setting rather than late in extremis.</p>
+	          </div>
+	        </details>
 
-        <details class="med">
-          <summary><span class="name">001a — Fatigue Management (Air Force)</span></summary>
-          <div class="med-body">
-            <h4>Ideal Steps</h4>
-            <ol>
-              <li>Assess operational risk, sleep debt, and medical contributors (infection, hypoxia, medications).</li>
-              <li>Optimize sleep opportunity and schedule; enforce strategic naps when possible.</li>
-              <li>Use stimulants only per directive/policy and after screening contraindications.</li>
-            </ol>
-            <p class="callout"><strong>At sea:</strong> Shiftwork and noise compound fatigue. Build sleep-protection into watch rotations and document any stimulant use with timing to reduce operational error.</p>
-          </div>
-        </details>
+	        <details class="med">
+	          <summary><span class="name">001a — Fatigue Management (Air Force)</span></summary>
+	          <div class="med-body">
+	            <h4>Step-by-Step</h4>
+	            <ol>
+	              <li>Identify the operational risk: what tasks are safety-critical and what failure modes are unacceptable (vehicle operation, weapons handling, critical watch).</li>
+	              <li>Screen for urgent medical contributors: hypoxia, infection, dehydration, hypoglycemia, heat injury, medication effects, substance use.</li>
+	              <li>Quantify fatigue: hours awake, recent sleep quantity/quality, shift changes, and circadian disruption; document a baseline.</li>
+	              <li>Implement non-pharmacologic mitigation first: protected sleep opportunity, strategic naps, schedule optimization, light exposure and hydration strategies.</li>
+	              <li>Use stimulants only when indicated and only per directive/policy after screening contraindications; document timing and planned duty limitations.</li>
+	              <li>Reassess frequently and escalate/stand down from duty when risk remains unacceptable despite mitigation.</li>
+	            </ol>
+	            <h4>Notes / Tips / Caveats</h4>
+	            <ul>
+	              <li>Fatigue management is risk management: the “procedure” is documentation, mitigation, and reassessment.</li>
+	              <li>Stimulants can mask fatigue without restoring performance for complex tasks; pair with duty limitations and planned recovery sleep.</li>
+	              <li>Screen for mental health stressors and substance use; fatigue can be a presenting symptom.</li>
+	            </ul>
+	            <p class="callout"><strong>At sea:</strong> Shiftwork and noise compound fatigue. Build sleep-protection into watch rotations and document any stimulant use with timing to reduce operational error.</p>
+	          </div>
+	        </details>
 
-        <details class="med">
-          <summary><span class="name">001s — Fatigue Management (Special Operations PA)</span></summary>
-          <div class="med-body">
-            <h4>Ideal Steps</h4>
-            <ol>
-              <li>Screen for safety-critical impairment and reversible medical causes.</li>
-              <li>Implement sleep plan + circadian strategies; consider short, protected recovery periods.</li>
-              <li>Use pharmacologic aids only per directive, with mission risk assessment.</li>
-            </ol>
-            <p class="callout"><strong>At sea:</strong> Treat fatigue like a safety hazard: formalize mitigation steps, track hours awake, and escalate when mission risk exceeds acceptable thresholds.</p>
-          </div>
-        </details>
+	        <details class="med">
+	          <summary><span class="name">001s — Fatigue Management (Special Operations PA)</span></summary>
+	          <div class="med-body">
+	            <h4>Step-by-Step</h4>
+	            <ol>
+	              <li>Assess whether impairment is safety-critical now (weapons, driving, aviation, critical medical duties) and remove from duty if immediate risk is unacceptable.</li>
+	              <li>Screen for reversible medical causes and red flags: infection, heat injury, altitude illness, hypoxia, dehydration, hypoglycemia, head injury, medication/substance effects.</li>
+	              <li>Quantify fatigue burden (hours awake, sleep debt, stimulant/sedative use) and document a timeline.</li>
+	              <li>Implement an operational sleep plan: protected sleep window, controlled naps, circadian alignment strategies, and workload adjustment when feasible.</li>
+	              <li>Use pharmacologic aids only per directive and after explicit mission risk assessment; document the decision, timing, and restrictions.</li>
+	              <li>Reassess performance and safety at defined intervals; escalate to higher authority/medical control if mitigation fails.</li>
+	            </ol>
+	            <h4>Notes / Tips / Caveats</h4>
+	            <ul>
+	              <li>Fatigue-related errors increase when tasks are complex, novel, or high consequence; don’t rely on subjective “feels fine.”</li>
+	              <li>Pair any pharmacologic strategy with a plan for recovery sleep; otherwise it becomes a short-term patch with accumulating risk.</li>
+	              <li>Document decisions carefully; fatigue management often has operational/legal implications.</li>
+	            </ul>
+	            <p class="callout"><strong>At sea:</strong> Treat fatigue like a safety hazard: formalize mitigation steps, track hours awake, and escalate when mission risk exceeds acceptable thresholds.</p>
+	          </div>
+	        </details>
 
-        <details class="med">
-          <summary><span class="name">002s — Acute Mountain Sickness</span></summary>
-          <div class="med-body">
-            <h4>Ideal Steps</h4>
-            <ol>
-              <li>Stop ascent; assess severity and vitals, and rule out HACE/HAPE red flags.</li>
-              <li>Rest, hydration, symptom control; descend if worsening or no improvement.</li>
-              <li>Use protocol-directed meds when indicated.</li>
-            </ol>
-            <p class="callout"><strong>At sea:</strong> (If ashore/altitude context) evacuation and descent planning are key. Prioritize recognition of progression to HACE/HAPE when resources are limited.</p>
-          </div>
-        </details>
+	        <details class="med">
+	          <summary><span class="name">002s — Acute Mountain Sickness</span></summary>
+	          <div class="med-body">
+	            <h4>Step-by-Step</h4>
+	            <ol>
+	              <li>Stop ascent immediately; rest and reassess. New symptoms at altitude should be assumed altitude-related until proven otherwise.</li>
+	              <li>Assess severity and vitals; actively screen for progression to HACE/HAPE (ataxia, confusion, severe dyspnea at rest, cough, cyanosis).</li>
+	              <li>Provide oxygen if available and treat dehydration/nausea/headache per protocol; avoid overexertion.</li>
+	              <li>If symptoms worsen, do not improve with rest, or red flags are present, initiate descent/evacuation planning promptly.</li>
+	              <li>Use protocol-directed medications when indicated and available; document response and ongoing symptoms.</li>
+	            </ol>
+	            <h4>Notes / Tips / Caveats</h4>
+	            <ul>
+	              <li>Descent is definitive therapy for worsening symptoms; medications are adjuncts.</li>
+	              <li>Do not allow further ascent while symptomatic.</li>
+	              <li>Consider other causes of headache/illness (dehydration, CO exposure, infection), but don’t delay altitude treatment when in doubt.</li>
+	            </ul>
+	            <p class="callout"><strong>At sea:</strong> (If ashore/altitude context) evacuation and descent planning are key. Prioritize recognition of progression to HACE/HAPE when resources are limited.</p>
+	          </div>
+	        </details>
 
-        <details class="med">
-          <summary><span class="name">003s — High Altitude Cerebral Edema (HACE) Management</span></summary>
-          <div class="med-body">
-            <h4>Ideal Steps</h4>
-            <ol>
-              <li>Immediate descent and oxygen; minimize exertion and treat as medical emergency.</li>
-              <li>Give steroid per directive; monitor neuro status closely.</li>
-              <li>Use portable hyperbaric bag if available and descent is delayed.</li>
-            </ol>
-            <h4>Key Medications</h4>
-            <ul>
-              <li><a class="med-link" data-med="DEXAMETHASONE">Dexamethasone</a>.</li>
-            </ul>
-            <p class="callout"><strong>At sea:</strong> (If ashore/altitude context) definitive therapy is descent; medication is an adjunct. Ensure evacuation communications start immediately when HACE is suspected.</p>
-          </div>
-        </details>
+	        <details class="med">
+	          <summary><span class="name">003s — High Altitude Cerebral Edema (HACE) Management</span></summary>
+	          <div class="med-body">
+	            <h4>Step-by-Step</h4>
+	            <ol>
+	              <li>Treat as an emergency: immediate descent is the priority; start oxygen if available and minimize exertion.</li>
+	              <li>Perform and document serial neuro exams (mental status, gait/ataxia, pupils) and monitor closely for deterioration.</li>
+	              <li>Administer steroid per directive and reassess; do not delay descent while waiting for medication effect.</li>
+	              <li>Use a portable hyperbaric bag if available when descent is delayed or not immediately feasible.</li>
+	              <li>Arrange urgent evacuation to definitive care; anticipate airway/ventilatory support needs if mental status declines.</li>
+	            </ol>
+	            <h4>Key Medications</h4>
+	            <ul>
+	              <li><a class="med-link" data-med="DEXAMETHASONE">Dexamethasone</a>.</li>
+	            </ul>
+	            <h4>Notes / Tips / Caveats</h4>
+	            <ul>
+	              <li>Medication is an adjunct; failure to descend is a common reason for poor outcomes.</li>
+	              <li>HACE and HAPE can coexist; screen for respiratory symptoms and treat both pathways when suspected.</li>
+	              <li>Keep the patient warm, hydrated as appropriate, and avoid sedatives that obscure neuro assessment unless required for safety.</li>
+	            </ul>
+	            <p class="callout"><strong>At sea:</strong> (If ashore/altitude context) definitive therapy is descent; medication is an adjunct. Ensure evacuation communications start immediately when HACE is suspected.</p>
+	          </div>
+	        </details>
 
-        <details class="med">
-          <summary><span class="name">004s — High Altitude Pulmonary Edema (HAPE) Management</span></summary>
-          <div class="med-body">
-            <h4>Ideal Steps</h4>
-            <ol>
-              <li>Immediate descent and oxygen; keep patient warm and minimize exertion.</li>
-              <li>Assess for respiratory failure; prepare for ventilatory support if deteriorating.</li>
-              <li>Use protocol-directed meds if available and indicated.</li>
-            </ol>
-            <p class="callout"><strong>At sea:</strong> (If ashore/altitude context) oxygen logistics and evacuation dominate care. If intubation is required, ensure sedation/vent plan is sustainable through transport.</p>
-          </div>
-        </details>
+	        <details class="med">
+	          <summary><span class="name">004s — High Altitude Pulmonary Edema (HAPE) Management</span></summary>
+	          <div class="med-body">
+	            <h4>Step-by-Step</h4>
+	            <ol>
+	              <li>Treat as an emergency: immediate descent and oxygen are priorities; keep the patient warm and minimize exertion.</li>
+	              <li>Monitor closely for respiratory failure: increasing work of breathing, worsening hypoxia, altered mental status, and fatigue.</li>
+	              <li>Support ventilation as needed (NIV or invasive ventilation per capability) and reassess frequently.</li>
+	              <li>Use protocol-directed medications if available and indicated; document response and ongoing oxygen requirement.</li>
+	              <li>Arrange urgent evacuation; continued altitude exposure worsens disease.</li>
+	            </ol>
+	            <h4>Notes / Tips / Caveats</h4>
+	            <ul>
+	              <li>HAPE can mimic pneumonia; rapid progression and improvement with oxygen/descent supports altitude pathology.</li>
+	              <li>Avoid excessive exertion during movement; carry/assist where possible.</li>
+	              <li>Consider concurrent HACE if neurologic symptoms develop; treat both pathways.</li>
+	            </ul>
+	            <p class="callout"><strong>At sea:</strong> (If ashore/altitude context) oxygen logistics and evacuation dominate care. If intubation is required, ensure sedation/vent plan is sustainable through transport.</p>
+	          </div>
+	        </details>
 
-        <details class="med">
-          <summary><span class="name">001o — Damage Control Resuscitation</span></summary>
-          <div class="med-body">
-            <h4>Ideal Steps</h4>
-            <ol>
-              <li>Control hemorrhage first (pressure, tourniquet, packing) and prevent hypothermia.</li>
-              <li>Limit crystalloid; use blood products where available; correct coagulopathy and calcium.</li>
-              <li>Give TXA early when indicated; target permissive hypotension until hemorrhage control (exceptions apply).</li>
-              <li>Reassess frequently and coordinate urgent evacuation/surgical capability.</li>
-            </ol>
-            <h4>Key Medications</h4>
-            <ul>
-              <li><a class="med-link" data-med="TRANEXAMIC ACID (TXA)">Tranexamic acid (TXA)</a>.</li>
-              <li><a class="med-link" data-med="CALCIUM GLUCONATE">Calcium gluconate</a> / <a class="med-link" data-med="CALCIUM CHLORIDE">Calcium chloride</a>.</li>
-              <li>Pressor rescue only: <a class="med-link" data-med="NOREPINEPHRINE">Norepinephrine</a>, <a class="med-link" data-med="VASOPRESSIN">Vasopressin</a>.</li>
-            </ul>
-            <p class="callout"><strong>At sea:</strong> Blood product availability and warming capacity are limiting steps. Prioritize hemorrhage control, thermal protection, and early evacuation triggers, and keep a tight log of products/meds used.</p>
-          </div>
-        </details>
+	        <details class="med">
+	          <summary><span class="name">001o — Damage Control Resuscitation</span></summary>
+	          <div class="med-body">
+	            <h4>Step-by-Step</h4>
+	            <ol>
+	              <li>Control hemorrhage immediately: direct pressure, tourniquets, hemostatic packing, junctional measures as available; reassess and re-tighten as needed.</li>
+	              <li>Prevent the lethal triad early: active warming, minimize exposure, and treat pain/anxiety while maintaining perfusion goals.</li>
+	              <li>Establish access and start resuscitation per protocol: limit crystalloids, prioritize blood products when available, and track volumes and response.</li>
+	              <li>Administer TXA early when indicated by directive; document timing relative to injury.</li>
+	              <li>Use permissive hypotension strategies per protocol until hemorrhage control, with exceptions (e.g., traumatic brain injury) where higher perfusion targets may be required.</li>
+	              <li>Monitor and correct coagulopathy contributors: calcium replacement when giving blood products, treat acidosis/hypothermia, and reassess bleeding.</li>
+	              <li>Reassess frequently with a structured approach (ABCs, bleeding sites, vitals, mental status, lactate/base deficit if available) and adjust plan dynamically.</li>
+	              <li>Coordinate urgent evacuation/surgical capability early; damage control is a bridge to definitive hemorrhage control, not a destination.</li>
+	            </ol>
+	            <h4>Key Medications</h4>
+	            <ul>
+	              <li><a class="med-link" data-med="TRANEXAMIC ACID (TXA)">Tranexamic acid (TXA)</a>.</li>
+	              <li><a class="med-link" data-med="CALCIUM GLUCONATE">Calcium gluconate</a> / <a class="med-link" data-med="CALCIUM CHLORIDE">Calcium chloride</a>.</li>
+	              <li>Pressor rescue only: <a class="med-link" data-med="NOREPINEPHRINE">Norepinephrine</a>, <a class="med-link" data-med="VASOPRESSIN">Vasopressin</a>.</li>
+	            </ul>
+	            <h4>Notes / Tips / Caveats</h4>
+	            <ul>
+	              <li>Hemorrhage control and warming are usually higher-yield than adding more fluids.</li>
+	              <li>Pressors can worsen bleeding if used before hemorrhage control; use only as rescue per protocol and document rationale.</li>
+	              <li>Keep a tight log: times, products/volumes, TXA timing, calcium dosing, vitals trends &mdash; this becomes the handoff for definitive care.</li>
+	            </ul>
+	            <p class="callout"><strong>At sea:</strong> Blood product availability and warming capacity are limiting steps. Prioritize hemorrhage control, thermal protection, and early evacuation triggers, and keep a tight log of products/meds used.</p>
+	          </div>
+	        </details>
       </div>
     </section>
   </main>
