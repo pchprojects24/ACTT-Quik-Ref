@@ -151,7 +151,7 @@
       <div class="card-grid">
         <button class="tile" data-target="viewMedications">
           <h3>Medications</h3>
-          <p id="medTileDesc">Searchable reference for IV/IM/SC medications.</p>
+          <p id="medTileDesc">Searchable medication quick reference.</p>
         </button>
         <button class="tile" data-target="viewAlgorithms">
           <h3>Clinical Algorithms</h3>
@@ -2904,8 +2904,112 @@
   var medTileDesc = document.getElementById("medTileDesc");
   if (medTileDesc) {
     medTileDesc.textContent =
-      "Searchable reference for " + MEDS.length + " IV/IM/SC medications.";
+      "Searchable reference for " + MEDS.length + " medications.";
   }
+
+  function htmlToText(maybeHtml) {
+    if (!maybeHtml) return "";
+    var tmp = document.createElement("div");
+    tmp.innerHTML = String(maybeHtml);
+    return (tmp.textContent || "").trim();
+  }
+
+  function normalizeForSearch(s) {
+    return String(s || "")
+      .toLowerCase()
+      .replace(/&nbsp;/g, " ")
+      .replace(/[^a-z0-9]+/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
+  function normalizeMedKey(name) {
+    return normalizeForSearch(name);
+  }
+
+  function buildComputedSearch(m) {
+    var parts = [];
+    parts.push(m.name || "");
+    parts.push(m.classification || "");
+    if (m.sections) {
+      Object.keys(m.sections).forEach(function (k) {
+        parts.push(k);
+        parts.push(htmlToText(m.sections[k]));
+      });
+    }
+    parts.push(m.Monograph || "");
+    return parts.join(" ");
+  }
+
+  function buildSearchFromSections(m) {
+    var parts = [];
+    parts.push(m.name || "");
+    parts.push(m._displayClassification || m.classification || "");
+    if (m.sections) {
+      [
+        "Indications",
+        "Dosage",
+        "Preparation & Administration",
+        "Compatibility & Stability",
+        "Hazards"
+      ].forEach(function (k) { parts.push(htmlToText(m.sections[k])); });
+    }
+    // Add a small prefix of the full monograph for alternate names/key phrases
+    // without making search strings enormous.
+    var mono = String(m.Monograph || "");
+    if (mono.length > 1200) mono = mono.slice(0, 1200);
+    parts.push(mono);
+    return parts.join(" ");
+  }
+
+  function buildProTipsHtml(m) {
+    var tips = [];
+    var name = String(m.name || "");
+    var cls = String(m._displayClassification || m.classification || "");
+    var hazards = htmlToText(m.sections && m.sections["Hazards"]);
+    var dose = htmlToText(m.sections && m.sections["Dosage"]);
+    var stability = htmlToText(m.sections && m.sections["Compatibility & Stability"]);
+
+    tips.push("At sea: secure IV/IO and tubing, re-check patency after vessel movement, and keep syringes/lines labeled and tethered.");
+    tips.push("High-alert dosing: confirm units (mg vs mcg), concentration, route, and pump settings with a second check when possible.");
+
+    if (/extravasation|vesicant|irritant|phlebitis/i.test(hazards)) {
+      tips.push("Line safety: higher tissue-injury risk with infiltration/extravasation — use a reliable site (avoid hand/wrist when possible) and reassess frequently.");
+    }
+    if (/hypotension|bradycard/i.test(hazards) || /titrate/i.test(dose)) {
+      tips.push("Hemodynamics: start low and titrate; monitor BP/HR trends closely (motion artefact is common — repeat readings and correlate clinically).");
+    }
+    if (/respiratory depression|sedation|apnea/i.test(hazards) || /opioid|benzodiazepine|sedative/i.test(cls)) {
+      tips.push("Airway readiness: anticipate hypoventilation — have suction, BVM, oxygen, and reversal agents available per protocol.");
+    }
+    if (/qt|torsades|prolong/i.test(hazards + " " + dose)) {
+      tips.push("Rhythm: watch for QT issues and ectopy; correct electrolytes and avoid stacking QT-prolonging agents when possible.");
+    }
+    if (/renal|crcl|creatinine/i.test(dose)) {
+      tips.push("Renal function: dosing may need adjustment — reassess kidney function and urine output when prolonged care is expected.");
+    }
+    if (/protect from light/i.test(stability)) {
+      tips.push("Storage: protect from light; on deck use an opaque bag/cover to prevent degradation.");
+    }
+    if (/refrigerat/i.test(stability)) {
+      tips.push("Storage: keep within temperature range; avoid freezing on deck and overheating in engine rooms.");
+    }
+
+    tips.push("Context: use local protocols/medical control. If a monograph link is present, treat it as the primary detailed reference.");
+
+    // Keep it tight and predictable for every medication.
+    tips = tips.slice(0, 6);
+    return "<ul><li>" + tips.join("</li><li>") + "</li></ul>";
+  }
+
+  // Normalize/complete fields used by the UI (without rewriting source JSON)
+  MEDS.forEach(function (m) {
+    if (!m.sections) m.sections = {};
+    m._displayClassification =
+      m.sections["Classification"] || m.classification || "";
+    m._key = normalizeMedKey(m.name);
+    m._searchNorm = normalizeForSearch(buildSearchFromSections(m));
+  });
 
   var viewLanding = document.getElementById("viewLanding");
   var viewMeds = document.getElementById("viewMedications");
@@ -2936,11 +3040,17 @@
   }
   function openMedByName(medName) {
     showMeds();
-    var target = medName.toLowerCase();
+    // Ensure the target medication isn't hidden by an active search filter.
+    var searchBox = document.getElementById("medSearch");
+    if (searchBox && searchBox.value) {
+      searchBox.value = "";
+      searchBox.dispatchEvent(new Event("input"));
+    }
+    var target = normalizeMedKey(medName);
     var listEl = document.getElementById("medList");
     var cards = listEl.querySelectorAll(".med");
     for (var i = 0; i < cards.length; i++) {
-      if ((cards[i].dataset.name || "") === target) {
+      if ((cards[i].dataset.key || "") === target) {
         cards[i].open = true;
         cards[i].classList.remove("flash");
         void cards[i].offsetWidth;
@@ -3082,14 +3192,14 @@
   function renderMed(m) {
     var details = document.createElement("details");
     details.className = "med";
-    details.dataset.search = m.search;
-    details.dataset.name = m.name.toLowerCase();
+    details.dataset.search = m._searchNorm || "";
+    details.dataset.key = m._key || "";
 
     var summary = document.createElement("summary");
     summary.innerHTML =
       '<span class="num">' + m.number + ".</span>" +
       '<span class="name">' + m.name + "</span>" +
-      '<span class="class">' + (m.classification || "") + "</span>";
+      '<span class="class">' + (m._displayClassification || "") + "</span>";
     details.appendChild(summary);
 
     var body = document.createElement("div");
@@ -3105,7 +3215,8 @@
         m.sections["Preparation & Administration"]) +
       buildSection("Compatibility & Stability",
         m.sections["Compatibility & Stability"]) +
-      buildSection("Hazards", m.sections["Hazards"]);
+      buildSection("Hazards", m.sections["Hazards"]) +
+      buildSection("Pro Tips (At Sea)", buildProTipsHtml(m));
     details.appendChild(body);
 
     return details;
@@ -3117,11 +3228,11 @@
   // Search
   var searchEl = document.getElementById("medSearch");
   function runSearch() {
-    var q = searchEl.value.trim().toLowerCase();
+    var q = normalizeForSearch(searchEl.value);
     var terms = q.split(/\s+/).filter(Boolean);
     var visible = 0;
     listEl.querySelectorAll(".med").forEach(function (el) {
-      var hay = el.dataset.search;
+      var hay = el.dataset.search || "";
       var match = terms.every(function (t) { return hay.indexOf(t) !== -1; });
       el.hidden = !match;
       if (match) visible++;
