@@ -6,6 +6,8 @@
 <meta name="theme-color" content="#0e7490" />
 <meta name="description" content="ACTT Quick Reference — medications, clinical algorithms, and procedures for advanced care at sea." />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚕️</text></svg>" />
+<link rel="manifest" href="manifest.webmanifest" />
+<link rel="apple-touch-icon" href="icons/icon-192.png" />
 <title>ACTT Quick Reference</title>
 <script>
   // Apply saved theme before first paint to avoid a light-mode flash.
@@ -294,7 +296,7 @@
           <li>Every section is searchable &mdash; try a drug name, symptom, or keyword. Press <kbd>/</kbd> to jump straight to the search box.</li>
           <li>Underlined <strong>medication links</strong> inside algorithms and procedures jump straight to the full med card.</li>
           <li>Night watch? Tap &#127769; in the header for dark mode &mdash; your choice is remembered.</li>
-          <li>Works offline once loaded &mdash; perfect for spotty connectivity offshore.</li>
+          <li>Works fully offline after the first visit &mdash; the app and all monograph PDFs are saved to your device. Add it to your phone or tablet home screen for one-tap access offshore.</li>
         </ul>
       </div>
       <p class="disclaimer">&#9888;&#65039; Educational quick reference only. Always follow local protocols, your scope of practice, and medical control &mdash; and verify every dose before administration.</p>
@@ -3528,11 +3530,36 @@
     });
   }
 
-  // Route by hash on load
-  if (location.hash === "#medications") showMeds();
-  else if (location.hash === "#algorithms") showAlgos();
-  else if (location.hash === "#procedures") showProcedures();
-  else showLanding();
+  // Route by hash on load and on back/forward or manual hash edits
+  function routeByHash() {
+    if (location.hash === "#medications") showMeds();
+    else if (location.hash === "#algorithms") showAlgos();
+    else if (location.hash === "#procedures") showProcedures();
+    else showLanding();
+  }
+  window.addEventListener("hashchange", routeByHash);
+  routeByHash();
+
+  // Offline support: register the service worker, then ask it to prefetch
+  // every monograph PDF so the whole reference works with no connectivity.
+  if ("serviceWorker" in navigator &&
+      (location.protocol === "https:" || location.hostname === "localhost" ||
+       location.hostname === "127.0.0.1")) {
+    window.addEventListener("load", function () {
+      navigator.serviceWorker.register("sw.js").then(function () {
+        var sent = false;
+        function sendPrefetch() {
+          if (sent || !navigator.serviceWorker.controller) return;
+          sent = true;
+          var urls = Object.keys(MONO_MAP).map(function (k) { return MONO_MAP[k]; });
+          navigator.serviceWorker.controller.postMessage(
+            { type: "PREFETCH_PDFS", urls: urls });
+        }
+        sendPrefetch();
+        navigator.serviceWorker.addEventListener("controllerchange", sendPrefetch);
+      }).catch(function () {});
+    });
+  }
 })();
 </script>
 </body>
