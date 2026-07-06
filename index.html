@@ -240,6 +240,103 @@
   }
   footer.site-footer p { margin: 4px 0; max-width: 720px; margin-left: auto; margin-right: auto; }
 
+  /* Calculators & scores */
+  .calc-form { display: flex; flex-wrap: wrap; gap: 10px 14px; margin-top: 10px;
+    align-items: flex-end; }
+  .calc-field { display: flex; flex-direction: column; gap: 3px; }
+  .calc-field > span { font-size: 0.72rem; font-weight: 700; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.4px; }
+  .calc-field input, .calc-field select {
+    padding: 8px 10px; border: 1px solid var(--border); border-radius: 10px;
+    background: var(--panel); color: var(--ink); font: inherit; width: 7.5em;
+  }
+  .calc-field select { width: auto; max-width: 17em; }
+  .calc-result {
+    background: var(--accent-soft); border: 1px solid var(--accent-strong);
+    border-radius: 10px; padding: 10px 14px; margin: 10px 0 0; font-size: 0.95rem;
+  }
+  .calc-result .big { font-size: 1.3rem; font-weight: 700; color: var(--accent-dark); }
+  .calc-result p { margin: 4px 0 0; }
+  .table-wrap { overflow-x: auto; margin-top: 8px; }
+  table.data { border-collapse: collapse; width: 100%; font-size: 0.9rem;
+    background: var(--panel); }
+  table.data th {
+    text-align: left; background: var(--accent-soft); color: var(--accent-dark);
+    font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.4px;
+    padding: 7px 10px; white-space: nowrap; border: 1px solid var(--border);
+  }
+  table.data td { padding: 6px 10px; border: 1px solid var(--border);
+    white-space: nowrap; }
+  .score-list { list-style: none; margin: 6px 0 0; padding: 0; }
+  .score-list label { display: flex; align-items: baseline; gap: 8px;
+    padding: 6px 0; cursor: pointer; border-bottom: 1px dashed var(--border); }
+  .score-list input[type="checkbox"] { flex-shrink: 0; transform: translateY(1px); }
+  .score-list .pts { margin-left: auto; font-weight: 700; font-size: 0.85rem;
+    color: var(--accent-dark); white-space: nowrap; padding-left: 10px; }
+
+  /* Inventory & expiry tracker */
+  .inv-form { display: grid; gap: 8px; margin-top: 14px;
+    grid-template-columns: 2fr 0.7fr 1.3fr 1.3fr auto; align-items: center; }
+  .inv-form input {
+    padding: 9px 12px; border: 1px solid var(--border); border-radius: 10px;
+    background: var(--panel); color: var(--ink); font: inherit; min-width: 0;
+  }
+  .inv-form .chip-btn { padding: 8px 14px; white-space: nowrap; }
+  .inv-tools { display: flex; align-items: center; gap: 8px; margin-top: 12px;
+    flex-wrap: wrap; }
+  .inv-tools input[type="search"] {
+    flex: 1 1 12em; min-width: 0; padding: 8px 12px; font: inherit;
+    border: 1px solid var(--border); border-radius: 999px;
+    background: var(--panel); color: var(--ink);
+  }
+  .inv-wrap { overflow-x: auto; margin-top: 10px; background: var(--panel);
+    border: 1px solid var(--border); border-radius: 12px; box-shadow: var(--shadow); }
+  table.inv { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
+  table.inv th {
+    text-align: left; background: var(--accent-soft); color: var(--accent-dark);
+    font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.4px;
+    padding: 8px 10px; white-space: nowrap;
+  }
+  table.inv td { padding: 5px 8px; border-top: 1px solid var(--border);
+    vertical-align: middle; }
+  table.inv input {
+    width: 100%; min-width: 6em; border: 1px solid transparent; border-radius: 8px;
+    background: transparent; color: var(--ink); font: inherit; padding: 5px 6px;
+  }
+  table.inv input:hover { border-color: var(--border); }
+  table.inv input:focus { border-color: var(--accent); outline: none;
+    background: var(--panel); }
+  table.inv td.inv-qty input { min-width: 3.5em; width: 4.5em; }
+  table.inv td.inv-exp input { min-width: 8.5em; }
+  .badge { display: inline-block; font-size: 0.72rem; font-weight: 700;
+    border-radius: 999px; padding: 1px 8px; white-space: nowrap; }
+  .badge.ok { background: rgba(22,163,74,0.12); color: #15803d;
+    border: 1px solid rgba(22,163,74,0.4); }
+  html[data-theme="dark"] .badge.ok { color: #4ade80; }
+  .badge.soon { background: var(--warn-bg); color: #b45309;
+    border: 1px solid var(--warn-border); }
+  html[data-theme="dark"] .badge.soon { color: #fbbf24; }
+  .badge.expired { background: rgba(220,38,38,0.12); color: #dc2626;
+    border: 1px solid rgba(220,38,38,0.45); }
+  html[data-theme="dark"] .badge.expired { color: #f87171; }
+  .row-del {
+    background: none; border: none; color: var(--muted); cursor: pointer;
+    font-size: 1rem; padding: 4px 8px; border-radius: 8px; line-height: 1;
+  }
+  .row-del:hover { color: #dc2626; background: rgba(220,38,38,0.10); }
+
+  /* Per-card print button */
+  .card-print {
+    background: none; border: none; cursor: pointer; color: var(--muted);
+    font-size: 0.95rem; line-height: 1; padding: 2px 6px; border-radius: 8px;
+    margin-left: 4px; flex-shrink: 0; align-self: center;
+  }
+  .card-print:hover { color: var(--accent-dark); background: var(--accent-soft); }
+
+  @media (max-width: 700px) {
+    .inv-form { grid-template-columns: 1fr 1fr; }
+    .inv-form input:first-child { grid-column: 1 / -1; }
+  }
   @media (max-width: 560px) {
     header.site h1 { font-size: 1rem; }
     .landing-hero h2 { font-size: 1.4rem; }
@@ -250,6 +347,40 @@
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     .tile, .tile:hover, #toTop { transition: none; transform: none; }
+  }
+
+  /* Print: clean one-pagers for the sick bay wall */
+  @media print {
+    :root, html[data-theme="dark"] {
+      --bg: #fff; --panel: #fff; --ink: #000; --muted: #444;
+      --accent: #000; --accent-2: #000; --accent-dark: #000;
+      --accent-soft: #f0f0f0; --accent-strong: #999; --border: #999;
+      --warn-bg: #fff; --warn-border: #777; --info-bg: #fff; --info-border: #999;
+      --shadow: none; --shadow-hover: none;
+    }
+    header.site, .search-bar, .list-tools, footer.site-footer, #toTop,
+    .landing-hero, .card-grid, .info-banner, .disclaimer, .empty,
+    .chip-btn, .card-print, .inv-form, .inv-tools, .row-del,
+    th.print-hide, td.print-hide { display: none !important; }
+    html, body { background: #fff; color: #000; }
+    main { max-width: none; padding: 0; }
+    details.med {
+      box-shadow: none; border: 1px solid #999; border-radius: 6px;
+      break-inside: avoid; page-break-inside: avoid; margin-bottom: 10px;
+    }
+    details.med summary::before { display: none; }
+    details.med summary { padding: 10px 12px; }
+    .med-body { padding: 0 14px 12px; }
+    .callout { border-style: dashed; }
+    .med-link, .mono-link { color: #000; text-decoration: none; border: none;
+      background: none; padding: 0; font-weight: 600; }
+    a[href] { color: #000; }
+    /* Single-card mode: the print button hides every other card */
+    html.printing-card details.med:not(.print-target) { display: none !important; }
+    html.printing-card details.med.print-target { border: none; margin: 0; }
+    html.printing-card details.med.print-target summary {
+      font-size: 1.15rem; border-bottom: 2px solid #000; padding-left: 0;
+    }
   }
 </style>
 </head>
@@ -287,6 +418,18 @@
           <h3>Procedures <span class="count-badge" id="procCountBadge"></span></h3>
           <p>Step-by-step checklists mapped to the Medical Directives list (with at-sea caveats).</p>
           <p class="tile-info">&#8505;&#65039; Steps, key meds, pitfalls, and an at-sea callout for every directive.</p>
+        </button>
+        <button class="tile" data-target="viewCalculators">
+          <span class="tile-emoji" aria-hidden="true">&#129518;</span>
+          <h3>Calculators &amp; Scores <span class="count-badge" id="calcCountBadge"></span></h3>
+          <p>Drip-rate tables, weight-based dosing, and quick clinical scores.</p>
+          <p class="tile-info">&#8505;&#65039; Pressor mL/hr tables, Parkland burn fluids, vent tidal volumes, TNK weight bands, GCS, Wells, and HEART.</p>
+        </button>
+        <button class="tile" data-target="viewInventory">
+          <span class="tile-emoji" aria-hidden="true">&#128230;</span>
+          <h3>Inventory &amp; Expiry <span class="count-badge" id="invCountBadge"></span></h3>
+          <p>Track your actual stock, quantities, and expiry dates.</p>
+          <p class="tile-info">&#8505;&#65039; Saved on this device only. Flags expired and soon-to-expire items; exports to CSV for hand-over.</p>
         </button>
       </div>
       <div class="info-banner">
@@ -3072,6 +3215,339 @@
 	        </details>
       </div>
     </section>
+
+    <!-- Calculators & Scores page -->
+    <section id="viewCalculators" hidden>
+      <div class="search-bar">
+        <input id="calcSearch" type="search" autocomplete="off"
+          placeholder="&#128269; Search calculators &amp; scores &mdash; try &ldquo;drip&rdquo;, &ldquo;burn&rdquo;, or &ldquo;wells&rdquo;&hellip;" />
+        <div class="list-tools">
+          <div class="search-meta" id="calcMeta"></div>
+          <span class="spacer"></span>
+          <button class="chip-btn" data-expand="calcList" title="Open every card">Expand all</button>
+          <button class="chip-btn" data-collapse="calcList" title="Close every card">Collapse all</button>
+        </div>
+      </div>
+      <div class="info-banner">&#8505;&#65039; <strong>How to use:</strong> enter the patient values and results update instantly &mdash; nothing is sent anywhere. These are aids, not orders: verify every dose against the med card, the linked monograph, and your protocols before administration. The &#128424;&#65039; button on any card prints it as a clean one-pager for the sick bay wall.</div>
+      <div id="calcEmpty" class="empty" hidden>&#129335; No calculators match your search.<br>Try a broader term &mdash; e.g. &ldquo;score&rdquo; or &ldquo;infusion&rdquo;.</div>
+      <div id="calcList" class="med-list">
+
+        <details class="med">
+          <summary>
+            <span class="name">Vasopressor Infusion Rates (mL/hr)</span>
+            <span class="class">Epi &middot; Norepi &middot; Dopamine</span>
+          </summary>
+          <div class="med-body">
+            <p class="callout"><strong>Check the bag before you dial:</strong> every rate below assumes the exact concentration in the column header &mdash; confirm it on the bag label. Infusion pump required; central line preferred (short-term large forearm vein acceptable while establishing access). Titrate to MAP &ge; 65 mmHg or per protocol, and reassess every 5&ndash;15 minutes.</p>
+
+            <h4><a class="med-link" data-med="EPINEPHRINE">Epinephrine</a> &mdash; 1 mg in 100 mL (10 mcg/mL)</h4>
+            <p>Standard dilution from the med card (1 mg in 100 mL, via pump). Usual range 1&ndash;4 mcg/min for hypotension/poor perfusion; higher doses are peri-arrest territory.</p>
+            <div class="table-wrap"><table class="data">
+              <thead><tr><th>Dose (mcg/min)</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>8</th><th>10</th></tr></thead>
+              <tbody><tr><td><strong>mL/hr</strong></td><td>6</td><td>12</td><td>18</td><td>24</td><td>30</td><td>36</td><td>48</td><td>60</td></tr></tbody>
+            </table></div>
+
+            <h4><a class="med-link" data-med="NOREPINEPHRINE">Norepinephrine</a> &mdash; standard concentrations</h4>
+            <p>Standard mixes from the med card: 4 mg in 250 mL (16 mcg/mL), 8 mg in 250 mL or premix (32 mcg/mL), 16 mg in 250 mL (64 mcg/mL). Doses are norepinephrine <em>base</em>. Initial 5&ndash;15 mcg/min; usual maintenance 2&ndash;40 mcg/min.</p>
+            <div class="table-wrap"><table class="data">
+              <thead><tr><th>Dose (mcg/min)</th><th>16 mcg/mL<br>(4 mg/250)</th><th>32 mcg/mL<br>(8 mg/250)</th><th>64 mcg/mL<br>(16 mg/250)</th></tr></thead>
+              <tbody>
+                <tr><td><strong>2</strong></td><td>7.5 mL/hr</td><td>3.8 mL/hr</td><td>1.9 mL/hr</td></tr>
+                <tr><td><strong>4</strong></td><td>15 mL/hr</td><td>7.5 mL/hr</td><td>3.8 mL/hr</td></tr>
+                <tr><td><strong>5</strong></td><td>18.8 mL/hr</td><td>9.4 mL/hr</td><td>4.7 mL/hr</td></tr>
+                <tr><td><strong>8</strong></td><td>30 mL/hr</td><td>15 mL/hr</td><td>7.5 mL/hr</td></tr>
+                <tr><td><strong>10</strong></td><td>37.5 mL/hr</td><td>18.8 mL/hr</td><td>9.4 mL/hr</td></tr>
+                <tr><td><strong>12</strong></td><td>45 mL/hr</td><td>22.5 mL/hr</td><td>11.3 mL/hr</td></tr>
+                <tr><td><strong>15</strong></td><td>56.3 mL/hr</td><td>28.1 mL/hr</td><td>14.1 mL/hr</td></tr>
+                <tr><td><strong>20</strong></td><td>75 mL/hr</td><td>37.5 mL/hr</td><td>18.8 mL/hr</td></tr>
+                <tr><td><strong>30</strong></td><td>112.5 mL/hr</td><td>56.3 mL/hr</td><td>28.1 mL/hr</td></tr>
+                <tr><td><strong>40</strong></td><td>150 mL/hr</td><td>75 mL/hr</td><td>37.5 mL/hr</td></tr>
+              </tbody>
+            </table></div>
+
+            <h4><a class="med-link" data-med="DOPAMINE">Dopamine</a> &mdash; premixed bags (weight-based)</h4>
+            <p>Premixed D5W bags from the med card: 400 mg in 250 mL (1600 mcg/mL) or 800 mg in 250 mL (3200 mcg/mL). Start 1&ndash;5 mcg/kg/min; usual range up to 20 mcg/kg/min.</p>
+            <div class="calc-form">
+              <label class="calc-field"><span>Patient weight (kg)</span>
+                <input id="dopaWt" type="number" min="1" max="300" step="1" inputmode="decimal" value="70"></label>
+            </div>
+            <div class="table-wrap"><table class="data">
+              <thead><tr><th>Dose (mcg/kg/min)</th><th>1600 mcg/mL<br>(400 mg/250)</th><th>3200 mcg/mL<br>(800 mg/250)</th></tr></thead>
+              <tbody id="dopaBody"></tbody>
+            </table></div>
+
+            <h4>Any Drug, Any Concentration</h4>
+            <p>For anything not covered above (or a non-standard mix), enter what is actually in the bag:</p>
+            <div class="calc-form">
+              <label class="calc-field"><span>Drug in bag (mg)</span>
+                <input id="dripMg" type="number" min="0" step="any" inputmode="decimal"></label>
+              <label class="calc-field"><span>Bag volume (mL)</span>
+                <input id="dripMl" type="number" min="1" step="any" inputmode="decimal"></label>
+              <label class="calc-field"><span>Ordered dose</span>
+                <input id="dripDose" type="number" min="0" step="any" inputmode="decimal"></label>
+              <label class="calc-field"><span>Dose units</span>
+                <select id="dripUnit">
+                  <option value="min">mcg/min</option>
+                  <option value="kgmin">mcg/kg/min</option>
+                </select></label>
+              <label class="calc-field"><span>Weight (kg)</span>
+                <input id="dripWt" type="number" min="1" max="300" step="1" inputmode="decimal" value="70"></label>
+            </div>
+            <div class="calc-result" id="dripOut">Enter the bag contents and dose above.</div>
+            <p class="callout"><strong>Double-check:</strong> mL/hr = dose (mcg/min) &times; 60 &divide; concentration (mcg/mL). Have a second person verify the concentration and pump setting whenever possible.</p>
+          </div>
+        </details>
+
+        <details class="med">
+          <summary>
+            <span class="name">Burn Fluid Calculator (Modified Parkland)</span>
+            <span class="class">ATLS 11th Ed.</span>
+          </summary>
+          <div class="med-body">
+            <p>Companion calculator to the <em>Major Burn Initial 24-Hour Fluid Resuscitation</em> algorithm. Ringer&rsquo;s Lactate preferred. Count %TBSA for partial- and full-thickness burns only (not superficial), and time the schedule from the <em>time of injury</em>, not arrival.</p>
+            <div class="calc-form">
+              <label class="calc-field"><span>Weight (kg)</span>
+                <input id="bwWt" type="number" min="1" max="300" step="1" inputmode="decimal"></label>
+              <label class="calc-field"><span>%TBSA burned</span>
+                <input id="bwTbsa" type="number" min="1" max="100" step="1" inputmode="decimal"></label>
+              <label class="calc-field"><span>Burn type</span>
+                <select id="bwType">
+                  <option value="2">Thermal / chemical, adult (2 mL/kg/%)</option>
+                  <option value="4">Electrical / high-voltage (4 mL/kg/%)</option>
+                  <option value="3">Pediatric &lt; 16 yr (3 mL/kg/%)</option>
+                </select></label>
+              <label class="calc-field"><span>Hours since injury</span>
+                <input id="bwHours" type="number" min="0" max="24" step="0.5" inputmode="decimal" value="0"></label>
+            </div>
+            <div class="calc-result" id="bwOut">Enter weight and %TBSA above.</div>
+            <p class="callout"><strong>The formula only starts the drip &mdash; urine output drives it.</strong> Reassess hourly and titrate the rate up or down by 20&ndash;25% to target urine output; avoid arbitrary boluses unless clinically hypotensive. Inhalation injury typically needs 30&ndash;50% more than calculated. Watch for fluid creep (see the burn resuscitation algorithm).</p>
+          </div>
+        </details>
+
+        <details class="med">
+          <summary>
+            <span class="name">Ideal Body Weight &amp; Ventilator Tidal Volumes</span>
+            <span class="class">Lung-protective</span>
+          </summary>
+          <div class="med-body">
+            <p>Tidal volume is set on <strong>ideal</strong> body weight (Devine formula, from height and sex) &mdash; never actual weight. Start at 6&ndash;8 mL/kg IBW (6 preferred); use 4&ndash;6 mL/kg for ARDS. Keep plateau pressure &le; 30 cmH&#8322;O.</p>
+            <div class="calc-form">
+              <label class="calc-field"><span>Sex</span>
+                <select id="ibwSex">
+                  <option value="m">Male</option>
+                  <option value="f">Female</option>
+                </select></label>
+              <label class="calc-field"><span>Height</span>
+                <input id="ibwHt" type="number" min="50" max="250" step="1" inputmode="decimal"></label>
+              <label class="calc-field"><span>Units</span>
+                <select id="ibwUnit">
+                  <option value="cm">cm</option>
+                  <option value="in">inches</option>
+                </select></label>
+            </div>
+            <div class="calc-result" id="ibwOut">Enter height above.</div>
+            <p class="callout"><strong>At sea:</strong> if you cannot measure height, use the patient&rsquo;s stated height &mdash; it is far closer to correct than using actual body weight. After any vent change, reassess chest rise, SpO&#8322;, EtCO&#8322;, and plateau pressure.</p>
+          </div>
+        </details>
+
+        <details class="med">
+          <summary>
+            <span class="name">Tenecteplase (TNK) Weight-Band Picker</span>
+            <span class="class">Fibrinolytic</span>
+          </summary>
+          <div class="med-body">
+            <p>Weight bands from the <em>Tenecteplase (TNKase) Instructions</em> algorithm and the <a class="med-link" data-med="TENECTEPLASE">Tenecteplase</a> card. Reconstitute 50 mg vial with 10 mL sterile water &rarr; <strong>5 mg/mL</strong>; swirl gently, do not shake. Single IV bolus over 5 seconds; flush dextrose lines with NS before and after.</p>
+            <div class="calc-form">
+              <label class="calc-field"><span>Weight (kg)</span>
+                <input id="tnkWt" type="number" min="30" max="250" step="1" inputmode="decimal"></label>
+              <label class="calc-field"><span>Indication / protocol</span>
+                <select id="tnkInd">
+                  <option value="stemi">STEMI &mdash; full dose (&lt; 75 yr)</option>
+                  <option value="stemi75">STEMI &mdash; half dose (&ge; 75 yr, per protocol)</option>
+                  <option value="stroke">Acute ischemic stroke &mdash; 0.25 mg/kg (max 25 mg)</option>
+                </select></label>
+            </div>
+            <div class="calc-result" id="tnkOut">Enter weight above.</div>
+            <p class="callout"><strong>Before you push:</strong> run the full contraindication checklist in the STEMI fibrinolysis algorithm, confirm the half-dose protocol is endorsed by your medical director for &ge; 75 yr, and give adjunctive antiplatelet/anticoagulation as per the algorithm. Stroke dosing only on neurologist/medical control direction.</p>
+          </div>
+        </details>
+
+        <details class="med">
+          <summary>
+            <span class="name">Glasgow Coma Scale (GCS)</span>
+            <span class="class">Score 3&ndash;15</span>
+          </summary>
+          <div class="med-body">
+            <p>Score the <em>best</em> response in each category and always chart the components (e.g. E3 V4 M5), not just the total &mdash; the motor score carries the most prognostic weight.</p>
+            <div class="calc-form">
+              <label class="calc-field"><span>Eye opening</span>
+                <select id="gcsE" class="gcs">
+                  <option value="4">4 &mdash; Spontaneous</option>
+                  <option value="3">3 &mdash; To voice</option>
+                  <option value="2">2 &mdash; To pain</option>
+                  <option value="1">1 &mdash; None</option>
+                </select></label>
+              <label class="calc-field"><span>Verbal response</span>
+                <select id="gcsV" class="gcs">
+                  <option value="5">5 &mdash; Oriented</option>
+                  <option value="4">4 &mdash; Confused</option>
+                  <option value="3">3 &mdash; Inappropriate words</option>
+                  <option value="2">2 &mdash; Incomprehensible sounds</option>
+                  <option value="1">1 &mdash; None</option>
+                </select></label>
+              <label class="calc-field"><span>Motor response</span>
+                <select id="gcsM" class="gcs">
+                  <option value="6">6 &mdash; Obeys commands</option>
+                  <option value="5">5 &mdash; Localizes pain</option>
+                  <option value="4">4 &mdash; Withdraws to pain</option>
+                  <option value="3">3 &mdash; Abnormal flexion (decorticate)</option>
+                  <option value="2">2 &mdash; Abnormal extension (decerebrate)</option>
+                  <option value="1">1 &mdash; None</option>
+                </select></label>
+            </div>
+            <div class="calc-result" id="gcsOut"></div>
+            <ul>
+              <li><strong>13&ndash;15:</strong> mild injury &mdash; observe, serial reassessment.</li>
+              <li><strong>9&ndash;12:</strong> moderate &mdash; close monitoring, low threshold for escalation and imaging.</li>
+              <li><strong>&le; 8:</strong> severe &mdash; &ldquo;GCS 8, intubate&rdquo;: assess airway protection; see the RSI algorithm.</li>
+              <li>Intubated patients: score verbal as &ldquo;1T&rdquo;. A drop of &ge; 2 points is significant &mdash; reassess and document time.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="med">
+          <summary>
+            <span class="name">Wells Score &mdash; Pulmonary Embolism</span>
+            <span class="class">Risk score</span>
+          </summary>
+          <div class="med-body">
+            <p>Pre-test probability for PE in a symptomatic patient. Check everything that applies:</p>
+            <ul class="score-list" id="wpeList">
+              <li><label><input type="checkbox" data-pts="3"> Clinical signs and symptoms of DVT (leg swelling + pain on palpation of deep veins) <span class="pts">+3</span></label></li>
+              <li><label><input type="checkbox" data-pts="3"> PE is the #1 diagnosis, or equally likely <span class="pts">+3</span></label></li>
+              <li><label><input type="checkbox" data-pts="1.5"> Heart rate &gt; 100/min <span class="pts">+1.5</span></label></li>
+              <li><label><input type="checkbox" data-pts="1.5"> Immobilization &ge; 3 days or surgery in the previous 4 weeks <span class="pts">+1.5</span></label></li>
+              <li><label><input type="checkbox" data-pts="1.5"> Previous objectively diagnosed DVT or PE <span class="pts">+1.5</span></label></li>
+              <li><label><input type="checkbox" data-pts="1"> Hemoptysis <span class="pts">+1</span></label></li>
+              <li><label><input type="checkbox" data-pts="1"> Malignancy (treatment within 6 months, or palliative) <span class="pts">+1</span></label></li>
+            </ul>
+            <div class="calc-result" id="wpeOut"></div>
+            <ul>
+              <li><strong>Two-tier:</strong> &le; 4 = PE unlikely &rarr; D-dimer (if available/sent ashore); &gt; 4 = PE likely &rarr; imaging / empiric anticoagulation per medical control.</li>
+              <li><strong>Three-tier:</strong> &lt; 2 low (~2&ndash;3%), 2&ndash;6 moderate (~16%), &gt; 6 high (~40%).</li>
+            </ul>
+            <p class="callout"><strong>At sea:</strong> with no D-dimer or CT available, a &ldquo;likely&rdquo; score plus hypoxia or hemodynamic strain is an evacuation-level finding &mdash; discuss empiric anticoagulation (e.g. <a class="med-link" data-med="ENOXAPARIN">Enoxaparin</a>) with medical control unless contraindicated.</p>
+          </div>
+        </details>
+
+        <details class="med">
+          <summary>
+            <span class="name">Wells Score &mdash; Deep Vein Thrombosis</span>
+            <span class="class">Risk score</span>
+          </summary>
+          <div class="med-body">
+            <p>Pre-test probability for DVT. Check everything that applies:</p>
+            <ul class="score-list" id="wdvtList">
+              <li><label><input type="checkbox" data-pts="1"> Active cancer (treatment ongoing, within 6 months, or palliative) <span class="pts">+1</span></label></li>
+              <li><label><input type="checkbox" data-pts="1"> Paralysis, paresis, or recent plaster immobilization of the leg <span class="pts">+1</span></label></li>
+              <li><label><input type="checkbox" data-pts="1"> Bedridden &ge; 3 days, or major surgery within 12 weeks <span class="pts">+1</span></label></li>
+              <li><label><input type="checkbox" data-pts="1"> Localized tenderness along the deep venous system <span class="pts">+1</span></label></li>
+              <li><label><input type="checkbox" data-pts="1"> Entire leg swollen <span class="pts">+1</span></label></li>
+              <li><label><input type="checkbox" data-pts="1"> Calf swelling &gt; 3 cm vs the asymptomatic leg (10 cm below tibial tuberosity) <span class="pts">+1</span></label></li>
+              <li><label><input type="checkbox" data-pts="1"> Pitting edema confined to the symptomatic leg <span class="pts">+1</span></label></li>
+              <li><label><input type="checkbox" data-pts="1"> Collateral superficial (non-varicose) veins <span class="pts">+1</span></label></li>
+              <li><label><input type="checkbox" data-pts="1"> Previously documented DVT <span class="pts">+1</span></label></li>
+              <li><label><input type="checkbox" data-pts="-2"> Alternative diagnosis at least as likely as DVT <span class="pts">&minus;2</span></label></li>
+            </ul>
+            <div class="calc-result" id="wdvtOut"></div>
+            <ul>
+              <li><strong>Two-tier:</strong> &lt; 2 = DVT unlikely &rarr; D-dimer; &ge; 2 = DVT likely &rarr; ultrasound / empiric treatment per medical control.</li>
+              <li><strong>Three-tier:</strong> &le; 0 low (~5%), 1&ndash;2 moderate (~17%), &ge; 3 high (~53%).</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="med">
+          <summary>
+            <span class="name">HEART Score &mdash; Chest Pain</span>
+            <span class="class">Risk score</span>
+          </summary>
+          <div class="med-body">
+            <p>Risk of a major adverse cardiac event (MACE) within 6 weeks for undifferentiated chest pain. Pairs with the ACS and STEMI algorithms.</p>
+            <div class="calc-form">
+              <label class="calc-field"><span>History</span>
+                <select id="heartH" class="heart">
+                  <option value="0">0 &mdash; Slightly suspicious</option>
+                  <option value="1">1 &mdash; Moderately suspicious</option>
+                  <option value="2">2 &mdash; Highly suspicious</option>
+                </select></label>
+              <label class="calc-field"><span>ECG</span>
+                <select id="heartE" class="heart">
+                  <option value="0">0 &mdash; Normal</option>
+                  <option value="1">1 &mdash; Non-specific repolarization changes</option>
+                  <option value="2">2 &mdash; Significant ST deviation</option>
+                </select></label>
+              <label class="calc-field"><span>Age</span>
+                <select id="heartA" class="heart">
+                  <option value="0">0 &mdash; &lt; 45 yr</option>
+                  <option value="1">1 &mdash; 45&ndash;64 yr</option>
+                  <option value="2">2 &mdash; &ge; 65 yr</option>
+                </select></label>
+              <label class="calc-field"><span>Risk factors</span>
+                <select id="heartR" class="heart">
+                  <option value="0">0 &mdash; None</option>
+                  <option value="1">1 &mdash; 1&ndash;2 risk factors</option>
+                  <option value="2">2 &mdash; &ge; 3, or known atherosclerotic disease</option>
+                </select></label>
+              <label class="calc-field"><span>Troponin</span>
+                <select id="heartT" class="heart">
+                  <option value="0">0 &mdash; &le; normal limit (or unavailable*)</option>
+                  <option value="1">1 &mdash; 1&ndash;3&times; normal</option>
+                  <option value="2">2 &mdash; &gt; 3&times; normal</option>
+                </select></label>
+            </div>
+            <div class="calc-result" id="heartOut"></div>
+            <ul>
+              <li><strong>0&ndash;3:</strong> low risk (~1&ndash;2% MACE) &mdash; discharge/observe pathway if troponin available and negative.</li>
+              <li><strong>4&ndash;6:</strong> moderate (~12&ndash;17%) &mdash; serial ECG/troponin, observation, medical control consult.</li>
+              <li><strong>7&ndash;10:</strong> high (~50&ndash;65%) &mdash; treat as ACS, early evacuation to an interventional centre.</li>
+            </ul>
+            <p class="callout"><strong>*At sea:</strong> risk factors: hypertension, hypercholesterolemia, diabetes, obesity (BMI &gt; 30), smoking, family history, prior atherosclerotic disease. Without point-of-care troponin the score is incomplete &mdash; treat an unscored troponin as &ldquo;unknown, not zero risk&rdquo; and bias toward the more cautious pathway.</p>
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- Inventory & Expiry page -->
+    <section id="viewInventory" hidden>
+      <div class="info-banner">&#8505;&#65039; <strong>How it works:</strong> log your actual stock with quantity, expiry, and location. Everything is saved <strong>on this device only</strong> (nothing leaves the browser) &mdash; export a CSV for backup or hand-over. Items expiring within 90 days are flagged <span class="badge soon">Expires soon</span>; past-date items are flagged <span class="badge expired">Expired</span>.</div>
+      <form id="invForm" class="inv-form" autocomplete="off">
+        <input id="invName" list="medNamesList" placeholder="Item &mdash; e.g. Epinephrine 1 mg/mL ampoule" required>
+        <input id="invQty" type="number" min="0" step="any" inputmode="decimal" placeholder="Qty">
+        <input id="invExpiry" type="date" title="Expiry date">
+        <input id="invLoc" placeholder="Location &mdash; e.g. crash bag">
+        <button class="chip-btn" type="submit">+ Add item</button>
+      </form>
+      <datalist id="medNamesList"></datalist>
+      <div class="inv-tools">
+        <input id="invSearch" type="search" placeholder="&#128269; Filter items&hellip;">
+        <div class="search-meta" id="invSummary"></div>
+        <span class="spacer"></span>
+        <button class="chip-btn" id="invExport" type="button" title="Download the list as a CSV file">Export CSV</button>
+        <button class="chip-btn" id="invClear" type="button" title="Delete every item on this device">Clear all</button>
+      </div>
+      <div class="inv-wrap" id="invWrap" hidden>
+        <table class="inv">
+          <thead><tr>
+            <th>Item</th><th>Qty</th><th>Expiry</th><th>Status</th><th>Location</th><th class="print-hide"></th>
+          </tr></thead>
+          <tbody id="invBody"></tbody>
+        </table>
+      </div>
+      <div id="invEmpty" class="empty">&#128230; No items yet &mdash; add your first one above.<br>Tip: the item box suggests all medication names from this app.</div>
+      <p class="disclaimer">&#9888;&#65039; Stored in this browser&rsquo;s local storage on this device. Clearing browser data (or using another device/browser) means a fresh list &mdash; export a CSV regularly.</p>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -3203,27 +3679,33 @@
   var backBtn = document.getElementById("backBtn");
   var siteTitle = document.getElementById("siteTitle");
 
-  function showLanding() {
-    viewLanding.hidden = false;
-    viewMeds.hidden = true;
-    document.getElementById("viewAlgorithms").hidden = true;
-    viewProcedures.hidden = true;
-    backBtn.hidden = true;
-    siteTitle.textContent = "ACTT Quick Reference";
+  var VIEW_DEFS = {
+    viewLanding: { title: "ACTT Quick Reference", hash: "", search: null },
+    viewMedications: { title: "Medications", hash: "#medications", search: "medSearch" },
+    viewAlgorithms: { title: "Clinical Algorithms", hash: "#algorithms", search: "algoSearch" },
+    viewProcedures: { title: "Procedures", hash: "#procedures", search: "procSearch" },
+    viewCalculators: { title: "Calculators & Scores", hash: "#calculators", search: "calcSearch" },
+    viewInventory: { title: "Inventory & Expiry", hash: "#inventory", search: "invSearch" }
+  };
+  function showView(id) {
+    var def = VIEW_DEFS[id] || VIEW_DEFS.viewLanding;
+    if (!VIEW_DEFS[id]) id = "viewLanding";
+    Object.keys(VIEW_DEFS).forEach(function (key) {
+      var el = document.getElementById(key);
+      if (el) el.hidden = key !== id;
+    });
+    backBtn.hidden = id === "viewLanding";
+    siteTitle.textContent = def.title;
     window.scrollTo(0, 0);
-    if (location.hash) history.replaceState(null, "", location.pathname);
+    if (def.hash) {
+      if (location.hash !== def.hash)
+        history.replaceState(null, "", location.pathname + def.hash);
+    } else if (location.hash) {
+      history.replaceState(null, "", location.pathname);
+    }
   }
-  function showMeds() {
-    viewLanding.hidden = true;
-    viewMeds.hidden = false;
-    document.getElementById("viewAlgorithms").hidden = true;
-    viewProcedures.hidden = true;
-    backBtn.hidden = false;
-    siteTitle.textContent = "Medications";
-    window.scrollTo(0, 0);
-    if (location.hash !== "#medications")
-      history.replaceState(null, "", location.pathname + "#medications");
-  }
+  function showLanding() { showView("viewLanding"); }
+  function showMeds() { showView("viewMedications"); }
   function openMedByName(medName) {
     showMeds();
     // Ensure the target medication isn't hidden by an active search filter.
@@ -3254,35 +3736,10 @@
     var name = link.dataset.med;
     if (name) openMedByName(name);
   });
-  function showAlgos() {
-    viewLanding.hidden = true;
-    document.getElementById("viewMedications").hidden = true;
-    document.getElementById("viewAlgorithms").hidden = false;
-    viewProcedures.hidden = true;
-    backBtn.hidden = false;
-    siteTitle.textContent = "Clinical Algorithms";
-    window.scrollTo(0, 0);
-    if (location.hash !== "#algorithms")
-      history.replaceState(null, "", location.pathname + "#algorithms");
-  }
-  function showProcedures() {
-    viewLanding.hidden = true;
-    document.getElementById("viewMedications").hidden = true;
-    document.getElementById("viewAlgorithms").hidden = true;
-    viewProcedures.hidden = false;
-    backBtn.hidden = false;
-    siteTitle.textContent = "Procedures";
-    window.scrollTo(0, 0);
-    if (location.hash !== "#procedures")
-      history.replaceState(null, "", location.pathname + "#procedures");
-  }
-
   document.querySelectorAll(".tile[data-target]").forEach(function (t) {
     t.addEventListener("click", function () {
       var target = t.getAttribute("data-target");
-      if (target === "viewMedications") showMeds();
-      if (target === "viewAlgorithms") showAlgos();
-      if (target === "viewProcedures") showProcedures();
+      if (VIEW_DEFS[target]) showView(target);
     });
   });
   backBtn.addEventListener("click", showLanding);
@@ -3373,6 +3830,15 @@
     86: "BC drug monos/sodium chloride 3 or 5 NEW.pdf",
     87: "BC drug monos/tenecteplase NEW.pdf",
     88: "BC drug monos/vitamin K NEW.pdf"
+    // No BC monograph PDF in the repo yet for these IV meds. When the PDF
+    // is dropped into "BC drug monos/", uncomment its line (and add a comma
+    // to the entry above):
+    // 12: "BC drug monos/cefuroxime NEW.pdf",
+    // 26: "BC drug monos/etomidate NEW.pdf",
+    // 33: "BC drug monos/gentamicin NEW.pdf",
+    // 37: "BC drug monos/hydromorphone NEW.pdf",
+    // 73: "BC drug monos/sugammadex NEW.pdf",
+    // 89: "BC drug monos/digoxin NEW.pdf"
   };
 
   function renderMed(m) {
@@ -3472,6 +3938,8 @@
     empty: "algoEmpty", badge: "algoCountBadge", label: "algorithms" });
   setupSectionSearch({ input: "procSearch", list: "procList", meta: "procMeta",
     empty: "procEmpty", badge: "procCountBadge", label: "procedures" });
+  setupSectionSearch({ input: "calcSearch", list: "calcList", meta: "calcMeta",
+    empty: "calcEmpty", badge: "calcCountBadge", label: "calculators" });
 
   // Expand / collapse all (respects an active search filter)
   document.querySelectorAll(".chip-btn[data-expand], .chip-btn[data-collapse]")
@@ -3511,9 +3979,11 @@
     if (e.key !== "/" || e.ctrlKey || e.metaKey || e.altKey) return;
     var tag = (document.activeElement && document.activeElement.tagName) || "";
     if (tag === "INPUT" || tag === "TEXTAREA") return;
-    var targetId = !viewMeds.hidden ? "medSearch"
-      : !document.getElementById("viewAlgorithms").hidden ? "algoSearch"
-      : !viewProcedures.hidden ? "procSearch" : null;
+    var targetId = null;
+    Object.keys(VIEW_DEFS).forEach(function (k) {
+      var el = document.getElementById(k);
+      if (el && !el.hidden) targetId = VIEW_DEFS[k].search;
+    });
     if (!targetId) return;
     e.preventDefault();
     document.getElementById(targetId).focus();
@@ -3530,12 +4000,481 @@
     });
   }
 
+  // ---------- Calculators & scores ----------
+  function calcNum(id) {
+    var el = document.getElementById(id);
+    var v = parseFloat(el && el.value);
+    return isFinite(v) && v > 0 ? v : null;
+  }
+  function fmtNum(n, dp) {
+    if (!isFinite(n)) return "—";
+    var s = n.toFixed(dp == null ? 1 : dp);
+    if (s.indexOf(".") !== -1) s = s.replace(/0+$/, "").replace(/\.$/, "");
+    return s;
+  }
+  function onCalcInput(ids, fn) {
+    ids.forEach(function (id) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      el.addEventListener("input", fn);
+      el.addEventListener("change", fn);
+    });
+    fn();
+  }
+
+  // Dopamine weight-based drip table (premix 1600 / 3200 mcg/mL)
+  var DOPA_DOSES = [2.5, 5, 7.5, 10, 15, 20];
+  function renderDopa() {
+    var body = document.getElementById("dopaBody");
+    if (!body) return;
+    var wt = calcNum("dopaWt");
+    body.innerHTML = DOPA_DOSES.map(function (d) {
+      function rate(conc) {
+        return wt ? fmtNum(d * wt * 60 / conc) + " mL/hr" : "—";
+      }
+      return "<tr><td><strong>" + d + "</strong></td><td>" + rate(1600) +
+        "</td><td>" + rate(3200) + "</td></tr>";
+    }).join("");
+  }
+  onCalcInput(["dopaWt"], renderDopa);
+
+  // Any-drug drip calculator
+  function renderDrip() {
+    var out = document.getElementById("dripOut");
+    if (!out) return;
+    var mg = calcNum("dripMg"), ml = calcNum("dripMl"),
+      dose = calcNum("dripDose"), wt = calcNum("dripWt");
+    var perKg = document.getElementById("dripUnit").value === "kgmin";
+    if (!mg || !ml || !dose || (perKg && !wt)) {
+      out.textContent = perKg
+        ? "Enter the bag contents, dose, and weight above."
+        : "Enter the bag contents and dose above.";
+      return;
+    }
+    var conc = mg * 1000 / ml;
+    var mcgMin = perKg ? dose * wt : dose;
+    out.innerHTML = "<span class=\"big\">" + fmtNum(mcgMin * 60 / conc) +
+      " mL/hr</span> &mdash; bag concentration " + fmtNum(conc) +
+      " mcg/mL; total dose " + fmtNum(mcgMin) + " mcg/min" +
+      (perKg ? " (" + fmtNum(dose) + " mcg/kg/min × " + fmtNum(wt, 0) + " kg)" : "") + ".";
+  }
+  onCalcInput(["dripMg", "dripMl", "dripDose", "dripUnit", "dripWt"], renderDrip);
+
+  // Burn fluids (Modified Parkland + Rule of 10s)
+  function renderBurn() {
+    var out = document.getElementById("bwOut");
+    if (!out) return;
+    var wt = calcNum("bwWt"), tbsa = calcNum("bwTbsa");
+    var f = parseFloat(document.getElementById("bwType").value);
+    var hrs = parseFloat(document.getElementById("bwHours").value);
+    if (!isFinite(hrs) || hrs < 0) hrs = 0;
+    if (hrs > 24) hrs = 24;
+    if (!wt || !tbsa) { out.textContent = "Enter weight and %TBSA above."; return; }
+    if (tbsa > 100) tbsa = 100;
+    var total = f * wt * tbsa;
+    var half = total / 2;
+    var html = "<span class=\"big\">" + fmtNum(total, 0) +
+      " mL Ringer's Lactate over 24 h</span> (" + f + " mL × " +
+      fmtNum(wt, 0) + " kg × " + fmtNum(tbsa, 0) + "%)";
+    if (hrs < 8) {
+      html += "<p><strong>First 8 h from injury:</strong> " + fmtNum(half, 0) +
+        " mL. With " + fmtNum(hrs) + " h already elapsed, run <strong>" +
+        fmtNum(half / (8 - hrs), 0) + " mL/hr</strong> for the remaining " +
+        fmtNum(8 - hrs) + " h.</p>";
+    } else {
+      html += "<p><strong>The first 8-h window has passed</strong> &mdash; give the remaining calculated fluid over the time left in the 24 h and titrate to urine output.</p>";
+    }
+    html += "<p><strong>Next 16 h:</strong> " + fmtNum(half, 0) +
+      " mL at <strong>" + fmtNum(half / 16, 0) + " mL/hr</strong>.</p>";
+    if (f === 3) {
+      var maint = 4 * Math.min(wt, 10) + 2 * Math.min(Math.max(wt - 10, 0), 10) +
+        Math.max(wt - 20, 0);
+      html += "<p><strong>Add pediatric maintenance (4-2-1, D5LR if &lt; 30 kg):</strong> " +
+        fmtNum(maint, 0) + " mL/hr on top of resuscitation fluid.</p>";
+      html += "<p><strong>Urine output target:</strong> " + fmtNum(wt, 0) + "–" +
+        fmtNum(2 * wt, 0) + " mL/hr (1 mL/kg/h; 1–2 mL/kg/h if &lt; 30 kg).</p>";
+    } else {
+      var r10 = Math.round(tbsa / 10) * 100 +
+        (wt > 80 ? Math.floor((wt - 80) / 10) * 100 : 0);
+      html += "<p><strong>Rule of 10s starting rate</strong> (adults ≥ 40 kg, while you calculate): ~<strong>" +
+        fmtNum(r10, 0) + " mL/hr</strong>.</p>";
+      html += f === 4
+        ? "<p><strong>Urine output target (electrical):</strong> " + fmtNum(wt, 0) +
+          "–" + fmtNum(1.5 * wt, 0) + " mL/hr (1–1.5 mL/kg/h) until urine clears of myoglobin.</p>"
+        : "<p><strong>Urine output target:</strong> " + fmtNum(0.5 * wt, 0) +
+          " mL/hr (0.5 mL/kg/h); reduce the rate if output &gt; " + fmtNum(wt, 0) + " mL/hr.</p>";
+    }
+    out.innerHTML = html;
+  }
+  onCalcInput(["bwWt", "bwTbsa", "bwType", "bwHours"], renderBurn);
+
+  // Ideal body weight (Devine) & lung-protective tidal volumes
+  function renderIbw() {
+    var out = document.getElementById("ibwOut");
+    if (!out) return;
+    var h = calcNum("ibwHt");
+    if (!h) { out.textContent = "Enter height above."; return; }
+    var cm = document.getElementById("ibwUnit").value === "in" ? h * 2.54 : h;
+    var male = document.getElementById("ibwSex").value === "m";
+    var ibw = (male ? 50 : 45.5) + 0.91 * (cm - 152.4);
+    if (ibw < 20) {
+      out.textContent = "Height out of the formula's useful range — check the value and units.";
+      return;
+    }
+    function vt(perKg) { return Math.round(ibw * perKg / 5) * 5; }
+    var html = "<span class=\"big\">IBW ≈ " + fmtNum(ibw, 0) + " kg</span> (" +
+      fmtNum(cm, 0) + " cm, " + (male ? "male" : "female") + ", Devine formula)";
+    html += "<p><strong>Tidal volume (mL):</strong> 4 mL/kg = " + vt(4) +
+      " &middot; 5 = " + vt(5) + " &middot; <strong>6 = " + vt(6) +
+      "</strong> &middot; 7 = " + vt(7) + " &middot; 8 = " + vt(8) + "</p>";
+    html += "<p>Start at <strong>6 mL/kg (" + vt(6) +
+      " mL)</strong>; usual range 6–8 mL/kg; ARDS 4–6 mL/kg. Keep plateau ≤ 30 cmH₂O.</p>";
+    if (cm < 152.4) {
+      html += "<p><em>Note: the Devine formula is least accurate below 152 cm — confirm with clinical judgement.</em></p>";
+    }
+    out.innerHTML = html;
+  }
+  onCalcInput(["ibwSex", "ibwHt", "ibwUnit"], renderIbw);
+
+  // Tenecteplase weight-band picker
+  var TNK_BANDS = [
+    { lim: 60, mg: 30, label: "less than 60 kg" },
+    { lim: 70, mg: 35, label: "60 to 69 kg" },
+    { lim: 80, mg: 40, label: "70 to 79 kg" },
+    { lim: 90, mg: 45, label: "80 to 89 kg" },
+    { lim: Infinity, mg: 50, label: "90 kg or more" }
+  ];
+  function renderTnk() {
+    var out = document.getElementById("tnkOut");
+    if (!out) return;
+    var wt = calcNum("tnkWt");
+    var ind = document.getElementById("tnkInd").value;
+    if (!wt) { out.textContent = "Enter weight above."; return; }
+    var mg, extra;
+    if (ind === "stroke") {
+      mg = Math.min(0.25 * wt, 25);
+      extra = "0.25 mg/kg × " + fmtNum(wt, 0) + " kg" +
+        (0.25 * wt > 25 ? ", capped at the 25 mg maximum" : "") +
+        ". Stroke dosing only on neurologist / medical control direction.";
+    } else {
+      var band;
+      for (var i = 0; i < TNK_BANDS.length; i++) {
+        if (wt < TNK_BANDS[i].lim) { band = TNK_BANDS[i]; break; }
+      }
+      mg = ind === "stemi75" ? band.mg / 2 : band.mg;
+      extra = "Weight band: " + band.label +
+        (ind === "stemi75"
+          ? " — <strong>half dose</strong> for age ≥ 75 yr (apply only where your protocol endorses it)."
+          : " — standard full dose.");
+    }
+    out.innerHTML = "<span class=\"big\">" + fmtNum(mg, 1) + " mg = " +
+      fmtNum(mg / 5, 1) + " mL</span> of reconstituted TNK (5 mg/mL), single IV bolus over 5 seconds.<p>" +
+      extra + "</p>";
+  }
+  onCalcInput(["tnkWt", "tnkInd"], renderTnk);
+
+  // Glasgow Coma Scale
+  function renderGcs() {
+    var out = document.getElementById("gcsOut");
+    if (!out) return;
+    var e = parseInt(document.getElementById("gcsE").value, 10);
+    var v = parseInt(document.getElementById("gcsV").value, 10);
+    var m = parseInt(document.getElementById("gcsM").value, 10);
+    var t = e + v + m;
+    var sev = t >= 13 ? "mild" : t >= 9 ? "moderate" : "severe";
+    out.innerHTML = "<span class=\"big\">GCS " + t + "</span> (E" + e + " V" + v +
+      " M" + m + ") — " + sev + " impairment" +
+      (t <= 8 ? ". <strong>Assess airway protection — see the RSI algorithm.</strong>" : ".");
+  }
+  onCalcInput(["gcsE", "gcsV", "gcsM"], renderGcs);
+
+  // Checkbox score cards (Wells PE / DVT)
+  function setupScoreList(listId, outId, interpret) {
+    var list = document.getElementById(listId);
+    var out = document.getElementById(outId);
+    if (!list || !out) return;
+    function update() {
+      var total = 0;
+      list.querySelectorAll("input[type=\"checkbox\"]").forEach(function (cb) {
+        if (cb.checked) total += parseFloat(cb.dataset.pts) || 0;
+      });
+      out.innerHTML = interpret(total);
+    }
+    list.addEventListener("change", update);
+    update();
+  }
+  setupScoreList("wpeList", "wpeOut", function (t) {
+    var two = t <= 4 ? "PE unlikely" : "PE likely";
+    var three = t < 2 ? "low" : t <= 6 ? "moderate" : "high";
+    return "<span class=\"big\">" + fmtNum(t) + " points</span> — <strong>" +
+      two + "</strong> (two-tier); " + three + " probability (three-tier).";
+  });
+  setupScoreList("wdvtList", "wdvtOut", function (t) {
+    var two = t < 2 ? "DVT unlikely" : "DVT likely";
+    var three = t <= 0 ? "low" : t <= 2 ? "moderate" : "high";
+    return "<span class=\"big\">" + fmtNum(t) + " points</span> — <strong>" +
+      two + "</strong> (two-tier); " + three + " probability (three-tier).";
+  });
+
+  // HEART score
+  function renderHeart() {
+    var out = document.getElementById("heartOut");
+    if (!out) return;
+    var t = 0;
+    ["heartH", "heartE", "heartA", "heartR", "heartT"].forEach(function (id) {
+      t += parseInt(document.getElementById(id).value, 10);
+    });
+    var tier = t <= 3 ? "low risk (~1–2% MACE)"
+      : t <= 6 ? "moderate risk (~12–17% MACE)"
+      : "high risk (~50–65% MACE)";
+    out.innerHTML = "<span class=\"big\">HEART " + t + "/10</span> — " + tier + ".";
+  }
+  onCalcInput(["heartH", "heartE", "heartA", "heartR", "heartT"], renderHeart);
+
+  // ---------- Per-card printing (clean one-pagers) ----------
+  document.querySelectorAll("details.med > summary").forEach(function (s) {
+    var b = document.createElement("button");
+    b.type = "button";
+    b.className = "card-print";
+    b.title = "Print this card as a one-pager";
+    b.setAttribute("aria-label", "Print this card");
+    b.textContent = "🖨";
+    s.appendChild(b);
+  });
+  function printCard(card) {
+    var wasOpen = card.open;
+    card.open = true;
+    card.classList.add("print-target");
+    document.documentElement.classList.add("printing-card");
+    function cleanup() {
+      card.classList.remove("print-target");
+      document.documentElement.classList.remove("printing-card");
+      card.open = wasOpen;
+      window.removeEventListener("afterprint", cleanup);
+    }
+    window.addEventListener("afterprint", cleanup);
+    setTimeout(function () { window.print(); }, 50);
+  }
+  document.addEventListener("click", function (e) {
+    var btn = e.target.closest && e.target.closest(".card-print");
+    if (!btn) return;
+    e.preventDefault();
+    e.stopPropagation();
+    var card = btn.closest("details.med");
+    if (card) printCard(card);
+  });
+
+  // ---------- Inventory & expiry tracker (device-local) ----------
+  var INV_KEY = "actt-inventory";
+  var invItems = [];
+  try {
+    invItems = JSON.parse(localStorage.getItem(INV_KEY) || "[]");
+    if (!Array.isArray(invItems)) invItems = [];
+  } catch (e) { invItems = []; }
+  function invSave() {
+    try { localStorage.setItem(INV_KEY, JSON.stringify(invItems)); } catch (e) {}
+  }
+  var invBody = document.getElementById("invBody");
+  var invWrap = document.getElementById("invWrap");
+  var invEmptyEl = document.getElementById("invEmpty");
+  var invSummaryEl = document.getElementById("invSummary");
+  var invBadge = document.getElementById("invCountBadge");
+  var invFilterEl = document.getElementById("invSearch");
+
+  function invStatus(expiry) {
+    if (!expiry) return { cls: "", label: "—" };
+    var d = new Date(expiry + "T23:59:59");
+    if (isNaN(d)) return { cls: "", label: "—" };
+    var days = Math.ceil((d - new Date()) / 86400000);
+    if (days < 0) return { cls: "expired", label: "Expired" };
+    if (days <= 90) return { cls: "soon", label: days + " d left" };
+    return { cls: "ok", label: "OK" };
+  }
+  function invSort() {
+    invItems.sort(function (a, b) {
+      var ax = a.expiry || "9999-99-99", bx = b.expiry || "9999-99-99";
+      if (ax !== bx) return ax < bx ? -1 : 1;
+      return (a.name || "").localeCompare(b.name || "");
+    });
+  }
+  function invCell(child, cls) {
+    var td = document.createElement("td");
+    if (cls) td.className = cls;
+    td.appendChild(child);
+    return td;
+  }
+  function invInput(item, field, type) {
+    var inp = document.createElement("input");
+    if (type) inp.type = type;
+    if (type === "number") { inp.min = "0"; inp.step = "any"; }
+    inp.value = item[field] == null ? "" : item[field];
+    inp.dataset.field = field;
+    return inp;
+  }
+  function invRenderRow(item) {
+    var tr = document.createElement("tr");
+    tr.dataset.id = item.id;
+    tr.appendChild(invCell(invInput(item, "name"), "inv-name"));
+    tr.appendChild(invCell(invInput(item, "qty", "number"), "inv-qty"));
+    tr.appendChild(invCell(invInput(item, "expiry", "date"), "inv-exp"));
+    var st = invStatus(item.expiry);
+    var badge = document.createElement("span");
+    badge.className = "badge " + st.cls;
+    badge.textContent = st.label;
+    tr.appendChild(invCell(badge, "inv-status"));
+    tr.appendChild(invCell(invInput(item, "loc"), "inv-loc"));
+    var del = document.createElement("button");
+    del.type = "button";
+    del.className = "row-del";
+    del.title = "Delete this item";
+    del.setAttribute("aria-label", "Delete this item");
+    del.textContent = "✕";
+    tr.appendChild(invCell(del, "print-hide"));
+    return tr;
+  }
+  function invApplyFilter() {
+    if (!invBody) return;
+    var q = normalizeForSearch(invFilterEl ? invFilterEl.value : "");
+    var terms = q.split(/\s+/).filter(Boolean);
+    invBody.querySelectorAll("tr").forEach(function (tr) {
+      var id = tr.dataset.id;
+      var item = null;
+      for (var i = 0; i < invItems.length; i++) {
+        if (String(invItems[i].id) === id) { item = invItems[i]; break; }
+      }
+      var hay = normalizeForSearch((item ? item.name + " " + (item.loc || "") : ""));
+      tr.hidden = !terms.every(function (t) { return hay.indexOf(t) !== -1; });
+    });
+  }
+  function invRender() {
+    if (!invBody) return;
+    invSort();
+    invBody.innerHTML = "";
+    var expired = 0, soon = 0;
+    invItems.forEach(function (item) {
+      var st = invStatus(item.expiry);
+      if (st.cls === "expired") expired++;
+      if (st.cls === "soon") soon++;
+      invBody.appendChild(invRenderRow(item));
+    });
+    var n = invItems.length;
+    invWrap.hidden = n === 0;
+    invEmptyEl.hidden = n !== 0;
+    invSummaryEl.textContent = n === 0 ? "" :
+      n + " item" + (n === 1 ? "" : "s") +
+      (expired ? " · " + expired + " expired" : "") +
+      (soon ? " · " + soon + " expiring ≤ 90 d" : "");
+    if (invBadge) invBadge.textContent = n || "";
+    invApplyFilter();
+  }
+  var invForm = document.getElementById("invForm");
+  if (invForm) {
+    invForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var name = document.getElementById("invName").value.trim();
+      if (!name) return;
+      invItems.push({
+        id: Date.now() + "-" + Math.random().toString(36).slice(2, 7),
+        name: name,
+        qty: document.getElementById("invQty").value,
+        expiry: document.getElementById("invExpiry").value,
+        loc: document.getElementById("invLoc").value.trim()
+      });
+      invSave();
+      invRender();
+      invForm.reset();
+      document.getElementById("invName").focus();
+    });
+  }
+  if (invBody) {
+    invBody.addEventListener("input", function (e) {
+      var inp = e.target;
+      var tr = inp.closest && inp.closest("tr");
+      if (!tr || !inp.dataset.field) return;
+      for (var i = 0; i < invItems.length; i++) {
+        if (String(invItems[i].id) === tr.dataset.id) {
+          invItems[i][inp.dataset.field] = inp.value;
+          invSave();
+          if (inp.dataset.field === "expiry") {
+            var st = invStatus(inp.value);
+            var badge = tr.querySelector(".badge");
+            badge.className = "badge " + st.cls;
+            badge.textContent = st.label;
+          }
+          break;
+        }
+      }
+    });
+    // Re-sort by expiry once the user leaves the field (not on every keystroke)
+    invBody.addEventListener("change", function (e) {
+      if (e.target.dataset && e.target.dataset.field === "expiry") invRender();
+    });
+    invBody.addEventListener("click", function (e) {
+      var btn = e.target.closest && e.target.closest(".row-del");
+      if (!btn) return;
+      var tr = btn.closest("tr");
+      for (var i = 0; i < invItems.length; i++) {
+        if (String(invItems[i].id) === tr.dataset.id) {
+          if (!confirm("Delete “" + (invItems[i].name || "this item") + "”?")) return;
+          invItems.splice(i, 1);
+          break;
+        }
+      }
+      invSave();
+      invRender();
+    });
+  }
+  if (invFilterEl) invFilterEl.addEventListener("input", invApplyFilter);
+  var invExportBtn = document.getElementById("invExport");
+  if (invExportBtn) {
+    invExportBtn.addEventListener("click", function () {
+      var rows = [["Item", "Qty", "Expiry", "Status", "Location"]];
+      invItems.forEach(function (item) {
+        rows.push([item.name || "", item.qty || "", item.expiry || "",
+          invStatus(item.expiry).label, item.loc || ""]);
+      });
+      var csv = rows.map(function (r) {
+        return r.map(function (v) {
+          return "\"" + String(v).replace(/"/g, "\"\"") + "\"";
+        }).join(",");
+      }).join("\r\n");
+      var blob = new Blob(["\uFEFF" + csv], { type: "text/csv;charset=utf-8" });
+      var a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "actt-inventory-" + new Date().toISOString().slice(0, 10) + ".csv";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(function () { URL.revokeObjectURL(a.href); }, 5000);
+    });
+  }
+  var invClearBtn = document.getElementById("invClear");
+  if (invClearBtn) {
+    invClearBtn.addEventListener("click", function () {
+      if (!invItems.length) return;
+      if (!confirm("Delete all " + invItems.length + " inventory items from this device? Export a CSV first if you need a copy.")) return;
+      invItems = [];
+      invSave();
+      invRender();
+    });
+  }
+  var medNamesList = document.getElementById("medNamesList");
+  if (medNamesList) {
+    MEDS.forEach(function (m) {
+      var opt = document.createElement("option");
+      opt.value = m.name;
+      medNamesList.appendChild(opt);
+    });
+  }
+  invRender();
+
   // Route by hash on load and on back/forward or manual hash edits
   function routeByHash() {
-    if (location.hash === "#medications") showMeds();
-    else if (location.hash === "#algorithms") showAlgos();
-    else if (location.hash === "#procedures") showProcedures();
-    else showLanding();
+    var id = "viewLanding";
+    Object.keys(VIEW_DEFS).forEach(function (k) {
+      if (VIEW_DEFS[k].hash && VIEW_DEFS[k].hash === location.hash) id = k;
+    });
+    showView(id);
   }
   window.addEventListener("hashchange", routeByHash);
   routeByHash();
