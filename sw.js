@@ -1,7 +1,7 @@
 /* ACTT Quick Reference — offline cache.
  * Bump the version below whenever index.html or the PDFs change so
  * returning devices pick up the new content. */
-var CACHE = "actt-quik-ref-v1";
+var CACHE = "actt-quik-ref-v2";
 var CORE = [
   "./",
   "./index.html",

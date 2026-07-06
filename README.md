@@ -15,6 +15,12 @@ at sea.
 | **Medications** | 182 | Indications, dosage, preparation & administration, compatibility & stability, hazards, and at-sea pro tips for every med. 73 meds link to their full BC drug monograph PDF. |
 | **Clinical Algorithms** | 29 | ACLS/BLS, cardioversion, STEMI/fibrinolysis (incl. TNK dosing charts), airway/RSI, DKA, sepsis, stroke, burns, tox, and more — with inline links to every medication mentioned. |
 | **Procedures** | 29 | Step-by-step checklists mapped 1:1 to the Medical Directives list (core 001–021 plus Navy, Air Force, Special Operations, and Operations directives), each with an at-sea callout. |
+| **Calculators & Scores** | 8 | Vasopressor drip-rate tables (epi/norepi/dopamine at the stocked concentrations, plus an any-drug drip calculator), Parkland burn fluids, ideal-body-weight tidal volumes, a TNK weight-band picker, and GCS / Wells (PE & DVT) / HEART score cards. |
+| **Inventory & Expiry** | — | Device-local stock tracker: quantities, expiry dates with expired / expires-soon flags, filtering, and CSV export. Stored in the browser's localStorage only. |
+
+Every medication, algorithm, procedure, and calculator card also has a 🖨
+button that prints it as a clean black-on-white one-pager (works from dark
+mode too) — handy for the sick bay wall.
 
 ## Files
 
@@ -48,7 +54,9 @@ refresh their cached PDFs and app shell.
   `sections`. Search indexing, count badges, and cross-links update
   automatically.
 - **Monograph PDFs:** drop the PDF into `BC drug monos/` and add a
-  `number: "path"` entry to `MONO_MAP` in `index.html`.
+  `number: "path"` entry to `MONO_MAP` in `index.html`. Ready-to-uncomment
+  entries already exist for cefuroxime, etomidate, gentamicin,
+  hydromorphone, sugammadex, and digoxin — add the PDF and uncomment.
 - **Algorithms / procedures:** add a `<details class="med">` card inside
   `#algoList` or `#procList` in `index.html`, following the existing
   structure. Use `<a class="med-link" data-med="EXACT MED NAME">` to link to
