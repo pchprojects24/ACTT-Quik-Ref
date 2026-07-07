@@ -16,7 +16,6 @@ at sea.
 | **Clinical Algorithms** | 29 | ACLS/BLS, cardioversion, STEMI/fibrinolysis (incl. TNK dosing charts), airway/RSI, DKA, sepsis, stroke, burns, tox, and more — with inline links to every medication mentioned. |
 | **Procedures** | 29 | Step-by-step checklists mapped 1:1 to the Medical Directives list (core 001–021 plus Navy, Air Force, Special Operations, and Operations directives), each with an at-sea callout. |
 | **Calculators & Scores** | 8 | Vasopressor drip-rate tables (epi/norepi/dopamine at the stocked concentrations, plus an any-drug drip calculator), Parkland burn fluids, ideal-body-weight tidal volumes, a TNK weight-band picker, and GCS / Wells (PE & DVT) / HEART score cards. |
-| **Inventory & Expiry** | — | Device-local stock tracker: quantities, expiry dates with expired / expires-soon flags, filtering, and CSV export. Stored in the browser's localStorage only. |
 
 Every medication, algorithm, procedure, and calculator card also has a 🖨
 button that prints it as a clean black-on-white one-pager (works from dark

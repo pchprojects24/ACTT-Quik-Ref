@@ -274,57 +274,6 @@
   .score-list .pts { margin-left: auto; font-weight: 700; font-size: 0.85rem;
     color: var(--accent-dark); white-space: nowrap; padding-left: 10px; }
 
-  /* Inventory & expiry tracker */
-  .inv-form { display: grid; gap: 8px; margin-top: 14px;
-    grid-template-columns: 2fr 0.7fr 1.3fr 1.3fr auto; align-items: center; }
-  .inv-form input {
-    padding: 9px 12px; border: 1px solid var(--border); border-radius: 10px;
-    background: var(--panel); color: var(--ink); font: inherit; min-width: 0;
-  }
-  .inv-form .chip-btn { padding: 8px 14px; white-space: nowrap; }
-  .inv-tools { display: flex; align-items: center; gap: 8px; margin-top: 12px;
-    flex-wrap: wrap; }
-  .inv-tools input[type="search"] {
-    flex: 1 1 12em; min-width: 0; padding: 8px 12px; font: inherit;
-    border: 1px solid var(--border); border-radius: 999px;
-    background: var(--panel); color: var(--ink);
-  }
-  .inv-wrap { overflow-x: auto; margin-top: 10px; background: var(--panel);
-    border: 1px solid var(--border); border-radius: 12px; box-shadow: var(--shadow); }
-  table.inv { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
-  table.inv th {
-    text-align: left; background: var(--accent-soft); color: var(--accent-dark);
-    font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.4px;
-    padding: 8px 10px; white-space: nowrap;
-  }
-  table.inv td { padding: 5px 8px; border-top: 1px solid var(--border);
-    vertical-align: middle; }
-  table.inv input {
-    width: 100%; min-width: 6em; border: 1px solid transparent; border-radius: 8px;
-    background: transparent; color: var(--ink); font: inherit; padding: 5px 6px;
-  }
-  table.inv input:hover { border-color: var(--border); }
-  table.inv input:focus { border-color: var(--accent); outline: none;
-    background: var(--panel); }
-  table.inv td.inv-qty input { min-width: 3.5em; width: 4.5em; }
-  table.inv td.inv-exp input { min-width: 8.5em; }
-  .badge { display: inline-block; font-size: 0.72rem; font-weight: 700;
-    border-radius: 999px; padding: 1px 8px; white-space: nowrap; }
-  .badge.ok { background: rgba(22,163,74,0.12); color: #15803d;
-    border: 1px solid rgba(22,163,74,0.4); }
-  html[data-theme="dark"] .badge.ok { color: #4ade80; }
-  .badge.soon { background: var(--warn-bg); color: #b45309;
-    border: 1px solid var(--warn-border); }
-  html[data-theme="dark"] .badge.soon { color: #fbbf24; }
-  .badge.expired { background: rgba(220,38,38,0.12); color: #dc2626;
-    border: 1px solid rgba(220,38,38,0.45); }
-  html[data-theme="dark"] .badge.expired { color: #f87171; }
-  .row-del {
-    background: none; border: none; color: var(--muted); cursor: pointer;
-    font-size: 1rem; padding: 4px 8px; border-radius: 8px; line-height: 1;
-  }
-  .row-del:hover { color: #dc2626; background: rgba(220,38,38,0.10); }
-
   /* Per-card print button */
   .card-print {
     background: none; border: none; cursor: pointer; color: var(--muted);
@@ -333,10 +282,6 @@
   }
   .card-print:hover { color: var(--accent-dark); background: var(--accent-soft); }
 
-  @media (max-width: 700px) {
-    .inv-form { grid-template-columns: 1fr 1fr; }
-    .inv-form input:first-child { grid-column: 1 / -1; }
-  }
   @media (max-width: 560px) {
     header.site h1 { font-size: 1rem; }
     .landing-hero h2 { font-size: 1.4rem; }
@@ -360,7 +305,7 @@
     }
     header.site, .search-bar, .list-tools, footer.site-footer, #toTop,
     .landing-hero, .card-grid, .info-banner, .disclaimer, .empty,
-    .chip-btn, .card-print, .inv-form, .inv-tools, .row-del,
+    .chip-btn, .card-print,
     th.print-hide, td.print-hide { display: none !important; }
     html, body { background: #fff; color: #000; }
     main { max-width: none; padding: 0; }
@@ -424,12 +369,6 @@
           <h3>Calculators &amp; Scores <span class="count-badge" id="calcCountBadge"></span></h3>
           <p>Drip-rate tables, weight-based dosing, and quick clinical scores.</p>
           <p class="tile-info">&#8505;&#65039; Pressor mL/hr tables, Parkland burn fluids, vent tidal volumes, TNK weight bands, GCS, Wells, and HEART.</p>
-        </button>
-        <button class="tile" data-target="viewInventory">
-          <span class="tile-emoji" aria-hidden="true">&#128230;</span>
-          <h3>Inventory &amp; Expiry <span class="count-badge" id="invCountBadge"></span></h3>
-          <p>Track your actual stock, quantities, and expiry dates.</p>
-          <p class="tile-info">&#8505;&#65039; Saved on this device only. Flags expired and soon-to-expire items; exports to CSV for hand-over.</p>
         </button>
       </div>
       <div class="info-banner">
@@ -3519,35 +3458,6 @@
       </div>
     </section>
 
-    <!-- Inventory & Expiry page -->
-    <section id="viewInventory" hidden>
-      <div class="info-banner">&#8505;&#65039; <strong>How it works:</strong> log your actual stock with quantity, expiry, and location. Everything is saved <strong>on this device only</strong> (nothing leaves the browser) &mdash; export a CSV for backup or hand-over. Items expiring within 90 days are flagged <span class="badge soon">Expires soon</span>; past-date items are flagged <span class="badge expired">Expired</span>.</div>
-      <form id="invForm" class="inv-form" autocomplete="off">
-        <input id="invName" list="medNamesList" placeholder="Item &mdash; e.g. Epinephrine 1 mg/mL ampoule" required>
-        <input id="invQty" type="number" min="0" step="any" inputmode="decimal" placeholder="Qty">
-        <input id="invExpiry" type="date" title="Expiry date">
-        <input id="invLoc" placeholder="Location &mdash; e.g. crash bag">
-        <button class="chip-btn" type="submit">+ Add item</button>
-      </form>
-      <datalist id="medNamesList"></datalist>
-      <div class="inv-tools">
-        <input id="invSearch" type="search" placeholder="&#128269; Filter items&hellip;">
-        <div class="search-meta" id="invSummary"></div>
-        <span class="spacer"></span>
-        <button class="chip-btn" id="invExport" type="button" title="Download the list as a CSV file">Export CSV</button>
-        <button class="chip-btn" id="invClear" type="button" title="Delete every item on this device">Clear all</button>
-      </div>
-      <div class="inv-wrap" id="invWrap" hidden>
-        <table class="inv">
-          <thead><tr>
-            <th>Item</th><th>Qty</th><th>Expiry</th><th>Status</th><th>Location</th><th class="print-hide"></th>
-          </tr></thead>
-          <tbody id="invBody"></tbody>
-        </table>
-      </div>
-      <div id="invEmpty" class="empty">&#128230; No items yet &mdash; add your first one above.<br>Tip: the item box suggests all medication names from this app.</div>
-      <p class="disclaimer">&#9888;&#65039; Stored in this browser&rsquo;s local storage on this device. Clearing browser data (or using another device/browser) means a fresh list &mdash; export a CSV regularly.</p>
-    </section>
   </main>
 
   <footer class="site-footer">
@@ -3684,8 +3594,7 @@
     viewMedications: { title: "Medications", hash: "#medications", search: "medSearch" },
     viewAlgorithms: { title: "Clinical Algorithms", hash: "#algorithms", search: "algoSearch" },
     viewProcedures: { title: "Procedures", hash: "#procedures", search: "procSearch" },
-    viewCalculators: { title: "Calculators & Scores", hash: "#calculators", search: "calcSearch" },
-    viewInventory: { title: "Inventory & Expiry", hash: "#inventory", search: "invSearch" }
+    viewCalculators: { title: "Calculators & Scores", hash: "#calculators", search: "calcSearch" }
   };
   function showView(id) {
     var def = VIEW_DEFS[id] || VIEW_DEFS.viewLanding;
@@ -4263,210 +4172,6 @@
     var card = btn.closest("details.med");
     if (card) printCard(card);
   });
-
-  // ---------- Inventory & expiry tracker (device-local) ----------
-  var INV_KEY = "actt-inventory";
-  var invItems = [];
-  try {
-    invItems = JSON.parse(localStorage.getItem(INV_KEY) || "[]");
-    if (!Array.isArray(invItems)) invItems = [];
-  } catch (e) { invItems = []; }
-  function invSave() {
-    try { localStorage.setItem(INV_KEY, JSON.stringify(invItems)); } catch (e) {}
-  }
-  var invBody = document.getElementById("invBody");
-  var invWrap = document.getElementById("invWrap");
-  var invEmptyEl = document.getElementById("invEmpty");
-  var invSummaryEl = document.getElementById("invSummary");
-  var invBadge = document.getElementById("invCountBadge");
-  var invFilterEl = document.getElementById("invSearch");
-
-  function invStatus(expiry) {
-    if (!expiry) return { cls: "", label: "—" };
-    var d = new Date(expiry + "T23:59:59");
-    if (isNaN(d)) return { cls: "", label: "—" };
-    var days = Math.ceil((d - new Date()) / 86400000);
-    if (days < 0) return { cls: "expired", label: "Expired" };
-    if (days <= 90) return { cls: "soon", label: days + " d left" };
-    return { cls: "ok", label: "OK" };
-  }
-  function invSort() {
-    invItems.sort(function (a, b) {
-      var ax = a.expiry || "9999-99-99", bx = b.expiry || "9999-99-99";
-      if (ax !== bx) return ax < bx ? -1 : 1;
-      return (a.name || "").localeCompare(b.name || "");
-    });
-  }
-  function invCell(child, cls) {
-    var td = document.createElement("td");
-    if (cls) td.className = cls;
-    td.appendChild(child);
-    return td;
-  }
-  function invInput(item, field, type) {
-    var inp = document.createElement("input");
-    if (type) inp.type = type;
-    if (type === "number") { inp.min = "0"; inp.step = "any"; }
-    inp.value = item[field] == null ? "" : item[field];
-    inp.dataset.field = field;
-    return inp;
-  }
-  function invRenderRow(item) {
-    var tr = document.createElement("tr");
-    tr.dataset.id = item.id;
-    tr.appendChild(invCell(invInput(item, "name"), "inv-name"));
-    tr.appendChild(invCell(invInput(item, "qty", "number"), "inv-qty"));
-    tr.appendChild(invCell(invInput(item, "expiry", "date"), "inv-exp"));
-    var st = invStatus(item.expiry);
-    var badge = document.createElement("span");
-    badge.className = "badge " + st.cls;
-    badge.textContent = st.label;
-    tr.appendChild(invCell(badge, "inv-status"));
-    tr.appendChild(invCell(invInput(item, "loc"), "inv-loc"));
-    var del = document.createElement("button");
-    del.type = "button";
-    del.className = "row-del";
-    del.title = "Delete this item";
-    del.setAttribute("aria-label", "Delete this item");
-    del.textContent = "✕";
-    tr.appendChild(invCell(del, "print-hide"));
-    return tr;
-  }
-  function invApplyFilter() {
-    if (!invBody) return;
-    var q = normalizeForSearch(invFilterEl ? invFilterEl.value : "");
-    var terms = q.split(/\s+/).filter(Boolean);
-    invBody.querySelectorAll("tr").forEach(function (tr) {
-      var id = tr.dataset.id;
-      var item = null;
-      for (var i = 0; i < invItems.length; i++) {
-        if (String(invItems[i].id) === id) { item = invItems[i]; break; }
-      }
-      var hay = normalizeForSearch((item ? item.name + " " + (item.loc || "") : ""));
-      tr.hidden = !terms.every(function (t) { return hay.indexOf(t) !== -1; });
-    });
-  }
-  function invRender() {
-    if (!invBody) return;
-    invSort();
-    invBody.innerHTML = "";
-    var expired = 0, soon = 0;
-    invItems.forEach(function (item) {
-      var st = invStatus(item.expiry);
-      if (st.cls === "expired") expired++;
-      if (st.cls === "soon") soon++;
-      invBody.appendChild(invRenderRow(item));
-    });
-    var n = invItems.length;
-    invWrap.hidden = n === 0;
-    invEmptyEl.hidden = n !== 0;
-    invSummaryEl.textContent = n === 0 ? "" :
-      n + " item" + (n === 1 ? "" : "s") +
-      (expired ? " · " + expired + " expired" : "") +
-      (soon ? " · " + soon + " expiring ≤ 90 d" : "");
-    if (invBadge) invBadge.textContent = n || "";
-    invApplyFilter();
-  }
-  var invForm = document.getElementById("invForm");
-  if (invForm) {
-    invForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-      var name = document.getElementById("invName").value.trim();
-      if (!name) return;
-      invItems.push({
-        id: Date.now() + "-" + Math.random().toString(36).slice(2, 7),
-        name: name,
-        qty: document.getElementById("invQty").value,
-        expiry: document.getElementById("invExpiry").value,
-        loc: document.getElementById("invLoc").value.trim()
-      });
-      invSave();
-      invRender();
-      invForm.reset();
-      document.getElementById("invName").focus();
-    });
-  }
-  if (invBody) {
-    invBody.addEventListener("input", function (e) {
-      var inp = e.target;
-      var tr = inp.closest && inp.closest("tr");
-      if (!tr || !inp.dataset.field) return;
-      for (var i = 0; i < invItems.length; i++) {
-        if (String(invItems[i].id) === tr.dataset.id) {
-          invItems[i][inp.dataset.field] = inp.value;
-          invSave();
-          if (inp.dataset.field === "expiry") {
-            var st = invStatus(inp.value);
-            var badge = tr.querySelector(".badge");
-            badge.className = "badge " + st.cls;
-            badge.textContent = st.label;
-          }
-          break;
-        }
-      }
-    });
-    // Re-sort by expiry once the user leaves the field (not on every keystroke)
-    invBody.addEventListener("change", function (e) {
-      if (e.target.dataset && e.target.dataset.field === "expiry") invRender();
-    });
-    invBody.addEventListener("click", function (e) {
-      var btn = e.target.closest && e.target.closest(".row-del");
-      if (!btn) return;
-      var tr = btn.closest("tr");
-      for (var i = 0; i < invItems.length; i++) {
-        if (String(invItems[i].id) === tr.dataset.id) {
-          if (!confirm("Delete “" + (invItems[i].name || "this item") + "”?")) return;
-          invItems.splice(i, 1);
-          break;
-        }
-      }
-      invSave();
-      invRender();
-    });
-  }
-  if (invFilterEl) invFilterEl.addEventListener("input", invApplyFilter);
-  var invExportBtn = document.getElementById("invExport");
-  if (invExportBtn) {
-    invExportBtn.addEventListener("click", function () {
-      var rows = [["Item", "Qty", "Expiry", "Status", "Location"]];
-      invItems.forEach(function (item) {
-        rows.push([item.name || "", item.qty || "", item.expiry || "",
-          invStatus(item.expiry).label, item.loc || ""]);
-      });
-      var csv = rows.map(function (r) {
-        return r.map(function (v) {
-          return "\"" + String(v).replace(/"/g, "\"\"") + "\"";
-        }).join(",");
-      }).join("\r\n");
-      var blob = new Blob(["\uFEFF" + csv], { type: "text/csv;charset=utf-8" });
-      var a = document.createElement("a");
-      a.href = URL.createObjectURL(blob);
-      a.download = "actt-inventory-" + new Date().toISOString().slice(0, 10) + ".csv";
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      setTimeout(function () { URL.revokeObjectURL(a.href); }, 5000);
-    });
-  }
-  var invClearBtn = document.getElementById("invClear");
-  if (invClearBtn) {
-    invClearBtn.addEventListener("click", function () {
-      if (!invItems.length) return;
-      if (!confirm("Delete all " + invItems.length + " inventory items from this device? Export a CSV first if you need a copy.")) return;
-      invItems = [];
-      invSave();
-      invRender();
-    });
-  }
-  var medNamesList = document.getElementById("medNamesList");
-  if (medNamesList) {
-    MEDS.forEach(function (m) {
-      var opt = document.createElement("option");
-      opt.value = m.name;
-      medNamesList.appendChild(opt);
-    });
-  }
-  invRender();
 
   // Route by hash on load and on back/forward or manual hash edits
   function routeByHash() {
